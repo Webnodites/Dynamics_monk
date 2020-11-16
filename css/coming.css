@@ -226,7 +226,12 @@ hr{
 
 @media (max-width: 480px) and (min-width: 320px){
     .logo img{
-    width: 200px;
+    width: 180px;
+}
+.section-padd {
+    height: 90vh;
+    display: flex;
+    align-items: center;
 }
 	.last p {
     font-size: 12px;
@@ -286,7 +291,12 @@ hr{
 }
 @media (max-width: 400px){
     .logo img{
-    width: 200px;
+    width: 160px;
+}
+.section-padd {
+    height: 90vh;
+    display: flex;
+    align-items: center;
 }
 	.last p {
     font-size: 10px;
