@@ -1009,7 +1009,10 @@ a.menu-box::after {
 }
 
 .pagebanner-section.banner_mainpage {
-	min-height: 500px
+	    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pagebanner-content {
@@ -1032,13 +1035,11 @@ a.menu-box::after {
 }
 
 .pagebanner-content.align_bottom {
-	top: auto;
-	transform: none;
-	bottom: 40px
 }
 
 .pagebanner-section.banner_aboutbg {
-	background: url(images/about/banner_aboutbg.webp) center no-repeat
+	background: url(images/about/b5.jpg) center no-repeat;
+	    background-size: cover;
 }
 
 .pagebanner-section.contactus_pagebanner {
@@ -2075,6 +2076,7 @@ color: #fff;
 
 .ourmission-section {
 	background: url(images/about/mission-bg.jpg) center center no-repeat;
+	background-size: cover;
 	margin-bottom: -2px
 }
 
@@ -2112,13 +2114,13 @@ color: #fff;
 }
 
 .ourmission-section .section-header h2 {
-	color: #05283f;
+	color: #fff;
 	font-weight: 500;
 	font-size: 32px
 }
 
 .ourmission-section .section-header p {
-	color: #333;
+	color: #fff;
 	font-size: 20px;
 	line-height: 28px;
 	font-weight: 400
@@ -8191,7 +8193,6 @@ form .form-control {
 	}
 	.footer-main {
 		padding-top: 30px;
-		padding-bottom: 50px
 	}
 	.footer-box h3 {
 		margin-bottom: 10px
@@ -8594,13 +8595,10 @@ form .form-control {
 	.footer-box.footer_sm {
 		margin-bottom: 30px
 	}
-	.ourmission-section {
-		background: 0
-	}
+	
 	.ourmission-section .section-header {
 		padding-top: 0;
 		padding-bottom: 15px;
-		background-color: #ffe382
 	}
 	.ourmission-section .section-inner-header {
 		padding-top: 30px;
