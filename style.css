@@ -9401,10 +9401,9 @@ form .form-control {
 		padding: 0
 	}
 	.home-about {
-		background: 0;
 		min-height: auto;
-		padding-bottom: 30px;
-		padding-top: 30px
+		padding-bottom: 40px;
+		padding-top: 40px
 	}
 	.aspdotnet_block .hire-content-box,
 	.style3 .aboutservice-block.style2 .aboutservice-box {
