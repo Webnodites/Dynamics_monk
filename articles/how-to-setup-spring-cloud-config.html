@@ -1,0 +1,933 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Quick Setup Spring Cloud Config?</title>
+<meta name="description" content="Spring cloud config setup might seem to be entirely complicate, especially to compare with a traditional monolithic applications base." />
+<meta name="keywords" content="Spring, Cloud, Config, Setup, microservices, Rest API" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/how-to-setup-spring-cloud-config.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Quick Setup Spring Cloud Config?" />
+<meta property="og:description" content="Spring cloud config setup might seem to be entirely complicate, especially to compare with a traditional monolithic applications base." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/how-to-setup-spring-cloud-config.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/images/spring-cloud-config/1.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/spring-cloud-config/1.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Spring cloud config setup might seem to be entirely complicate, especially to compare with a traditional monolithic applications base." />
+<meta name="twitter:title" content="How to Quick Setup Spring Cloud Config?" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/images/spring-cloud-config/1.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+	<!-- Header Section -->
+	<div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+		<div class="container-fluid">
+			<div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+				<div class="container">	
+					<nav class="menu-navigation">
+						<div class="logo-block">
+							<a class="navbar-brand" href="/">
+								<img src="../images/logo.png" alt="logo"/>
+							</a>
+						</div>
+						<a class="menuswitch" href="#">
+							<span class="menuline bar1"></span>
+							<span class="menuline bar2"></span>
+							<span class="menuline bar3"></span>
+						</a>
+						<div class="menu-collapse">
+							<ul class="navigation-menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="../company.html">About Us</a></li>
+								<li class="dropdown">
+									<i class="ddl-switch"></i>
+									<a href="#">Services</a>
+									<ul class="dropdown-menu">
+										<div class="dropdown-menubox">
+											<li><a href="../services/application-development.html">Application Development</a></li>
+											<li><a href="#">Digital Transformation</a></li>
+											<li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+											<li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+											<li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/big-data-services.html">Big Data</a></li>
+											<li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+											<li><a href="#">Block Chain</a></li>
+											<li><a href="../services/devops-consulting.html">DevOps</a></li>
+											<li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+											<li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+											<li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+											<li><a href="#">Business Intelligence</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+											<li><a href="#">Data Integration</a></li>
+											<li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+											<li><a href="#">Dashboards</a></li>
+										</div>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<i class="ddl-switch"></i>
+									<a href="#">Technologies</a>
+									<ul class="dropdown-menu two_col">
+										<div class="dropdown-menubox">
+											<li><a href="../technologies/java-application-development.html">Java</a></li>
+											<li><a href="../technologies/python-development-services.html">Python</a></li>
+											<li><a href="../technologies/scala-development.html">Scala</a></li>
+											<li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../technologies/android-app-development.html">Android</a></li>
+											<li><a href="../technologies/ios-application-development.html">iOS</a></li>
+											<li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+										</div>
+										<div class="dropdown-menubox microsoft_nested">
+											<li class="full_width"><strong>Microsoft</strong></li>
+											<li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+											<li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+											<li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+											<li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+											<li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+											<li><a href="#">Power BI</a></li>
+										</div>
+									</ul>
+								</li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header><!-- Header Section /- -->
+    
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+        <div class="Inner-Banner">
+    	<div class="Page-Size">
+            	<h1>How to Setup SPRING CLOUD CONFIG?</h1>
+            </div>
+        </div><!--Web-Banner-->
+    
+    <div class="Page-Size">
+        <div class="Text Width-100">			
+			<h3>1. Introduction</h3>
+			<p>Microservice architecture or simply Micro services has gained a lot of traction in recent times. They are better suited for agile methodology and ensure better continuous delivery. Big organizations like EBay, Amazon, and Netflix are embracing it.</p>
+			<p>Traditional monolithic applications operate as a single unit. A minor change in application, needs entire application to be deployed. There is no option to scale up/down certain modules in application independently, the entire application needs to scale up/down.</p>			
+			<p>In Microservice, an application is deployed as a suite of smaller and independent applications each one managing a separate business operation/entity. These services can be independently developed (even in different languages), scaled up/down and deployed. They typically communicate with each other using REST API.</p>
+			
+			<div class="youtube-videobox">
+			    <iframe src="https://www.youtube.com/embed/OytqzGq9hmE"></iframe>
+			</div>
+			<p>However there are also downsides to this approach:</p>
+			<ul class="listing">
+			    <li>Management/Monitoring of distributed services becomes painful as their number grows.</li>
+			    <li>Debugging of a bug which spans multiple services is difficult.</li>
+			    <li><strong>Each service maintains its own configuration (typically in a properties/yml file). It&rsquo;s also common that certain config parameters are used in multiple services. When a config parameter has to be changed, we need to track all the services using it, change the value in all of them and build and deploy each </strong><a href="../technologies/senior-java-developers.html"><strong>Senior Java Developers</strong></a><strong></strong></li>
+			</ul>
+			<p>Spring Cloud Config attempts to resolve the configuration drawback mentioned in #3.</p>
+			<h3>2. Spring Cloud Config</h3>
+			<p>Spring Cloud Config employs Server-Client approach for storing the configuration externally at 1 place. Any changes in configuration doesn’t need to deploy the associated services, in-fact these changes are reflected automatically.</p>
+			
+			<p><b>2.1 HLD and Execution Flow</b></p>
+			
+			<div class="single-article-img"><img src="../images/spring-cloud-config/1.jpg" alt="spring-cloud-config" /></div>
+			<p><b>2.2 Spring Cloud Config Components</b></p>
+			
+			<p>Spring cloud Config consists of following components:</p>
+			
+			<p><i>2.2.1 Git Repository</i></p>
+			<p>The file containing configuration (typically .properties or .yml) is hosted in git repository. The default implementation of the Spring cloud config storage uses GIT repository.</p>
+		    <p>In this repository maintain properties for each environment (dev, local, prod) separately using profile specific config files such as <strong>application. Properties</strong>, <strong>application-local.properties</strong>, <strong>application-dev.properties.</strong></p>
+			
+			<p><i>2.2.2 Config Server</i></p>
+			<p>This is a standalone application wherein the path to git repository is configured. It also provides a REST API endpoints to read the configuration in the underlying git repository.</p>
+			
+			<p><i>2.2.3 Config Clients</i></p>
+			<p>These are the individual Microservice, which binds to Spring Cloud Config Server. All property changes in git repo are reflected without redeploying the Microservice. Spring beans in this should be annotated with <strong>@RefreshScope, </strong>so that Whenever any parameter in configuration file hosted in git changes, on triggering <strong>/refresh </strong> endpoint, the application context is reloaded with new config without application restart.</p>
+			<h3>3. Project</h3>
+			<p>In this project, we will create a 2 projects</p>
+			<ul class="listing">
+			    <li>Git backed config server</li>
+			    <li>Config client microservice which binds to Config server. All configuration changes will be reflected without redeploying the it.</li>
+			</ul>
+			<p><b>3.1 Git Repository</b></p>
+			
+			<p>Before starting with projects, let’s first create a git repository which will host central configuration.</p>
+			
+			<p>1. Go to a folder and create an empty git repository in it.</p>
+			
+			<div class="single-article-img"><img src="../images/spring-cloud-config/2.jpg" alt="spring-cloud-config" /></div>
+			<p>2. Create properties file in it. </p>
+			
+			<p>Here I have create 2 files </p>
+			<p><strong>application-dev.properties</strong>- which will be used when the active profile for client = dev</p>
+			<p><strong>application-local.properties</strong>- which will be used when the active profile for client = local</p>
+			<p>The contents of application-local.properties is</p>
+			
+			<div class="single-article-img"><img src="../images/spring-cloud-config/3.jpg" alt="spring-cloud-config" /></div>
+			<p>3. Add the files to staging area and commit the changes</p>
+			
+			<div class="single-article-img"><img src="../images/spring-cloud-config/4.jpg" alt="spring-cloud-config" /></div>
+			<p><b>3.2 Config Server Project</b></p>
+			
+			<p>This is a simple spring boot project with following structure</p>
+			
+			<div class="single-article-img"><img src="../images/spring-cloud-config/5.jpg" alt="spring-cloud-config" /></div>
+			<p>3.2.1 Maven Dependencies</p>
+			<p>Here we are using latest version of spring-boot-starter as well as <a href="https://cloud.spring.io/" target="_blank">Spring Cloud Finchley</a> Release Train.</p>
+			
+<xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.hemant</groupId>
+    <artifactId>cloud-config-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>cloud-config-server</name>
+    <description>Spring Cloud Server</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath />
+        <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>			
+</xmp>
+			<p><b>3.2.2 Main Application Class :</b></p>
+			<p>We have added the<a href="https://github.com/spring-cloud/spring-cloud-config/blob/master/spring-cloud-config-server/src/main/java/org/springframework/cloud/config/server/EnableConfigServer.java" target="_blank"> EnableConfigServer </a> annotation before the class so that project will act like a spring config server</p>
+<xmp>
+packagecom.hemant.configserver;
+
+importorg.springframework.boot.SpringApplication;
+importorg.springframework.boot.autoconfigure.SpringBootApplication;
+importorg.springframework.cloud.config.server.EnableConfigServer;
+
+@SpringBootApplication
+@EnableConfigServer
+publicclassCloudConfigServerApplication {
+    publicstaticvoidmain(String[] args) {
+        SpringApplication.run(CloudConfigServerApplication.class, args);
+    }
+}
+</xmp>
+			<p><b>3.2.2 Application properties</b></p>
+			<p>Here we have chosen server port as 8888.  <strong>spring.cloud.config.server.git.uri</strong> will bind the git repository. Here we are using local git repo but we can also use the  remote repository by changing to its URL.</p>
+<xmp>
+server.port:8888
+spring.application.name:config-server
+spring.cloud.config.server.git.uri=${HOME}/GIT_CONFIG			
+</xmp>
+
+			<p><b>3.2.4 Start the config server</b></p>
+			<p>1. Go to the project&rsquo;s root and issue
+				 &gt;&gt;&gt; mvncleaninstall
+				 2. If build is success, launch the jar generated in the target folder
+				 &gt;&gt;&gt; java-jartarget/cloud-config-server-0.0.1-SNAPSHOT.jar
+				 3. We can use REST Endpoints of the Config server for retrieving the configuration
+				 &gt;&gt;&gt; /{applicationName}/{profile}
+			</p>
+						<xmp>
+GET http: //localhost:8888/config-server/local
+{
+    "name": "config-server",
+    "profiles": [ "local"],
+    "label": null,
+    "version": "55e871a4f85a6d70f7bf2931ba416e41a9c1cf3f",
+    "state": null,
+    "propertySources": [ {
+        "name": "/Users/hemant/GIT_CONFIG/application-local.properties",
+        "source": {
+            "connect.host": "localhost", "connect.port": "90909", "connect.username": "root", "connect.password": "root", "welcome.message": "Hi User! Attempt 1"
+        }
+    }
+    ]
+}
+
+GET http: //localhost:8888/config-server/dev
+{
+    "name": "config-server",
+    "profiles": [ "dev"],
+    "label": null,
+    "version": "55e871a4f85a6d70f7bf2931ba416e41a9c1cf3f",
+    "state": null,
+    "propertySources": [ {
+        "name": "/Users/hemant/GIT_CONFIG/application-dev.properties",
+        "source": "source": {
+            "connect.host": "dev-server", "connect.port": "1234", "connect.username": "dev", "connect.password": "dev", "welcome.message": "Hi User! Attempt 1"
+        }
+    }
+    ]
+}			
+</xmp>
+			<p>Here the setup of config server is complete.</p>
+			<p><b>3.3 Config Client Application</b></p>
+			<p>Startbuilt a latest Spring Boot application that uses the Config Server to load its own configuration and that refreshes its configuration to reflect modifies in configuration on-demand continue start.</p>
+			<p>It is a spring-boot application, with following structure:</p>
+			<div class="single-article-img"><img src="../images/spring-cloud-config/6.jpg" alt="spring-cloud-config"/></div>
+			<p>3.3.1 Maven dependencies</p>
+			<p>Here we are using latest version of spring-boot-starter as  well as <a href="https://cloud.spring.io/" target="_blank">Spring Cloud Finchley</a> Release Train.</p>
+			<xmp>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hemant</groupId>
+    <artifactId>config-client</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>config-client</name>
+    <description>Spring Cloud Config Client</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+        <relativePath />
+        <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>			
+</xmp>
+			<p><b>Explanation :</b></p>
+			<p>1.	Spring-boot-starter-web - for enabling MVC</p>
+			<p>2.	Spring-cloud-starter-config - This dependency is used to connect to Config Server.</p>
+			<p>3.	Spring-boot-starter-actuator - This dependency exposes operational endpoints of application. We’ll need /refresh endpoint to refresh the application context, when changes are made to git repository.</p>
+			<p><b>3.3.2 Main Application Class :</b></p>
+			<xmp>
+packagecom.hemant.configclient;
+
+importorg.springframework.boot.SpringApplication;
+importorg.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+publicclassConfigClientApplication {
+
+    publicstaticvoidmain(String[] args) {
+        SpringApplication.run(ConfigClientApplication.class, args);
+    }
+}</xmp>
+			<p><b>3.3.3 Stateful Beans</b></p>
+			<p>In order to demonstrate the spring cloud configuration more clearly, we are creating a stateful spring bean here.</p>
+			<xmp>
+packagecom.hemant.configclient;
+
+importorg.springframework.boot.SpringApplication;
+importorg.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+publicclassConfigClientApplication {
+
+    publicstaticvoidmain(String[] args) {
+        SpringApplication.run(ConfigClientApplication.class, args);
+    }
+}	
+</xmp>
+			<p>The configuration class to create its bean is :</p>
+			<xmp>
+packagecom.hemant.configclient.config;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+importorg.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+importorg.springframework.context.annotation.Bean;
+importorg.springframework.context.annotation.Configuration;
+
+/**
+ * Config class used to create Connect object bean
+ * @author hemant
+ *
+ */
+@Configuration
+@RefreshScope
+publicclassConnectionConfig {
+
+	privatestaticfinal Logger LOG = LoggerFactory.getLogger(ConnectionConfig.class);
+
+	@Value("${connect.host}")
+	private String host;
+	@Value("${connect.username}")
+	private String username;
+	@Value("${connect.password}")
+	private String password;
+	@Value("${connect.port}")
+	privateint port;
+
+	/**
+	 * This method creates a stateful bean by using
+	 * configuration from config-server.
+	 * 
+	 * Also its annotated with @RefreshScope, so that this will be 
+       * refreshed/reinitialized, at runtime
+	 * @return
+	 */
+	@Bean
+	@RefreshScope
+	public Connection mongo() {
+		LOG.info("START : Connection Bean Creation");
+		Connection conn = new Connection();
+		conn.setHost(host);
+		conn.setUsername(username);
+		conn.setPassword(password);
+		conn.setPort(port);
+		LOG.info("END : Connection Bean Creation :{}", conn);
+		return conn;
+	}
+}
+</xmp>
+			<p>Here the bean is annotated with @RefreshScope, so that bean will be re-initialized at run-time.</p>
+			<p><b>3.3.4 Controller</b></p>
+			<p>We are also exposing the REST endpoints, so demonstrate how beans and properties are changed.</p>
+			<xmp>
+packagecom.hemant.configclient.web;
+
+importjava.util.HashMap;
+importjava.util.Map;
+
+importorg.springframework.beans.factory.annotation.Autowired;
+importorg.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+importorg.springframework.web.bind.annotation.RequestMapping;
+importorg.springframework.web.bind.annotation.RequestMethod;
+importorg.springframework.web.bind.annotation.RestController;
+
+importcom.hemant.configclient.config.Connection;
+
+/**
+ * Controller for exposing how the state (beans + properties)
+ * have changed on the fly.
+ * 
+ * This controller bean is annotated with @RefreshScope so that, 
+ * its reinitialized on the fly.
+ * 
+ * @author hemant
+ *
+ */
+@RestController
+@RefreshScope
+publicclassController {
+    @Autowired
+    private Connection connection;
+
+    @Value("${welcome.message}")
+    private String welcomeMessage;
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public Map < String, String > get() {
+        Map < String, String > map = newHashMap < > ();
+        map.put("connectionProperties", connection.toString());
+        map.put("welcomeMessage", welcomeMessage);
+        return map;
+    }
+}		
+</xmp>
+			<p><b>3.3.5 Application Properties</b></p>
+<xmp>
+spring.application.name:config-client
+server.port:8080
+spring.cloud.config.uri=http://localhost:8888
+management.endpoints.web.exposure.include=refresh			
+</xmp>
+			<p>Here application.properties doesn’t have any specific configuration parameters, this is because it gets its properties from the config-server.</p>
+			<p>The significance of handful properties configured here is :</p>
+			<ul class="listing">
+				<li>spring.application.name - name of the application </li>
+				<li>server.port - the application port</li>
+				<li>spring.cloud.config.uri - the URL of config server, we created above</li>
+				<li>management.endpoints.web.exposure.include - We had added <strong>spring-boot-starter-actuator</strong> in our pom, which exposes operational endpoints of our application. They include <em>/health, /info, /metrics,       /refresh.</em> Of these we only want /refresh endpoint to refresh the application context, when changes are made to git repository.</li>
+			</ul>
+			<p><b>3.3.6 Starting the config-client :</b></p>
+			<p>1. Go to the project&rsquo;s root and issue
+				 &gt;&gt;&gt;mvncleaninstall
+				 2. If build is success, launch the jar generated in the target folder
+				 &gt;&gt;&gt;java-jar-Dspring.profiles.active=localtarget/config-client-0.0.1-SNAPSHOT.jar
+				 Here we have selected the active profile as &ldquo;local&rdquo;, so that it will read properties from &ldquo;application-local.properties&rdquo; from git repo. Changing the same to &ldquo;dev&rdquo;, means it will read properties from application-dev.properties from git repo.
+			</p>
+			<h3>4. Demonstration</h3>
+			<p>To demonstrate the application :</p>
+			<p><b>1. Let’s first hit the client-config endpoint, to get the latest client data</b></p>
+			<xmp>
+GET http://localhost:8080
+
+{
+  "connectionProperties": "Connection [host=localhost, port=90909, username=root, password=root]",
+  "welcomeMessage": "Hi User! Attempt 1"
+}
+
+These properties are same which were defined in application-local.properties in git repository.			
+</xmp>
+			<p><b>2. Make changes in Git Repo</b></p>
+			<p>We have made changes to application-local.properties, so that it looks like</p>
+			<div class="single-article-img"><img src="../images/spring-cloud-config/7.jpg" alt="spring-cloud-config"/></div>
+			<p>Commit the changes</p>
+			<div class="single-article-img"><img src="../images/spring-cloud-config/8.jpg" alt="spring-cloud-config"/></div>
+			<p><b>3. Confirm if the properties are changed in client:</b></p>
+					<xmp>
+GET http://localhost:8080
+
+{
+  "connectionProperties": "Connection [host=localhost, port=90909, username=root, password=root]",
+  "welcomeMessage": "Hi User! Attempt 1"
+}
+
+These properties are same which were defined in application-local.properties in git repository.		
+</xmp>
+
+			<p>You can find, that old properties are still reflected inspite of changing the file in git repository and committing the changes. This is where the /refresh endpoint of actuator comes in.</p>
+			<p><b>4. Trigger Refresh Endpoint on Client: </b></p>
+			<p>We can use CURL to trigger the same or any other REST client.</p>
+			<div class="single-article-img"><img src="../images/spring-cloud-config/9.jpg" alt="spring-cloud-config"/></div>
+			<p>The response is list of configuration properties which are changed.</p>
+			<p><b>5. Now Again hit client endpoint</b></p>
+					<xmp>
+GET http://localhost:8080
+
+{
+  "connectionProperties": "Connection [host=localhost, port=27017, username=local, password=root]",
+  "welcomeMessage": "Hi LOCAL! Attempt 2"
+}</xmp>
+
+			<p><b>Thus here we can see</b></p>
+			<p>1.	The properties were refreshed.</p>
+			<p>2.	The beans with @RefreshScope was also reinitiated.</p>
+			<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Dynamic configuration management in microservice architecture with Spring CloudBy <a href="https://twitter.com/bartekslota?ref_src=twsrc%5Etfw">@bartekslota</a> Video: <a href="https://t.co/WwnmY7DWMe">https://t.co/WwnmY7DWMe</a>Slides: <a href="https://t.co/R1m0JXNy5S">https://t.co/R1m0JXNy5S</a>GitHub repos: <a href="https://t.co/M083YRlCPf">https://t.co/M083YRlCPf</a><a href="https://t.co/VOZUZzt3XF">https://t.co/VOZUZzt3XF</a><a href="https://twitter.com/hashtag/springio18?src=hash&amp;ref_src=twsrc%5Etfw">#springio18</a> <a href="https://twitter.com/hashtag/replay?src=hash&amp;ref_src=twsrc%5Etfw">#replay</a> <a href="https://twitter.com/springcloud?ref_src=twsrc%5Etfw">@springcloud</a></p>&mdash; Spring I/O (@spring_io) <a href="https://twitter.com/spring_io/status/1017739370365939719?ref_src=twsrc%5Etfw">July 13, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+			<h3>5. Conclusion</h3>
+			<p>Thus we have accomplished:</p>
+			<ul class="listing">
+				<li>Centralized configuration of our services in spring. This configuration is hosted in a git repository.</li>
+				<li>Created Cloud Config Server which secure to the getstore</li>
+				<li>Created Cloud Client services to devour the configuration on startup and then refresh the configuration without restarting.</li>
+				<li>Also based on the active profile of client application, only changes from respective file is reflected. </li>
+			</ul>
+			
+			<h3>Read More</h3>
+			<ul class="listing">
+				<li><a href="https://www.nexsoftsys.com/articles/spring-cloud-netflix-ribbon.html">Spring Cloud Netflix - Ribbon</a></li>
+			</ul>
+			 
+  </div>
+  </div><!--Page-Size-->
+
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note"/></div>
+    
+	<div class="clients-section margin_top30">
+		<div class="section-header ourclients">
+			<h4>Some of our clients</h4>
+		</div>	
+		<div class="container">
+			<div class="clients-block owl-carousel owl-theme">
+				<div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+			</div>
+		</div>	
+	</div>
+	<div class="teams-section">
+		<div class="container">
+			<div class="teams-title">
+				<img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+			</div>
+		</div>
+	</div>
+    
+	<!-- Footer -->
+	<footer class="footer-main">
+		<div class="container">
+			<div class="row">
+				<div class="footer-box">
+					<h3>Services</h3>
+					<div class="footer-innerbox-block">
+						<div class="footer-innerbox">
+							<ul class="listing">
+								<li><a href="../services/application-development.html">Application Development</a></li>
+								<li><a href="#">Digital Transformation</a></li>
+								<li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+								<li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+								<li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+								<li><a href="../services/big-data-services.html">Big Data</a></li>
+								<li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+								<li><a href="#">Block Chain</a></li>
+								<li><a href="../services/devops-consulting.html">DevOps</a></li>
+							</ul>
+						</div>
+						<div class="footer-innerbox">
+							<ul class="listing">
+								<li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+								<li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+								<li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+								<li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+								<li><a href="#">Business Intelligence</a></li>
+								<li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+								<li><a href="#">Data Integration</a></li>
+								<li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+								<li><a href="#">Dashboards</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-box">
+					<h3>Technologies</h3>
+					<div class="footer-innerbox w35">
+						<ul class="listing">
+							<li><a href="../technologies/java-application-development.html">Java</a></li>
+							<li><a href="../technologies/python-development-services.html">Python</a></li>
+							<li><a href="../technologies/scala-development.html">Scala</a></li>
+							<li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+							<li><a href="../technologies/android-app-development.html">Android</a></li>
+							<li><a href="../technologies/ios-application-development.html">iOS</a></li>
+							<li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+						</ul>
+					</div>
+					<div class="footer-innerbox w65">
+						<ul class="listing">
+							<li class="list-title"><strong>Microsoft</strong></li>
+							<li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+							<li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+							<li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+							<li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+							<li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+							<li><a href="#">Power BI</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-box footer_sm">
+					<div class="footer-box-business">
+						<h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+						<div class="footer-socialbox">
+							<h3>Follow NEX</h3>
+							<div class="ft-social">
+								<a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								<a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								<a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+	</footer><!-- Footer /- -->
+	
+<script defer src="../js/jquery-1.12.4.min.js"></script>
+<script defer src="../js/lib.js"></script>
+<script defer src="js/functions.js"></script>
+
+
+     <script src="/js/jquery-1.12.4.min.js"></script>
+    
+</body>
+</html>

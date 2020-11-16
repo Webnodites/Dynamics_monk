@@ -1,0 +1,870 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Advanced Web Scraping Tutorials in Python</title>
+    <meta name="description" content="Web scraping is about downloading structured from the website, picking some of that data extraction and passing along web page." />
+    <meta name="keywords" content="web, scraping, Python, BeautifulSoup" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/web-scraping-in-python.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Advanced Web Scraping Tutorials in Python" />
+    <meta property="og:description" content="Web scraping is about downloading structured from the website, picking some of that data extraction and passing along web page." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/web-scraping-in-python.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Web scraping is about downloading structured from the website, picking some of that data extraction and passing along web page." />
+    <meta name="twitter:title" content="Advanced Web Scraping Tutorials in Python" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Web Scraping in Python</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <div class="single-content-block">
+                <h2>Introduction:</h2>
+                <p>Some call it “screen scraping”, others “web scraping” and yet a few others call it simply “data extraction” from documents may be online or offline. These terms are used interchangeably, but they have slightly different meanings.  Hence, the tactics used for extracting such data are slightly different, but for the course of this discussion we will concentrate on “web scraping”, which basically means extracting data from websites (i.e., HTML documents). Later on, we will take a peek at how to extract data from Microsoft Word and Excel documents, and PDF files.</p>
+                <h3>Web Scraping using urllib, urllib2, and BeautifulSoup:</h3>
+                <p>Let us dive in straight away into the topic of “web scraping”. Now, there are multiple ways of doing this using python, and we will take a look at each of them briefly, but our main focus will be on using a slew of the following modules: urllib, its half-brother urllib2, and BeautifulSoup (3.2.1). You may use BeautifulSoup version 4 too, it is called bs4, and I don’t like the name for obvious reasons, so I will stick with the 3.2.1 version. It is not very different from bs4, so if you want to use that, please go ahead and use it with almost the same code that we write using version 3.2.1.</p>
+                <p>Now, the actual workhorse for this is the module urllib2 which actually makes the HTTP(S) connections, extract the content (be it HTML or a Word or XLS or PDF), and stores it into a variable in your program. In case of a MS Word or Excel or PDF document, it will actually download the entire doc as a whole and store it somewhere. You need a python module to extract the content from it, and in this discussion we will see how to do that.</p>
+                <div class="youtube-videobox">
+                    <iframe src="https://www.youtube.com/embed/XQgXKtPSzUI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p>Let’s get to the code now. For now you might not understand every line of it, but don’t worry, by the end of this blog I will explain everything I put down in the code and you will be able to grasp it. </p>
+                <p>[Note: the code here is  taken from the repository of python and perl code at <a href="https://github.com/supmit13" target="_blank">https://github.com/supmit13</a>, which is my  personal repository of code that I have written over the course of past few  years, so you can go ahead and have a look at other code in that repo. Not all  of it is for use in production grade, since it is really a repo of code that I  normally write to test stuff, but some of it is in production. However, I own  the code, and it is in public domain, so you are free to make use of it, even  without informing me. Just fork a repo if you want and you can start doing your  stuff. However, please do not change anything on the original versions.]</p>
+                <h3>Listing #1</h3>
+                <P>import os, sys, re, time # we might not use all of them in our code here, but it is a good practice to have the basic tools imported at the outset</P>
+                <xmp class="codding-box">
+                    import urllib, urllib2
+                    from BeautifulSoup import BeautifulSoup
+                    import StringIO
+                    import gzip
+                </xmp>
+                <p># Let’s start with something simple, like yellowpages.</p>
+                <xmp class="codding-box">
+                    url = "https://www.yellowpages.com/” # Clear that the URL beginning with https
+                    httpHeaders = {‘User-Agent’ : r'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.10)
+                    Gecko/20111103 Firefox/3.6.24', 'Accept' :
+                    'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                    'Accept-Language' : 'en-us,en;q=0.5', 'Accept-Encoding' : 'gzip,deflate',
+                    'Accept-Charset' : 'ISO-8859-1,utf-8;q=0.7,*;q=0.7', 'Keep-Alive' : '115',
+                    'Connection' : 'keep-alive', }
+                </xmp>
+                <p>
+                    You don’t need to specify these many header parameters, but it might be a good thing to do if you
+                    are trying to make any log parser on the server side think that you are not a bot. Please note that
+                    the ‘User-Agent’ key has a value that is a fingerprint of the Firefox browser. So a person looking
+                    at the server logs will not say that your program was actually a bot. Of course there are other
+                    measures that you need to take in order to fool the guy on the server side, but more on that as we
+                    move on.
+                </p>
+                <p><em>pageRequest = urllib2.Request(url, None, httpHeaders)</em></p>
+                <p># In the above line, we create a http request object that we are going to use to scrape the yellowpages website.</p>
+                <p># The second parameter is the data we want to send the website in the request, and since </p>
+                <p># we are making a GET request, we are not sending any explicit data. So it is None for now.</p>
+                <p># Later, we will see how to make POST requests, and in those requests, we will see what we</p>
+                <p># send in the ‘data’ param.</p>
+                <p>try:</p>
+                <p><em>    pageResponse = urllib2.urlopen(pageRequest)</em></p>
+                <p>except:</p>
+                <p><em> print “Error retrieving page pointed to by URL: %s Error: %s”%(url, sys.exc_info()[1].__str__())</em></p>
+                <p># Now, at this point we should be able to see what the content of the pageResponse variable</p>
+                <p># is, but it will be in a gzipped encoded format. Still let us see what it contains.</p>
+                <xmp class="codding-box">
+                    pageContent = pageResponse.read()
+                    print pageContent
+                </xmp>
+                <p>The content of the pageResponse variable will be something like this:</p>
+                <xmp class="codding-box">
+                    '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03\xec\xbd\xebr\x1bG\x920\xfa\xdfOQ\xc6F\xc8\xe41\xba\xd9U}
+                    \'\r\xfbP\x105\xf2.8\xf6J6gl\xadB\x01\x82M\x02v\x13\xe0\x00 %RV\xc4\xf7\x0e\xdf\x1b\x9e\'9y\xadn\x90
+                    D\xd9\x9a\x99\xdd\x8d\xb1\xccFuu\xdd++3+3+\xeb\xab\xcf\x9f|\xd7\xff\xe1\xa7\xef\x0f\xccxy^\x7f\xfd\x15>M=\x9c\x9e\xf5:
+                    \xd5\xb4\x03\xef\xd5\xf0\xe4\xeb\xaf\xce\xab\xe5\x10\x12,/\x82\xeao\x97\x93\xab^\xe7\xaf\xc1\x8f\xfbA\
+                    x7fv~1\\N\x8e\xeb\xaacF\xb3\xe9\xb2\x9a.{\x9do\x0fz\xd5\xc9Y\x05Y\x17\xa3\xf9\xe4bi\x96\xd7\x17U\xef\x8be\
+                    xf5v\xb9\xf3\xcb\xf0j\xc8\xb1_|\xfdf2=\x99\xbd\t\xff\xfc\xfc\xe0\xc7\xc3\xdf~\xdb\xa2\xdf\xde\xbb\xf7\xdb
+                    {\x14\n\'\xd3\xd3\x99\xe9\x99w\x9d\xe1\x19\x14\xdb\xd9\xedt\xba\x9d\xe3j\x08\xd5@\xf8xx\x1eN\xe7\xc1\xc9p9\x0c\
+                    xa7\xd5\x12>U\xf3\xf9l\xfe\xf8\xfe\xef\xf5dTM\x17\xd5\x7fT\xd7\xf0y\x98\x1f\x8f"\x1b%\xd9\x08\xbe\x0c/.\xe0#tc6\
+                    xfd\xf6\t|\xcc\x8b(\xb1Q\xd4\xe5_\xbb\x9a\xe2\x87\xc9y\xd5\xd9-\\\x18\xa5.\xb5\xb6\xdbY\xce\x87\xd3\xc5p\x84\
+                    xdf\xfe<\xc4o\x9d\xc3\xb3\xe7/~~|\xf8\xf4\xaf\xbf\x1e>;\x1a\xff|\xf2\x97\xb3\xe5w\'?\x9e=\x7fZ\x1f=yzT
+                    <\xffS\xfc\xed\xd9\x9f\x9f\x17\xa7P\xf0\xdf.\xab\xcb\x8a\x8b\x8c\xa0\xa8\xe5\x9f.\'\'PB\x1c\x8d\xb2\xe3$rv\x98\ xc0\x7f\xd8\x00\x1c\x82\x1ff\xbf\xc2\x84\xecN/\xeb\xfa\xfd\x9e\xb9o\xf4\xba\xaf_O\xe7\xaf\xe78K\xf3\xaawz9\xa5\xa6mU\
+                    xddiw\xb9\xfdN\xdf\xcd|\x0b\xde&\xa7[\x9fO_._m\xbf\xbb\x1a\xce\xcd\xac\x87\xe1\xde\xbb\xea\xed\xc5l\xbe\\\xec\xbe{\xff~\
+                    xaf\x82\x98\x97\xd1\xabp4\xac\xeb\xadY(\x9f\xba\xbe\xd8\xa9f\xa5\x84\xf6\xd5\xcb\xe9\xab\xbdy\xb5\xbc\x9cc\r\xb3\xdf~\x9bn\xbf\xef\xce\xba>
+                    \xe3\xf6{\xf9\x885i\xe4{hFGK\xec\xf4z\x08.\xb3S\xd3\xee\xc7\xb6dk\xc7\xed\x9d\xce\xe6[\\y\xb47\xfbj\x19\xd6\xd5\xf4l9\xde\x9b}\xf9\xe56\xf4
+                    \xee\xe5\xec\xd5\xb6o\xca\xfb\xadwv\xf7\xe5\x86\xc1\xd8~\xf7\xde\xbf\xcd\xf4\xbb\xe4\xf6\xd9|\xcc\x04R\xbc\x1c\x85\xd3\xd9\x9b\xadm\x18\x9b\
+                    xd9\x14`c\xebrk8?\xbb<\x87\x89Zlow\xa7\xdf\xe0<\xed.\xc7\x93\x05\x14\x05\xafW\xb3\xc9\x89\x89(\xe2\xfd{l\xf6\xa4Wmu\xc6\xc3\xe9\t,\x9e\xed
+\xee\x10\xde\xe2\xed\xee%\xfc$\xdb\xddS\xfcVA|xV-\xb7\x10\xc6F\xd5\x1cR\x8d0\xbe\x9e\rO\xe8m\xd1\xa3Y\xdf\xeb\\NO\xaa\xd3\xc9\xb4:iFO\
+xc0cZ\xbd\x99W\x00\xbb\x8f\x1emi\xb0\xb7\xd8\xde\xc3\xfa/z/;\x8bj\xf9=\xc0\xd6\xd1\xa4zC\xc0\xdb\xc5\x98\xfe\xe5b9;\xdf_.\xe7\x93\xe3\
+xcb\xa5D\x1e\xe0\xf2zF\xad\x9dC\x0c\xd46Y\x8c\xa1B\x80\xcd\x93\x93\x1ff?`\x0b\xe1e2\xad\xa1\x1d\xcf&K\xfe\xf0\xbc\xaa\xab\xe1\xa2\xea\xb...’
+                </xmp>
+                <p>For our purposes, this is garbage and we can’t do anything useful with it. So, in order to get the actual content (in english, not gibberish), we need to add the following code:</p>
+                <h3>Listing #2</h3>
+                <p># Remember we imported StringIO – here is where we use it.</p>
+                <xmp class="codding-box">
+                    responseStream = StringIO.StringIO(pageContent)
+                    decodedContent = ""
+                </xmp>
+
+
+                <p>try:</p>
+                <p><em>   gzipper = gzip.GzipFile(fileobj=responseStream)</em></p>
+                <p><em>decodedContent = gzipper.read()</em></p>
+                <p>except:</p>
+                <p><em> # Maybe this isn't gzipped content after all....</em></p>
+                <p><em>decodedContent =  pageContent </em></p>
+                <p><em>print  decodedContent </em></p>
+                <p># This will print the contents in English</p>
+                <p>Now, this is the type of code (the decoding part) we need on a routine basis. Hence it is best to create a function out of it. </p>
+                <h3>Listing #3</h3>
+                <xmp class="codding-box">
+                    def decodeGzippedContent(encoded_content):
+                    response_stream = StringIO.StringIO(encoded_content)
+                    decoded_content = ""
+                    try:
+                    gzipper = gzip.GzipFile(fileobj=response_stream)
+                    decoded_content = gzipper.read()
+                    except: # Maybe this isn't gzipped content after all....
+                    decoded_content = encoded_content
+                    return(decoded_content)
+                </xmp>
+                <p>Next time we encounter this scenario, we will call  decodeGzippedContent with the encoded content as a param. Having done this, let us now concentrate on extraction of data. We will need BeautifulSoup here.</p>
+                <xmp class="codding-box">
+                    soup = BeautifulSoup(decodedContent)
+                    # Let’s say we are interested in all the anchor tags here...
+                    alllinks = soup.find("a")
+                    for link in alllinks:
+                    if link.has_key(“href”):
+                    print link[‘href’]
+                    else:
+                    pass
+                </xmp>
+                <p>BeautifulSoup has enormous capabilities of extracting data and it would not be possible here to show them here in the narrow scope of this document. For example, it can extract data based on a tag name and an attribute of that tag. Let us suppose you want to get all the data contained in all “div” tags in an HTML document, but you want to consider only those div tags that have their “class” attribute set to “news”. In order to do that you could write the following code:</p>
+                <h3>Listing #4</h3>
+                <xmp class="codding-box">
+                    soup  = BeautifulSoup(html)
+                    allnewdivs = soup.findAll("div", {'class' : 'news'})
+                    content = “”
+                    for newsdiv in allnewsdivs:
+                    content += “\n\n” + newsdiv.text # Just put 2 newlines between the contents of each div.
+                </xmp>
+                <p>To know more on BeautifulSoup, I would suggest you take a look at their documentation (which is exhaustive) and only that can give you a precise idea of handy it is in your daily scraping tasks. The link to their docs is: https://www.crummy.com/software/BeautifulSoup/bs4/doc/</p>
+                <p>Please note that it is version 4 documentation, but if you look around a bit you will find the docs to version 3.2.1 as well</p>
+                <p>Now let us get back to urllib and urllib2 for a more in depth discussion. As you might have noticed, in our last example, we used the method “urlopen” of the urllib2 module to make a request. “urlopen” occurs to be the default opener object, and you can modify it according to your requires. For example, in the following code, I am going to declare a class called “NoRedirectHandler” which basically handles all redirects that automatically takes place when you use a default opener object. Sometimes that is a convenient solution (you don't need to worry about a page redirection, since it happens automatically), but in certain conditions you might want to know what exactly is being done when the redirect happens. So here is the code below, and I will walk you through it .</p>
+                <h3>Listing #5</h3>
+                <xmp class="codding-box">
+                    import os, sys, re, time, gzip
+
+                    import urllib, urllib2, httplib
+
+                    from urlparse import urlparse, urlsplit
+
+                    from StringIO import StringIO
+
+                    class NoRedirectHandler(urllib2.HTTPRedirectHandler):
+
+                    def http_error_302(self, req, fp, code, msg, headers):
+
+                    infourl = urllib.addinfourl(fp, headers, req.get_full_url())
+
+                    infourl.status = code
+
+                    infourl.code = code
+
+                    return infourl
+
+                    http_error_300 = http_error_302
+
+                    http_error_301 = http_error_302
+
+                    http_error_303 = http_error_302
+
+                    http_error_307 = http_error_302
+
+                    class Bot(object):
+                    def __init__(self, siteUrl):
+                    self.opener = urllib2.build_opener()
+                    self.no_redirect_opener = urllib2.build_opener(urllib2.HTTPHandler(), \
+                    urllib2.HTTPSHandler(), NoRedirectHandler())
+                    self.httpHeaders = { 'User-Agent' : r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36',  'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language' : 'en-US,en;q=0.8', 'Accept-Encoding' : 'gzip,deflate,sdch', 'Connection' : 'keep-alive', 'Host' : 'www.courts.mo.gov' }
+                    # Code to create the pageRequest goes here... it is the same as in the earlier example.
+                    self.pageResponse = self.no_redirect_opener.open(self.pageRequest)
+                    # Some other code....
+                </xmp>
+                <p>The point to note above is the definition of the NoRedirectHandler and the usage of it in pulling data. Using the “urllib2.build_opener()” method, you can create a custom opener object for yourself and use it. Yes, you need to write quite a bit of code for that, but on the positive side it also gives you flexibility and independence from using the cut and dried stuff which might not suit your purpose.</p>
+                <h3><strong>Other Libraries:</strong></h3>
+                <p><strong><a href="../hire/python-developers.html">Hire Python  developers</a></strong> have quite a few libraries that allow you to do the same in  much lesser code, but that comes with quite an amount of constraints. Firstly,  you need to learn the library and figure out what is does and how it does what  it does, and then implement your solution accordingly. There are frameworks  like &ldquo;scrapy&rdquo;, and libraries like &ldquo;request&rdquo; and &ldquo;mechanize&rdquo; that handle a lot  of stuff for you. Again, I can only give you some pointers regarding how to  make basic usage of these modules/frameworks, and I am also going to list down  a few advantages and disadvantages of these entities.</p>
+                <p>Let's look at Scrapy first: This is a framework that was designed explicitly for web scraping. </p>
+                <h3>Listing #6</h3>
+                <xmp class="codding-box">
+                    from scrapy.http import Request
+
+                    from crawling.spiders.lxmlhtml import CustomLxmlLinkExtractor as LinkExtractor
+
+                    from scrapy.conf import settings
+
+                    from crawling.items import RawResponseItem
+
+                    from crawling.spiders.redis_spider import RedisSpider
+
+                    link_extractor = LinkExtractor(
+
+                    allow_domains=response.meta['allowed_domains'],
+
+                    allow=response.meta['allow_regex'],
+
+                    deny=response.meta['deny_regex'],
+
+                    deny_extensions=response.meta['deny_extensions'])
+                </xmp>
+                <p>for link in link_extractor.extract_links(response):</p>
+                <p><strong># Do something with the links.</strong></p>
+                <p>As you can see, scrapy hides the details of the technicalities, and provides the programmer with an infrastructure where she/he can focus on the functionality of the application under consideration. Again, however, the downside is that Scrapy doesn't really take care of every thing you need. For instance, if you are extracting links from a HTML document and you want to go 5 levels below the target page to extract links, Scrapy will efficiently do that for you. However, if you want to know which links came from which level, scrapy plays dumb. It doesn't keep track of the layer at which a certain link is found. And that can be a serious problem if you are trying to assign a score reflecting the relevance of the link, where links at the top pages will have more weightage than the others in the lower levels.</p>
+                <p>You may also use the “request” library, which is very easy to use:</p>
+                <h3>Listing #7</h3>
+                <xmp class="codding-box">
+                    import os, sys, re, time
+                    import requests
+
+                    resp = requests.get(“https://www.yellowpages.com”)
+                    pageContent = resp.text
+                </xmp>
+                <p># You can actually make any type of request using this module – like POST, PUT, HEAD...</p>
+                <p>Now, let us go back to urllib2 for one more time and see how POST requests are made. A POST request ideally contains data, and it can be a large volume of data. This might take time, so you might want to increase the server's timeout parameter to a value such that all the data is uploaded.</p>
+                <p>Let's get into the code:</p>
+                <h3>Listing #8</h3>
+                <p><em>pageRequest = urllib2.Request(requestUrl, encodedPageFormData, httpHeaders)</em></p>
+                <p>
+                    <em>The variable &ldquo;  encodedPageFormData&rdquo; contains data in the following format:</em><br />
+                    <em>param1=val1&amp;param2=val2&amp;param3=val3....</em><br />
+                    <em>Now, what you can do is  first collect your data and place it in a dictionary, like so:</em><br />
+                    <em>d = {'param1' : 'val1',  'param2' : 'val2', 'param3': 'val3'...}</em><br />
+                    <em>In order to get the data  in the above mentioned format, you can do urllib.urlencode(d):</em><br />
+                    <em>encodedPageFormData = urllib.urlencode(d)</em><br />
+                    <em>The subsequent code is  similar to the code we explained above.</em>
+                </p>
+                <p>If you are interested in scraping newspaper articles and their metadata (like the date on which the article was printed in the newspaper, the name of the author, his/her occupation, etc) can be achieved using a module called “newpaper”. You can easily install newspaper module using “pip install newspaper”. Once that is done, you may write the following code to extract the content of it.</p>
+                <h3>Listing #9</h3>
+                <p><em>from newspaper import Article</em></p>
+                <xmp class="codding-box">
+                    url = “https://indianexpress.com/article/opinion/columns/unemployment-really-cmie-surjit-bhalla-demonetisation-job-cuts-5399928/”
+
+                    article = Article(url) # Default language is English, 'en'.
+                    article.download()
+                    article.parse()
+                    article.nlp() # Uses Natural Language Processing, so that is wonderful stuff.
+                    print article.text # This will give you the textual content of the paper.
+                    “””
+                    if you want the title, date published, a summary and stuff like that, you would need to make calls to
+                    the following methods:
+                    print article.title
+                    print article.summary
+                </xmp>
+                <h3>Scraping Sites that are behind an Authentication Mechanism:</h3>
+                <p>In order to scrape contents from a website that is being an authentication mechanism (meaning you have login using your username and password), you need to send the login URL your username, password and any cookie sent by the server to the browser. In such a case, you need to keep track of the cookie(s) that are sent to the scraper/bot every time you send it an HTTP POST request and you would need to include that in your next HTTP request. Given below is a piece of code that demonstrates it. It basically logs into the Facebook account, but you need to put in the appropriate credentials as well as install the dependencies. It will not run as is, since it is a part of a larger project which has a layered architecture. But anyway, I think it will be sufficient to give you an idea as to how this thing is done:</p>
+                <h3>Listing #10</h3>
+                <xmp class="codding-box">
+                    1.	def doLogin(self, username="someusername", password="somepasswd"):
+
+                    2.	        soup = BeautifulSoup(self.currentPageContent)
+
+                    3.	        loginForm = soup.find("form", {'id' : 'login_form'})
+
+                    4.	        emailField = loginForm.find("input", {'type' : 'text'})
+
+                    5.	        emailFieldName = emailField['name']
+
+                    6.	        passwdField = loginForm.find("input", {'type' : 'password'})
+
+                    7.	        passwdFieldName = passwdField['name']
+
+                    8.	        otherLoginFields = loginForm.findAll("input", {'type' : 'hidden'})
+
+                    9.	        otherFieldNames = {}
+
+                    10.	        for loginField in otherLoginFields:
+
+                    11.	            if loginField.has_key("name"):
+
+                    12.	                otherFieldNames[loginField['name']] = loginField['value'] or None
+
+                    13.	            elif loginField.has_key("id"):
+
+                    14.	                otherFieldNames[loginField['id']] = loginField['value'] or None
+
+                    15.
+
+                    16.	        checkbox = loginForm.find("input", {'type' : 'checkbox'})
+
+                    17.	        otherFieldNames[checkbox['name']] = checkbox['value']
+
+                    18.	        submitButton = loginForm.find("input", { 'type' : 'submit' })
+
+                    19.	        otherFieldNames[submitButton['id']] = submitButton['value']
+
+                    20.
+
+                    21.	        # Now select a username and password from self.availableCreds randomly
+
+                    22.	        credsLen = self.availableCreds.__len__()
+
+                    23.	        randomIndex = random.randint(0, credsLen - 1)
+
+                    24.	        fbUsernames = self.availableCreds.keys()
+
+                    25.	        self.siteUsername = fbUsernames[randomIndex]
+
+                    26.	        self.sitePassword = self.availableCreds[self.siteUsername]
+
+                    27.	        self.requestMethod = 'POST'
+
+                    28.	        self.postData = { emailFieldName : self.siteUsername, passwdFieldName : self.sitePassword }
+
+                    29.	        for fieldName in otherFieldNames.keys():
+
+                    30.	            self.postData[fieldName] = otherFieldNames[fieldName]
+
+                    31.	        self.httpHeaders['Referer'] = self.requestUrl
+
+                    32.	        self.requestUrl = loginForm['action']
+
+                    33.	        if not self.__class__._isAbsoluteUrl(self.requestUrl):
+
+                    34.	            self.requestUrl = self.baseUrl + self.requestUrl
+
+                    35.	        self.loginUrl = self.requestUrl
+
+                    36.
+
+                    37.	        urlencodedData = urllib.urlencode(self.postData)
+
+                    38.	        self.pageRequest = urllib2.Request(self.requestUrl, urlencodedData, self.httpHeaders)
+
+                    39.	        try:
+
+                    40.	            self.pageResponse = self.no_redirect_opener.open(self.pageRequest)
+
+                    41.	            self.sessionCookies = self.__class__._getCookieFromResponse(self.pageResponse)
+
+                    42.	            self.httpHeaders["Cookie"] = self.sessionCookies
+
+                    43.	            responseHeaders = self.pageResponse.info()
+
+                    44.	            if responseHeaders.has_key('location'):
+
+                    45.	                self.requestUrl = responseHeaders['location']
+
+                    46.	            else:
+
+                    47.	                print "Could not search redirection URL during logging in. Giving up...\n"
+
+                    48.	                return None
+
+                    49.	        except:
+
+                    50.	            print "Failed while creating the POST request to login. Giving up...\n"
+
+                    51.	            return None
+
+                    52.	        if self.__class__.DEBUG:
+
+                    53.	            print "\n===========================================\n"
+
+                    54.	            print "Request URL: " + self.requestUrl
+
+                    55.	            print "Session Cookies: " + self.sessionCookies
+
+                    56.	            print "\n===========================================\n"
+
+                    57.	        self.pageRequest = urllib2.Request(self.requestUrl, None, self.httpHeaders)
+
+                    58.	        try:
+
+                    59.	            self.pageResponse = self.no_redirect_opener.open(self.pageRequest)
+
+                    60.	            self.httpHeaders['Referer'] = self.requestUrl
+
+                    61.	        except:
+
+                    62.	            print "Failed while redirecting to user's homepage during login. Giving up...\n"
+
+                    63.	            return None
+
+                    64.	        self.currentPageContent = self.__class__._decodeGzippedContent(self.getPageContent())
+
+                    65.	        return (self.currentPageContent)
+                </xmp>
+                <p>Specifically, take a look at the lines starting at line #21. The username and the password is being populated and then a POST request is being made with some other parameters that Facebook wants. This code was written about 3 years back, and hence it is outdated, but if you want to log into any website through an authentication mechanism, this is the way to go.</p>
+                <h3>Scraping Documents other than HTML:</h3>
+                <p>Retrieving documents other than HTML is pretty easy, as they tend to exist at a certain link on a page. For example, if you have to download the PDF file from the website “http://www.pdf995.com/samples/pdf.pdf|”, it is quite easy. The code below does it. Just take a look.</p>
+                <xmp class="codding-box">
+                    import os, sys, re, time
+
+                    import urllib, urllib2
+
+                    from BeautifulSoup import BeautifulSoup
+
+                    url = "http://www.pdf995.com/samples/pdf.pdf"
+
+                    pdf = urllib2.urlopen(url)
+                </xmp>
+                <p>Similar logic applies to MS Word Doc and MS Excel sheets.</p>
+                <p>Now, the main issue with these documents is parsing and getting the data out. While MS Word and MS Excel have reasonably good python modules to parse them and extract data (like xlrd for xls(x) files, and Python-docx and a few others for Word documents), data extraction from PDF can be very tricky. It actually depends on the specific document and its format. There is a framework called Reportlab that is capable of doing this, but it is complex. Hence PDF data extraction needs to be looked into in a case by case basis.</p>
+                <h3>How Do You Scrape the Darknet:</h3>
+                <p>Using the methods above, you would not be able to crawl and scrape contents from the darkweb. You would either need a Tor browser (to do it partially manually) or you would need socks5h proxies to do that. Below is a sample code that performs this task. A lot of the code had to be stripped as it was part of a classified project, but I am sure you would get the idea as to how it is done.</p>
+                <xmp class="codding-box">
+                    proxies1 = {
+
+                    'http': 'socks5h://127.0.0.1:9050',
+
+                    'https': 'socks5h://127.0.0.1:9050'
+
+                    }
+                    try:
+
+                    pageresp = requests.get(targetUrl,proxies=proxies1)
+
+                    pagedoc = pageresp.text
+
+                    logfp.write("Request to URL '%s' returned status code %s\n"%(targetUrl, pageresp.status_code))
+
+                    except:
+
+                    print "Could not process the target URL '%s' - %s\n"%(targetUrl, sys.exc_info()[1].__str__())
+
+                    logfp.write("Could not process the target URL '%s' - %s - Status code is %s\n"%(targetUrl, sys.exc_info()[1].__str__(),pageresp.status_code))
+
+                    return 0
+                </xmp>
+
+                <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Web Scraping Using Python! In this tutorial, you&#39;ll learn how to extract data from the web, manipulate and clean data using Python&#39;s Pandas library, and data visualize using Python&#39;s Matplotlib library. <a href="https://t.co/M6zSlqUU4E">https://t.co/M6zSlqUU4E</a> <a href="https://t.co/lsAroMj0A3">pic.twitter.com/lsAroMj0A3</a></p>&mdash; DataCamp (@DataCamp) <a href="https://twitter.com/DataCamp/status/1035784477010788357?ref_src=twsrc%5Etfw">September 1, 2018</a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                <h3>Conclusion:</h3>
+                <p>Well, we have not been able to cover a lot of areas in web scraping and web crawling, but this is a part of data mining and data mining is a big topic. I have tried to explain the concepts I have discussed above to the best of my abilities, but I am sure that in some cases I have fallen short. Anyway, if you have any questions for me, please revert back at the address mentioned in the blog and I think I will get a notification. Thanks for your patience.</p>
+            </div>
+        </div>
+
+
+    </div><!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+</html>

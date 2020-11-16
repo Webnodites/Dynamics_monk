@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latest MS Azure SignalR version 1.0.0 with Asp.Net support</title>
+<meta name="description" content="Azure SignalR open source library with Asp.Net support. Learn here how Azure SignalR service can help to ASP.Net developer to build and manage real-time web applications." />
+<meta name="keywords" content="ASP.Net Development Services India" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/azure-signalr-service-now-supports-asp-net.html" />	
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Latest MS Azure SignalR version 1.0.0 with Asp.Net support" />
+<meta property="og:description" content="Azure SignalR open source library with Asp.Net support. Learn here how Azure SignalR service can help to ASP.Net developer to build and manage real-time web applications." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/azure-signalr-service-now-supports-asp-net.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/articles/images/azure-signair-service1.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/azure-signair-service1.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Azure SignalR open source library with Asp.Net support. Learn here how Azure SignalR service can help to ASP.Net developer to build and manage real-time web applications." />
+<meta name="twitter:title" content="Latest MS Azure SignalR version 1.0.0 with Asp.Net support" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/azure-signair-service1.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Azure SignalR Service now supports ASP.NET!</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100">
+            <div class="single-content-block">
+                <p>Microsoft developers have released the SignalR service SDK with Asp.Net support. In this post, we shall discuss about the latest MS Azure SignalR version 1.0.0 and its preview.</p>
+                <p>Azure SignalR service is intended for real-time messaging. Developers can now scale <a href="https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.2">Asp.net Core</a> SignalR applications using this way. However, the service is designed on SignalR for asp.net core 2.0, which is not completely compatible with SignalR service.  Developers need to make changes to code to make asp.net SignalR app compatible with SignalR service. Moreover, the service SDK needs to add support of asp.net.</p>
+                <p>Architecture used for Asp.net Support</p>
+                <div class="single-article-img">
+                    <img src="images/azure-signair-service1.jpg" alt="azure signair service" />
+                </div>
+                <p><strong>Fig – Showing the typical architecture to use Azure SignalR Service with an app server in Asp.net core or asp.net</strong></p>
+                <p>The app server listens to client’s connection requests and handles connections in self-hosted SignalR app. Using SignalR service support, the same server only replies to negotiate requests made by clients and redirects clients to SignalR service to create a persistent client-server link.</p>
+                <p>Things <a href="https://www.nexsoftsys.com/technologies/net-application-development.html">ASP.Net Development Services provider</a> can do with Asp.net support for the Azure SignalR service-</p>
+                <ul class="article-listing">
+                    <li>They can continue to keep SignalR app in Asp.net and work with fully owned and managed SignalR service</li>
+                    <li>They just need to make few changes to the SignalR API code to switch to use SignalR service.</li>
+                    <li>They can leverage built-in features of Azure SignalR service and tools to help run SignalR app with assured SLA.</li>
+                </ul>
+
+                <p>Asp.net SignalR is an open source library that helps asp.net developers in adding real-time web functionality to web apps. Real time web functionality enables developers to have server-side code push content to the clients that are connected, on spot, in real time.</p>
+                <h3>Azure SignalR Service Use Cases</h3>
+                <p>There are numerous types of apps that need real time content updates. Here are some use cases for using Azure SignalR service-</p>
+                <ul class="article-listing">
+                    <li>Apps such as gaming, voting, maps, auction, GPS apps that need high frequency updates through the server</li>
+                    <li>Dashboards and monitoring apps like instant sales updates</li>
+                    <li>Collaborative purpose apps like whiteboard apps, team meeting software, etc.</li>
+                    <li>Apps with notifications, like social networking, chat, travel alerts, games, etc.</li>
+                </ul>
+                <p>Some features and APIs called off by the support-</p>
+                <ul class="article-listing">
+                    <li>Forever Frame Transport </li>
+                    <li>Automatic Reconnects</li>
+                    <li>HubState</li>
+                    <li>GlobalHost Object</li>
+                    <li>PersistentConnection Class</li>
+                    <li>HubPipeline module</li>
+                    <li>Client-side internet explorer support prior MS internet explorer 11</li>
+                </ul>
+                <p>Today’s apps provide latest information without any need of refreshing the page. You can add real-time functionality to your dashboards, games, maps, etc.</p>
+                <p>The support of asp.net emphasizes on compatibility, which results in zero support for all new features from Asp.net core SignalR. For instance, features like Streaming is only available for apps with Asp.net Core SignalR support. </p>
+                <p>SignalR is a kind of technology that has feature to push new emails to your account as soon as they arrive. With SingalR service, you get a complete managed service that assists you build real-time experiences. </p>
+                <p>Real time web functionality </p>
+                <p>Since SignalR is designed on asp.net core, and the “hubs” are the part of its architecture. Hubs run over your server and route messages in and out to ensure that they get received by the intended recipient in real time. When you create a hub in your middleware, the two pieces of code present at the moment tie everything together. </p>
+                <div class="single-article-img">
+                    <img src="images/azure-signair-service2.jpg" alt="azure signair service" />
+                </div>
+                <p>The initial method is AddSignalR, which you call in your Startup.ConfigureServices method of web app to allow passing of SignalR messages to SignalR.</p>
+                <div class="single-article-img">
+                    <img src="images/azure-signair-service3.jpg" alt="azure signair service" />
+                </div>
+                <p>The next method is UseSignalR, which is placed inside your Startup.Configure method of web app. This generates awareness about your hub among SignalR.</p>
+                <p>Both the methods are significant when you move your SignalR app to Azure SignalR service. It’s not as complicated as provisioning the infrastructure yourself.</p>
+                <p>Developers can establish SignalR connection in three ways – Server-Sent events, websocket, and long polling. Websocket is the only transport that offers real duplex interaction while the remaining two are just following it. However, there are platforms that don’t support websockets and for them, SignalR will automatically try to use distinct kind of communication. It can also be forced communication.</p>
+                <p>Single connection to server can go to just single Hub- it means if you are using a server with multiple hubs; your client will have to create multiple connections to each hub separately. Linked client can use any public method defined within hub. Simultaneously, server can use any method that client is listening to it. Hub also reveals Context Property where it tracks information like active connections.</p>
+                <div class="single-article-img">
+                    <img src="images/azure-signair-service4.jpg" alt="azure signair service" />
+                </div>
+                <p>When the connection between client and hub gets established, hub gets its unique id. The client has facility to join a virtual group- collection of clients. When he joins a group that doesn’t exist yet, then the server automatically creates that group. The server can even send messages to clients in three ways-</p>
+                <ul class="article-listing">
+                    <li>Broadcast to every client that is connected to hub</li>
+                    <li>Send messages to clients within a group only</li>
+                    <li>Send a single text to a specific client</li>
+                </ul>
+                <div class="single-article-img">
+                    <img src="images/azure-signair-service5.jpg" alt="azure signair service" />
+                </div>
+                <p>Asp.net core authentication mechanics are supported by SignalR server. Authorize attributes can be rolled over entire hub classes or on certain methods. It works similarly as in asp.net core app.</p>
+                <h3>Read More</h3>
+                <ul class="listing">
+                    <li><a href="https://www.nexsoftsys.com/articles/CURD-data-manipulation-in-bsondocument-on-no-SQL-mongo-Database-ASPNet.html">CURD Data Manipulation in BsonDocument on No SQL Mongo Database ASP.Net</a></li>
+                    <li><a href="https://www.nexsoftsys.com/articles/implementing-and-customizing-swagger-UI-in-ASP-NET-Web-APIs.html">Implementing and Customizing Swagger UI in ASP.NET Web APIs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Clear">&nbsp;</div>
+    </div><!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,561 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Difference between Mobile Application Testing and Web Application Testing</title>
+    <meta name="description" content="What are the different types of application and are there any differences between their testing? A post to understand Mobile Application Testing and Web Application Testing in details with differences." />
+    <meta name="keywords" content="Mobile Application Testing, Web Application Testing, Software Testing Services" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/difference-between-mobile-web-software-testing.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Difference between Mobile Application Testing and Web Application Testing" />
+    <meta property="og:description" content="What are the different types of application and are there any differences between their testing? A post to understand Mobile Application Testing and Web Application Testing in details with differences." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/difference-between-mobile-web-software-testing.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/types-of-applications.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/types-of-applications.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="What are the different types of application and are there any differences between their testing? A post to understand Mobile Application Testing and Web Application Testing in details with differences." />
+    <meta name="twitter:title" content="Difference between Mobile Application Testing and Web Application Testing" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/types-of-applications.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+        <!-- Social Links -->
+        <ul class="btnlist">
+            <li class="item skype">
+                <a href="skype:aegissoftware?call">
+                    <div class="sticky-box">
+                        <p><i class="fa fa-skype"></i></p>
+                        <p>Skype</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- # Social Links -->
+
+        <!-- Inquiry Form -->
+        <ul class="btnlist">
+            <li class="item inquiry">
+                <div id="inquiry_form" class="btn sticky-box">
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                    <p>Quick Inquiry</p>
+                </div>
+                <div class="info-box inq">
+                    <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                    <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                    <form>
+                        <div class="inquiry-box">
+                            <div class="form-group fullwidth">
+                                <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                            </div>
+                            <div class="form-group-block">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                    <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                </div>
+                                <div class="form-group Clear">
+                                    <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                </div>
+                                <div class="form-group Clear">
+                                    <span id="lblInfo"> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <!-- Inquiry Form /- -->
+        <!--Btns-->
+        <ul class="btnlist">
+            <li class="item case-studies">
+                <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                    <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                    <p>Case Studies</p>
+                </div>
+            </li>
+            <li class="item client-speaks">
+                <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                    <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                    <p>Client Speaks</p>
+                </div>
+            </li>
+        </ul>
+        <!--Btns-->
+    </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Mobile Application Testing vs. Web Application Testing</h1>
+        </div>
+    </div>
+    <!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <div class="single-content-block">
+                <div class="single-article-img">
+                    <img src="images/web-mobile-application-testing.jpg" alt="web-mobile-application-testing" class="mr-2">
+                </div>
+                <p>In the current world, we have multiple choices to view any application. If we want to go through any website on a large screen, we can view it on a desktop.</p>
+                <p>On the other hand, if we don’t want to spend our time to open desktop and view the website via the browser, we can simply open the website on our Smartphone browser that makes easy for us to go through any website and get the details. One step ahead in that technology era! Now we have native apps as well to get through any information from the internet.</p>
+                <h2>Types of Application and Application Testing </h2>
+                <p>In this discussion, we will discuss the types of application we have. And the point of view of <strong><a href="../services/offshore-qa-testing-services.html">Software  testing services</a></strong> there is a difference in approaches to test those different types of application.</p>
+                <p>Let’s first discuss the types of application. So basically there are 3 types of application.</p>
+                <ul class="listing">
+                    <li>Web Application</li>
+                    <li>Mobile Application</li>
+                    <li>Desktop Application</li>
+                </ul>
+                <p>An Image to understand it in better way by <strong>ScienceSoft</strong></p>
+                <div class="single-article-img">
+                    <img src="images/types-of-applications.jpg" alt="web-mobile-application-testing" />
+                </div>
+                <ul class="article-listing">
+                    <li>
+                        <h2>Web Applications:</h2>
+                        <p>The web application that runs within a browser! This is the application which entirely resides on the server and to access the application, we need a platform i.e. browser.</p>
+                        <p>Taking an example of one of the applications is Facebook which is ultimately a package of multiple corresponding pages which runs on a browser. A web application is being used on various devices i.e. mobile, tablet and desktop with the different configuration which is only limited to web-browser and internet connectivity. If the application is compatible across the screen resolutions, you can view and access your application very efficiently.</p>
+                    </li>
+                    <li>
+                        <h2>Mobile Application:</h2>
+                        <p>In the mobile application we have </p>
+                        <ul>
+                            <li>Native Application</li>
+                            <li>Mobile web Application</li>
+                            <li>Hybrid Application</li>
+                        </ul>
+                        <p></p>
+                        <h3>Native Application</h3>
+                        <p>Native Application is an application which is built to run independently on mobile devices. Native apps do not require any base like a browser to run on a device. Commonly nowadays we have 2 platforms either iOS or Android and there is a small bunch of users on windows mobile as well as Blackberry which is gradually decreasing in quantity as majorly market is taken care by iOS and Android mobile operating systems. A small example of a native mobile app is an SMS app or in terms of installable apps is Temple Run.</p>
+                        <p>Basically, an app built up for a particular system like iOS, Android etc, and that cannot be used on other than their own platform. One of the major advantages of native apps is Native apps are high in performance and ensures good user experience and easy to achieve targets of an end user. And some of the cons of Native apps are higher cost. To create native apps, it is high in cost to build as compared to other types of application.</p>
+                        <h3>Mobile Web Application</h3>
+                        <p>Mobile web application is just a web application which we run on a mobile browser and access the application view browser in mobile devices. For accessing the mobile web application, you just need mobile device have a web browser installed in it and your mobile should be connected with the internet.</p>
+                        <h3>Hybrid Application </h3>
+                        <p>A hybrid application is an application which builds on different technology as compared to native apps, look and feel remain almost the same. The difference occurs in the performance of the application where you can experience the slowness while accessing the hybrid application</p>
+                    </li>
+                    <li>
+                        <h2>Desktop Application:</h2>
+                        <p>An application which runs on the computer is basically its own environment and configuration. This application is an executable file which you have to execute it on a computer to view its content and access the application. In terms of testing the desktop application, you need to be focused broadly on UI and a functional layer, as well as Load/Performance, plays an important role here. You have to focus on system hardware part as well. For example, how much memory consumption is there when running your application and what is the status of your RAM consumption.</p>
+                        <p>Now the point occurred when coming to the software testing profession, what makes the difference between testing of mobile application and web application testing.</p>
+                    </li>
+                </ul>
+                <h2>Difference between Mobile App Testing and Web Application Testing </h2>
+                <h3>Mobile App Testing: </h3>
+                <p>When testing the mobile application, there are many constraints which you need to look at while testing. User experience is one of the major assets in your application. Your application may be the bug-free but if the user experience is not good, that does not worth. Some of the major areas we have to look into mobile app testing which does not make much importance in web application testing.</p>
+                <ul>
+                    <li>
+                        <h3>Installation/Un-installation testing: </h3>
+                        <p>This kind of testing you can cover in smoke testing. You need to make sure that you can be able to install and uninstall the application in all supportive devices and application is useful and not having any upfront crashing. You have to also make sure that when you uninstall the application, your app folder should also get deleted from the file manager when working with Android operating system.</p>
+                    </li>
+                    <li>
+                        <h3>Network Testing: </h3>
+                        <p>You need to be very sure about the application’s network performance. You need to test your application in all aspects like in 4G, 3G, Wi-Fi, and edge. Apply prevention checks on all required and security concerning modules that in a low network or no network, avoid fatal errors.</p>
+                    </li>
+                    <li>
+                        <h3>Device Compatibility:  </h3>
+                        <p>Your application should be compatible with all kind of operating systems versions and device screen resolutions. For example, if you have an iOS application, the application should work appropriately on all supportive iPhone, iPad and with minimum supportive iOS version to the latest available iOS version.</p>
+                    </li>
+                    <li>
+                        <h3>Memory Testing:  </h3>
+                        <p>In your testing, memory is one of the major aspects where most the application lacking in the industry. We have to be aware of the memory leaks and RAM consumption from your application. And also make sure to reduce app size as lower as possible.</p>
+                    </li>
+                </ul>
+                <p>Watch a Video on Mobile Testing by <strong>QA-Eversity</strong></p>
+                <h3>Native and hybrid apps testing </h3>
+                <p>Native and hybrid apps may be built on different technologies but they serve almost similar features. Testing approach for both the application would be the same as both supports mobile platforms.</p>
+                <p>Installation testing: Both the application needs to be tested on the basis of installation as both are the installable file in devices.</p>
+                <p>When talking about the next step in testing, we just follow the testing approach suitable for mobile application as below:</p>
+                <ul class="listing">
+                    <li>User interface testing</li>
+                    <li>Functional testing</li>
+                    <li>Compatibility testing</li>
+                    <li>Network testing</li>
+                    <li>Interruptions testing</li>
+                    <li>Performance testing</li>
+                    <li>Notification testing</li>
+                    <li>Gesture testing</li>
+                    <li>Memory leaks check</li>
+                </ul>
+                <h3>Web Application Testing </h3>
+                <ul class="listing">
+                    <li>Cross browser testing and Compatibility Testing: For a web application, you have to ensure that your application having expected look and feel on all supportive browsers with has combinations of different operating systems. In parallel, you have to also make sure that the application should have the same look and feel in shorter screen resolution devices like mobile and tablets as well.</li>
+                    <li>Security Testing &amp; Link checks: In terms of security testing, you have to make sure about the user session is working as expected but longer time duration. Your application must have broken links free. There are many online tools available that are too open source. You can use them to check the broken links in your application. Identify the broken links and try to avoid them.</li>
+                    <li>Cookies Testing: There are small files getting stores in your temporary folder that are called cookies which are used to maintain the user session of your application. You have to ensure the functionality by checking in both ways i.e. on and off cookies in your browser settings.</li>
+                </ul>
+                <p>These are few points which need to be taken care during web application testing. These are the additional testing but by covering these points don’t forget to follow the testing life cycle and testing process which covers all required testing types in the Quality Cycle.</p>
+                <h3>What’s in the Future of Mobile and Web application Testing?</h3>
+                <p>Due to the increase in the number of mobile users, app testers are focusing more on innovative ways to enhance the applications. This also affects the software testing ecosystem and making it a bit complex for the app testing team. To overcome this challenge, software companies are adding agility to their software development process. They are now emphasizing on enhancing the quality and performance of their mobile apps to get a success story.</p>
+                <p>When we talk about the future, it calls for robust front-end and back-end app testing. Web-based application testing needs several QA checks at both API level and UI level. Testing teams need to be proficient in applying tools during several layers of the app. Testers will be able to perform several test cases in no time using the right software testing tools.</p>
+                <h4>AI and ML Technology Use in Testing</h4>
+                <p>While software companies will be using agile methods to stay ahead, the use of AI and ML in IT software testing is the latest trend. However, these methodologies are still available in the market and IT software testing companies are using these technologies with the acknowledgment of undiscovered areas.</p>
+                <p>Software companies are calling QA teams for early development stages. The companies now understand the need for involving QA testers at early software development stages to fill the gap between software development and software testing needs.</p>
+                <p>The future of web app testing and mobile app testing involves more use of test automation. With test automation, software companies can ensure faster delivery of premium apps that will grow their business. With the availability of advancements and upgrades, testers need to work on their skills and work on how quality assurance can become a part of the software development stage.</p>
+                <p>You may like to go through a list of <a href="http://www.trustfirms.com/top-software-mobile-app-testing-companies-developers/" target="_blank">Top Software &amp; Mobile App Testing Companies &amp; Developers in India &amp; USA</a> to choose better from them!</p>
+                <p>You can easily <a href="https://www.nexsoftsys.com/articles/mobile-app-non-functional-testing.html" target="_blank">Improve the Quality of a Mobile App Using Non-Functional Testing.</a></p>
+            </div>
+        </div>
+    </div>
+    <!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+</body>
+</html>

@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Analysis Using Numpy And Pandas</title>
+<meta name="description" content="Complete Guideline for Data Analysis with Python using Numpy and Pandas.Python took a major leap with some wonderful packages, frameworks and libraries to handle big data,numerical analysis, spatial analysis and the two major packages in use today for such purposes are Numpy and Pandas." />
+<meta name="keywords" content="" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/data-analysis-using-numpy-and-pandas.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Data Analysis Using Numpy And Pandas" />
+<meta property="og:description" content="Complete Guideline for Data Analysis with Python using Numpy and Pandas. Python took a major leap with some wonderful packages, frameworks and libraries to handle big data, numerical analysis, spatial analysis and the two major packages in use today for such purposes are Numpy and Pandas." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/data-analysis-using-numpy-and-pandas.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Complete Guideline for Data Analysis with Python using Numpy and Pandas. Python took a major leap with some wonderful packages, frameworks and libraries to handle big data, numerical analysis, spatial analysis and the two major packages in use today for such purposes are Numpy and Pandas." />
+<meta name="twitter:title" content="Data Analysis Using Numpy And Pandas" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/images/home/img2.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Data Analysis Using Numpy And Pandas</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size margh2">
+        <div class="Text Width-100">
+            <h2>Introduction:</h2>
+            <p>When python was created, the main focus was on creating applications (web and otherwise) with the least anount of effort. Python, at that time, boasted of a python command line where one could run pieces of code to test them and once they worked fine, they could be incorporated into the main application code. So, a lot of programming time was saved, and people (including me) liked it. (I happen to come from a C and Perl background before I befriended Python, and I fell in love at the first sight).</p>
+            <p>At that time, it was a great language to make business apps/processes and do automation of mundane tasks like testing applications, QA, etc. It did have some good math library back then, and you could use it to manipulate numerical data, plot basic charts, and so on. However, with the advent of big data, and Google's usage of it, Python was poised to take the center stage. Google employed Guido, the creator of the Python programming language and took the lead to utilize big data. With this in mind, Python took a major leap.</p>
+            <p>Out came some of python's  wonderful packages, frameworks and libraries to handle big data, numerical analysis, spatial analysis (things like face recognition), etc, and the two major packages in use today for such purposes are Numpy and Pandas. So here, we will take a rather shallow view of them since space is limited, but we will try to cover all aspects of the packages mentioned above (Each of these 2 packages can be written as books with atleast 300 pages each, so trying to go deep into them would not be possible here).</p>
+
+            <h2>NumPy:</h2>
+            <p>Numpy provides the <a href="https://www.nexsoftsys.com/hire/python-developers.html">python developers</a> with a set of tools to handle lots of data in a relatively easy way. The most prominent datastructure provided by numpy is 'ndarray'. It is an array that is indexed numerically like a standard python array (lists and tuples), but it is not a heterogenous array like a python list or tuple. So, that begs the question why is it special and more useful than standard python array datastructures? Well, firstly, it can hold multi-dimensional data. Doing that with a python list or tuple is cumbersome. Apart from this, it has certain attributes that gives us an insight as to what the ndarray contains. We will explain some of the more important ones here, but we will try to list as many as possible here.</p>
+
+            <p>The attributes are: shape, dtype, offset, buffer, order and strides. These are the ones that are more notable, but there are others that serve a specific purpose in a specific scenario. We will be skipping them here.</p>
+            <p>In order to create numpy 'ndarray', we have 3 options, depending on what type of ndarray we are trying to create. These options are “array”, “zeros” and “empty”. There is also a low level constructor named “ndarray” with which we can create an ndarray. Take a look at the following example:</p>
+<xmp>
+import numpy as np
+np.ndarray(shape = (2, 2), dtype = float, order = 'F')
+
+The result would be something like the following, as it is randomly generated.
+
+array([
+    [0.00000000e+000, 6.10591585e-309],
+    [3.24370112e+178, 6.52709565e+091]
+])
+</xmp>
+            <p>Now, let us take a look at some of the parameters of the “ndarray” constructor:</p>
+
+            <ul class="listing">
+                <li><strong>size:</strong> Number of elements in the array</li>
+                <li><strong>dtype:</strong> Datatype of the elements in the ndarray</li>
+                <li><strong>data:</strong> Pointer to the start of the array's data</li>
+                <li><strong>flags:</strong> Defines the memory layout of the array</li>
+                <li><strong>ndim:</strong> Number of dimensions of the array</li>
+                <li><strong>shape:</strong> Tuples of array dimensions. We will look at it more closely later.</li>
+                <li><strong>strides:</strong> Tuple of bytes to traverse in each direction when traversing the array.</li>
+                <li><strong>Itemsize:</strong> size of one array element in bytes.</li>
+            </ul>
+            <p>There are quite a few other attributes that we skipped here. If you want to get a detailed view of them, please refer to the following page: <a href="https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.html">https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.ndarray.html</a></p>
+            <p>ndarray also has quite a few methods, but before we get into them, let us take a closer look at the 'shape' attriute.</p>
+            <p>An 'ndarray' is an n-dimensional array and the attribute 'shape' defines the length of these dimensions. The 'shape' attribute is a tuple of integers. For example, an array of one dimension (a list) will have a single element in the tuple that defines the length of the list. A 2D array will have 2 elements in the shape tuple and so on. Let's see some examples here:</p>
+<xmp>
+import numpy as np
+
+arr = np.array([10, 11, 12])
+arr.shape# Returns(3, )# Please note above that the arguments to np.array()# are passed as a list.Hence, the 'array'
+function treats# them as a single argument.
+
+arr2 = np.zeros((4, 5, 6))# Note the elements are passed as tuples, not lists.
+arr2.shape# Returns the tuple(4, 5, 6) as it identifies the tuple in the argument# as an ndarray containing 3 dimensions of length, breadth and width as# 4, 5, and 6 respectively.
+</xmp>                
+            <p>Another important associated function of ndarray is 'reshape()'. 'reshape()', as the name suggests, is a way of modifying the shape given to a datastructure (ndarray in this case). Please note that however, reshaping an array in-place will fail to create a copy. The parameters passed to the reshape() function are as follows:</p>
+
+            <ul class="listing">
+                <li><strong>Param #1: </strong>An array like object (could be an ndarray, or a normal python list). This is a required parameter.</li>
+                <li><strong>Param #2: </strong>An integer, or a tuple of integers – this will be used to reshape the first argument. This is a required parameter.</li>
+                <li><strong>Param #3: </strong>order, and this could be any of 'C', 'F' and 'A'. 'C' means to read and write the array in a C like indexing order (which means the outermost index changes the fastest and the innermost changes slowest). 'F' stands for Fortran like order, which is just the opposite of 'C' indexing. 'A' means to read/write the elements of the array in the first argument if it is contiguous in memory in a Fortran like manner, and C like manner otherwise. This is an optional parameter.</li>
+            </ul>
+
+            <p>The return value is a ndarray which has been reshaped by the second parameter. Let's see some examples:</p>
+<xmp>
+>>> nd = np.ndarray(shape = (2, 2), dtype = float, order = 'F') >>> nd
+array([
+    [0.00000000e+000, 3.24370112e+178],
+    [6.10591585e-309, 6.52709565e+091]
+]) >>> rnd = nd.reshape((4, 1)) >>> rnd
+array([
+    [0.00000000e+000],
+    [3.24370112e+178],
+    [6.10591585e-309],
+    [6.52709565e+091]
+])
+</xmp>             
+            <p>So as you can see above that reshaping nd with a tuple containing (4,1) converts it to a ndarray with 4 rows and 1 column.</p>
+            <p>During analysis of data, you will mostly get the data as a string. So, how do we convert that string to a ndarray so that we can do numpy operations on it? The answer is 'genfromtxt()'.</p>
+            <p>“genfromtxt()” basically runs a couple of loops. The first loop converts each line in a file into a sequence of strings. The second loop converts each of those strings to an appropriate data type. This function is basically slower than other single loop counterparts (like “loadtxt()”, but it is flexible and can handle missing data that loadtxt() cannot).</p>
+            <p>Let's look at some examples.</p>
+<xmp>
+>>>
+import numpy as np
+    >>> from io
+import StringIO
+    >>>
+    >>> data = u” 5, 4, 3\ n2, 1, 0” >>> np.genfromtxt(StringIO(data), delimiter = ”, ”)
+array([
+    [5., 4., 3., ],
+    [2., 1., 0.]
+])
+</xmp>            
+            <p>The argument 'delimiter' determines how the lines are to be split. For example, a CSV file will specify the ',' character as the delimiter, while a TSV will specify '\t' as the delimiter. By default, that is if the delimiter is not specified, then the whitespace characters are considered to be the delimiter. You can refer to the following material to learn more about genfromtxt(): <a href="https://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html#splitting-the-lines-into-columns">https://docs.scipy.org/doc/numpy/user/basics.io.genfromtxt.html#splitting-the-lines-into-columns</a></p>
+            <p>While you would find a lot of situations where you would want to use numpy by itself, you would also use numpy indirectly when you use the 'pandas' module. So now that we have glanced at numpy, let us focus a bit on pandas and see how pandas can help us solve data crunching needs using numpy under its hood.</p>
+
+            <h2>Pandas:</h2>
+            <p>The “pandas” module is specifically useful for computing and finding patterns in data and hence it is one of the most useful tools for any data scientist/engineer. However, most of the time you would not be using pandas alone, but you would possibly be using modules like scipy and matplotlib along with pandas to achieve your ends. Here, we will be focussing on pandas only, but in our examples we will make use of scipy and matplotlib to display data distribution and such things.</p>
+            <p>Pandas provides the data scientist/analyst with 2 different (and very useful data structures) named “series” and “dataframe”. A “series” is nothing but a labelled column of data that can hold any datatype (int, float, string, objects, etc). A pandas “series” can be created using the following constructor call:</p>
+            <p><em>pandas.Series(data, index, dtype, copy)</em></p>
+            <p>The argument “data” is a list of data elements (mostly passed as a numpy ndarray), “index” is a unique hashable list with the same length as the “data” argument. “dtype” defines the data type (Series is a homogeneous collection of elements), and “copy” specifies if copy flag is set. By default, this is false.</p>
+            <p>The following code snippet creates a Series:</p>
+<xmp>
+import pandas as pd
+s = pd.Series()
+print s
+
+import numpy as np
+data = np.array(['w', 'x', 'y', 'z'])
+r = pd.Series(data)
+print r
+</xmp>            
+            <p>The output would be as follows:</p>
+<xmp>
+Series([], dtype: float64) 0 w 1 x 2 y 3 z
+</xmp>            
+            <p>A Dataframe is a multidimensional table made up of a collection of Series. First, let us see how a Series  can be created using a collection of data objects:</p>
+            <p><em>Let's create a Series from a Numpy ndarray:</em></p>
+<xmp>
+import numpy as np
+import pandas as pd
+
+d = np.array(['q', 'w', 'e', 'r', 't'])
+sr = pd.Series(d)
+# Diplay sr
+print(sr)
+
+The output would be as follows:
+0   q
+1   w
+2   e
+3   r
+4   t
+</xmp>       
+            <p>Note that the first column designates the index of the ndarray. The pandas “Series” takes them and makes use of it inside the data structure.</p>
+            <p>However, you are free to use other numeric sequences as index. For example, the Series created below will be using indices from 1000.</p>
+<xmp>
+d = np.array(['q', 'w', 'e', 'r', 't'])
+sr = pd.Series(d, index=[1000, 1001, 1002, 1003, 1004])
+print(sr)
+
+Now the output will look like this:
+1000        q
+1001        w
+1002        e
+1003        r
+1004        t
+</xmp>
+            <p>A Series can also be created from other data structures like a dictionary, scalars, etc, in a similar manner. Please refer to the documentation for an indepth study on those cases. We can't handle it here due to lack of space. However, they are quite simple and it should not take more than 15 mins to understand them and start making use of them in your programs.</p>
+            <p>Next, we need a way to access data in a Series using a location (index). After all, that is the primary reason behind using these data structures. So let's delve into it. Here, I am taking an example that was inspired by an example in an online tutorial, but we will extend on it later.</p>
+<xmp>
+d = np.array(['q', 'w', 'e', 'r', 't'])
+sr = pd.Series(d, index = ['a', 'b', 'c', 'd', 'e'])# Please note here that our indices are not numerical, but are ASCII non - numeric characters.This is supported.#The first element may be accessed using the following syntax:
+    print(sr[0])
+</xmp>
+            <p>The output will be 'q'. Now, let us suppose we need to extract the first n elements of the Series. So how do we do that? It is simple and it is similar to the way standard python lists are accessed: print(sr[:n])</p>
+            <p><em>The above expression will display something like this</em></p>
+<xmp>
+a   'q'
+b   'w'
+c   'e'
+d   'r'
+e   't'
+</xmp>            
+            <p>This will print out the values till the nth element.</p>
+            <p>Now, let us focus on Pandas dataframes for a while. As for Series, I would strongly suggest you to go through the official pandas documentation to fill in the gaps that I am leaving. This article is meant to get you started on this topic, but it will definitely fall short in the effort to make you an expert on the topic. This article is simply not meant for that purpose.</p>
+            <p>Pandas works by putting the input data in a data structure called the “Dataframe”. So if you provide pandas with a CSV file, it will create a dataframe with the data passed to it and that will allow you to do whatever operations you want to do to the data. It will allow you to answer questions like :</p>
+            <ul class="listing">
+                <li>What is the average mean, median and mode for every column of data in the dataframe</li>
+                <li>How does the distribution of data in column 'i' look like.</li>
+                <li>Does the second column have any correlation with the seventh column?</li>
+            </ul>
+            <p>These are some of the questions data scientists and analysts will ask themselves and pandas would allow them to answer such questions easily.</p>
+            <p>Let's look at an example first to see how such questions might be answered using the pandas module.</p>
+            <p>Suppose we have the following dictionary containing the number of students in first, second, third and fourth years.</p>
+<xmp>
+course_population= {
+    'maths': [20, 24, 19, 22], 'physics': [31, 33, 42, 29], 'chemistry': [22, 24, 21, 20]
+}
+</xmp>           
+            <p>Now, let's pass this to the dataframe constructor:</p>
+<xmp>
+import pandas as pd
+
+df = pd.DataFrame(course_population, index = ['first'
+    'second', 'third', 'fourth'
+])
+print(df)
+</xmp>   
+            <p>The output would be as follows:</p> 
+            <div class="table-data">
+                <table border="1" cellspacing="0" cellpadding="0" class="blue">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Maths</th>
+                            <th>Physics</th>
+                            <th>Chemistry</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>First</td>
+                        <td>20</td>
+                        <td>31</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>Second</td>
+                        <td>24</td>
+                        <td>33</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>Third</td>
+                        <td>19</td>
+                        <td>42</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Fourth</td>
+                        <td>22</td>
+                        <td>29</td>
+                        <td>20</td>
+                    </tr>
+                </table>
+            </div> 
+            <p>So, each key-value pair represents  a column in the dataframe.</p>
+            <p>We will see how we can access specific elements. But before that, let's play around with the data, so that we can have an understanding of it, which will help us in making decisions regarding what methods to use on it to analyse it.</p>
+
+            <h3>df.head(2)</h3>
+            <p>This will print the first 2 rows of the dataset. In the tiny sample of data we are using, it might seem meaningless to use this function, but if you are dealing with data in the order of millions of rows (which is quite possible in a realistic problem), this function can show you how the data lies. Similarly, you may also do a tail() function call on the data.</p>
+            <h3>df.tail(2)</h3>
+            <p>This displays the last 2 rows of data.</p>
+            <p>To check the number of rows and columns your data has, you may want to use the 'shape' attribute. You can call it in the following way:</p>
+            <h3>df.shape</h3>
+            <p>The output of the above line would be (4,3), meaning the data has 4 rows and 3 columns.</p>
+            <p>If you want to drop duplicates from your data, then you may use the drop_duplicates() function on your data. This function will drop all duplicate values and return the duplicate free data frame.</p>
+            <p><strong>df1= df.drop_duplicates()</strong></p>
+
+            <p>Another function that you might need to use quite frequently is 'info()'. This function gives the user a good idea about what type of data is there in the dataset. For example, applying this on our dataset gives the following output:</p>
+<xmp>
+df.info()
+
+class= "pandas.core.frame.DataFrame"
+Index: 4 entries, first to fourth
+Data columns (total 3 columns):
+chemistry    4 non-null int64
+maths        4 non-null int64
+physics      4 non-null int64
+dtypes: int64(3)
+memory usage: 128.0+ bytes
+</xmp>
+            <p>Next, let us see how we can access a certain value in the pandas data frame. In order to retrieve a row, we can use 'loc' . 
+            For example, df.loc['third'] displays the following:</p>
+<xmp>
+chemistry    21
+maths        19
+physics      42
+Name: third, dtype: int64
+
+Alternatively, we can use 'iloc' to retrieve a row using its numerical index value. The expression df.iloc[2] displays the same output we saw above. 
+
+To retrieve a part of the data row-wise, we can do the following:
+df.iloc[1:3]
+
+This displays the following:
+        chemistry  maths  physics
+second         24     24       33
+third          21     19       42
+</xmp>
+            <p>To retrieve a specific value, we can use the above mentioned iloc function in the following way:</p>
+            <p>df.iloc[2,1]</p>
+            <p>This displays 19.</p>
+
+            <h3>Conclusion:</h3>
+            <p>Pandas is a rather large module (and so is numpy) and it is full of very useful tools. I have merely tried to pique your interest on it in this article. In order to go in-depth, I would suggest you take a look at the pages provided in this link: <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html</a></p>
+            <p>The best way to learn, however, is to do some work involving the specific topic. So, I would suggest that you create a small home project (may be tracking the prices of stocks of various companies over time from “Yahoo stocks” pages). Using pandas in such a project will surely provide you with opportunity to try various operations and thus your grasp on the module is bound to get better.</p>
+    </div>
+
+    <div class="Clear">&nbsp;</div>
+
+
+</div>
+    </div><!--Page-Size-->
+
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+<div class="clients-section margin_top30">
+    <div class="section-header ourclients">
+        <h4>Some of our clients</h4>
+    </div>
+    <div class="container">
+        <div class="clients-block owl-carousel owl-theme">
+            <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+        </div>
+    </div>
+</div>
+<div class="teams-section">
+    <div class="container">
+        <div class="teams-title">
+            <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-main">
+    <div class="container">
+        <div class="row">
+            <div class="footer-box">
+                <h3>Services</h3>
+                <div class="footer-innerbox-block">
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li><a href="../services/application-development.html">Application Development</a></li>
+                            <li><a href="#">Digital Transformation</a></li>
+                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                            <li><a href="#">Block Chain</a></li>
+                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                            <li><a href="#">Business Intelligence</a></li>
+                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                            <li><a href="#">Data Integration</a></li>
+                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                            <li><a href="#">Dashboards</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Technologies</h3>
+                <div class="footer-innerbox w35">
+                    <ul class="listing">
+                        <li><a href="../technologies/java-application-development.html">Java</a></li>
+                        <li><a href="../technologies/python-development-services.html">Python</a></li>
+                        <li><a href="../technologies/scala-development.html">Scala</a></li>
+                        <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                        <li><a href="../technologies/android-app-development.html">Android</a></li>
+                        <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                        <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-innerbox w65">
+                    <ul class="listing">
+                        <li class="list-title"><strong>Microsoft</strong></li>
+                        <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                        <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                        <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                        <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                        <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                        <li><a href="#">Power BI</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box footer_sm">
+                <div class="footer-box-business">
+                    <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                    <div class="footer-socialbox">
+                        <h3>Follow NEX</h3>
+                        <div class="ft-social">
+                            <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+</footer><!-- Footer /- -->
+
+<script defer src="../js/jquery-1.12.4.min.js"></script>
+<script defer src="../js/lib.js"></script>
+<script defer src="js/functions.js"></script>
+
+
+</body>
+</html>

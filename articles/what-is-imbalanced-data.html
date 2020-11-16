@@ -1,0 +1,806 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Deal imbalanced datasets in machine learning?</title>
+<meta name="description" content="If there are two-class classification then remaining data would mean half portion for each of the class. This kind of issue resolve using machine learning techniques, little imbalance is not a bad thing." />
+<meta name="keywords" content="machine learning, imbalanced data, python, matplotlib" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/what-is-imbalanced-data.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Deal imbalanced datasets in machine learning?" />
+<meta property="og:description" content="If there are two-class classification then remaining data would mean half portion for each of the class. This kind of issue resolve using machine learning techniques, little imbalance is not a bad thing." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/what-is-imbalanced-data.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/articles/images/imbalanced-data.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/imbalanced-data.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="If there are two-class classification then remaining data would mean half portion for each of the class. This kind of issue resolve using machine learning techniques, little imbalance is not a bad thing." />
+<meta name="twitter:title" content="How to Deal imbalanced datasets in machine learning?" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/imbalanced-data.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />	
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>What is imbalanced data?</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <div class="single-content-block">
+                <div class="single-article-img">
+                    <p class="d-md-flex text-justify"><img src="images/imbalanced-data.jpg" alt="imbalanced-data" class="mr-2" />In Machine Learning, many of us come across problems like anomaly detection in which classes are highly imbalanced. Like, for binary classification (0 and 1 class) more than 85% of data points belong to either class.<br><br>So, in this blog will cover techniques to handle highly imbalanced data. Some of the classic examples are fraud detection, anomaly detection etc.</p>
+                </div>
+                <h2>Let’s dive into the details of these techniques.</h2>
+                <h4><b>List of techniques -:</b></h4>
+                <ul class="article-listing">
+                    <li>Random Undersamopling</li>
+                    <li>Random Oversampling</li>
+                    <li>Python imblearn Undersampling</li>
+                    <li>Python imblearn Oversampling</li>
+                    <li>Oversampling : SMOTE(Synthetic Minority Oversampling Technique)</li>
+                    <li>Undersampling: Tomek Links  </li>
+                </ul>
+                <h2>Looking at imbalanced data</h2>
+                <p>Here, I have collected raw data from here -: </p>
+                <p>Data is about classification of glass. It has 2 classes which are imbalanced in nature, here it is not highly imbalanced but they are imbalanced. Let’s take a look with the help of code.</p>
+<xmp class="codding-box">
+importpandasaspd
+importnumpyasnp
+importmatplotlib.pyplotasplt
+% matplotlib inline
+
+data=pd.read_csv(‘../Data_imb.csv')
+
+print(data)
+</xmp>
+
+                <div class="responsive-table">
+                    <table>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><strong>RI_real</strong></td>
+                            <td><strong>Na_real</strong></td>
+                            <td><strong>Mg_real</strong></td>
+                            <td><strong>Al_real</strong></td>
+                            <td><strong>Si_real</strong></td>
+                            <td><strong>K_real</strong></td>
+                            <td><strong>Ca_real</strong></td>
+                            <td><strong>Ba_real</strong></td>
+                            <td><strong>Fe_real</strong></td>
+                            <td><strong>Class</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>0</strong></td>
+                            <td>1.515888</td>
+                            <td>12.87795</td>
+                            <td>3.43036</td>
+                            <td>1.40066</td>
+                            <td>73.2820</td>
+                            <td>0.68931</td>
+                            <td>8.04468</td>
+                            <td>0.00000</td>
+                            <td>0.1224</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>1.517642</td>
+                            <td>12.97770</td>
+                            <td>3.53812</td>
+                            <td>1.21127</td>
+                            <td>73.0020</td>
+                            <td>0.65205</td>
+                            <td>8.52888</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>1.522130</td>
+                            <td>14.20795</td>
+                            <td>3.82099</td>
+                            <td>0.46976</td>
+                            <td>71.7700</td>
+                            <td>0.11178</td>
+                            <td>9.57260</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>1.522221</td>
+                            <td>13.21045</td>
+                            <td>3.77160</td>
+                            <td>0.79076</td>
+                            <td>71.9884</td>
+                            <td>0.13041</td>
+                            <td>10.24520</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>1.517551</td>
+                            <td>13.39000</td>
+                            <td>3.65935</td>
+                            <td>1.18880</td>
+                            <td>72.7892</td>
+                            <td>0.57132</td>
+                            <td>8.27064</td>
+                            <td>0.00000</td>
+                            <td>0.0561</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td>1.520991</td>
+                            <td>13.68925</td>
+                            <td>3.59200</td>
+                            <td>1.12139</td>
+                            <td>71.9604</td>
+                            <td>0.08694</td>
+                            <td>9.40044</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6</strong></td>
+                            <td>1.517551</td>
+                            <td>13.15060</td>
+                            <td>3.60996</td>
+                            <td>1.05077</td>
+                            <td>73.2372</td>
+                            <td>0.57132</td>
+                            <td>8.23836</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7</strong></td>
+                            <td>1.519100</td>
+                            <td>13.90205</td>
+                            <td>3.73119</td>
+                            <td>1.17917</td>
+                            <td>72.1228</td>
+                            <td>0.06210</td>
+                            <td>8.89472</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>8</strong></td>
+                            <td>1.517938</td>
+                            <td>13.21045</td>
+                            <td>3.47975</td>
+                            <td>1.41029</td>
+                            <td>72.6380</td>
+                            <td>0.58995</td>
+                            <td>8.43204</td>
+                            <td>0.00000</td>
+                            <td>0.0000</td>
+                            <td>negative</td>
+                        </tr>
+                    </table>
+                </div>
+<xmp class="codding-box">
+Checking the counts of each class
+data['Class'].value_counts()
+
+negative    181
+positive     33
+Name: Class, dtype: int64
+
+## Plotting the counts for each class
+data['Class'].value_counts().plot(kind='bar')
+
+<matplotlib.axes._subplots.AxesSubplot at 0x25d838418d0>
+</xmp>
+                <div class="single-article-img">
+                    <img src="images/lookingat-imbalanced-data.jpg" alt="lookingat-imbalanced-data" />
+                </div>
+                <p>So, here positive class covers about 15% of data which is imbalance in nature</p>
+                <p>Now, let’s start looking at techniques to handle this problem.</p>
+                <ul class="article-listing">
+                    <li>
+                        <h3>Random Undersampling</h3>
+                        <p>
+                            In this, what will happen is the majority class examples will be under sampledi.e., some of the examples which belong to majority class will be removed. It has advantages but it may cause a lot of information loss in some of the cases. Let’s look at code, how to perform
+                            <a href="../technologies/python-development-services.html">undersampling in Python Django development.</a>
+                        </p>
+<xmp class="codding-box">
+count_class_n, count_class_p=data.Class.value_counts()
+
+# Divide by class
+data_class_n=data[data['Class'] ==' negative']
+data_class_p=data[data['Class'] ==' positive']
+
+## Undersampling over negative class(data_class_n)
+data_class_n_under=data_class_n.sample(count_class_p)
+## Concatenating undersamples classes of Negative(undersampled) with the minority class for final data set
+data_under=pd.concat([data_class_n_under, data_class_p], axis=0)
+
+## Checking the counts of each class after undersampling
+print('Class count after under-sampling:')
+print(data_under.Class.value_counts())
+
+## Plotting the graphs
+data_under.Class.value_counts().plot(kind='bar', title='Count of Classes')
+
+Class count after under-sampling:
+negative    33
+Positive    33
+Name: Class, dtype: int64
+</xmp>
+                        <div class="single-article-img">
+                            <img src="images/random-oversampling-2.jpg" alt="random-oversampling-2" />
+                        </div>
+                        <p>
+                            After undersampling, we have 33 data points in each class. <br>
+                            Here undersampling is not a better option because we already have 200 points and after that we reducing just to 30’s which is very less. So, it depends upon the usecase as well.
+                        </p>
+                    </li>
+
+                    <li>
+                        <h3>Random Oversampling</h3>
+                        <p>In random oversampling, it will create the duplicates of randomly selected examples in minority class. </p>
+<xmp class="codding-box">
+## Oversampling over positive class(data_class_p)
+data_class_p_over=data_class_p.sample(count_class_n, replace=True)
+## Concatenating undersamples classes of Positive(Oversampled) with the majority class for final data set
+data_over=pd.concat([data_class_p_over, data_class_n], axis=0)
+
+## Checking the counts of each class after oversampling
+print('Class count after under-sampling:')
+print(data_over.Class.value_counts())
+
+## Plotting the graphs
+data_over.Class.value_counts().plot(kind='bar', title='Count of Classes', color=['b','r'])
+
+Class count after under-sampling:
+positive    181
+negative    181
+Name: Class, dtype: int64
+
+
+<matplotlib.axes._subplots.AxesSubplot at 0x25d83c85ac8>
+</xmp>
+                        <div class="single-article-img">
+                            <img src="images/random-oversampling-1.jpg" alt="random-oversampling-1" />
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Undersampling using Imblearn</h3>
+                        <p>Let’s look at undersampling using imblearn package in Python.</p>
+                        <p>
+                            Similarly we can perform oversampling using Imblearn. It might confuse you why to use different libraries of performing undersampling and oversampling. Sometimes, it happens that
+                            undersampling(oversampling) using imblearn and simple resampling produce different results and we can select based on the performance as well.
+                        </p>
+<xmp class="codding-box">
+importimblearn
+
+fromimblearn.under_samplingimportRandomUnderSampler
+
+Undersample=RandomUnderSampler(return_indices=True)
+
+## preparing the data in the format
+X = data[['RI_real', 'Na_real', 'Mg_real', 'Al_real', 'Si_real', 'K_real',
+'Ca_real', 'Ba_real', 'Fe_real']]
+y =data['Class']
+
+## Fitting for performing undersampling using imblearn
+X_rus, y_rus, id_rus=Undersample.fit_sample(X, y)
+
+
+print("Count of class after undersampling")
+print(pd.Series(y_rus).value_counts())
+
+## Plotting the graph for class counts after undersampling imblearn
+pd.Series(y_rus).value_counts().plot(kind='bar', title='Count of Classes', color=['r','b'])
+
+Count of class after undersampling
+negative    33
+positive    33
+dtype: int64
+
+<matplotlib.axes._subplots.AxesSubplot at 0x25d86471128>
+
+</xmp>
+                        <div class="single-article-img">
+                            <img src="images/undersampling-using-imblearn-3.jpg" alt="undersampling-using-imblearn-3" />
+                        </div>
+
+                    </li>
+                    <li>
+                        <h3>Tomek links</h3>
+                        <p>Tomek links is the algorithm based on the distance criteria, instead of removing the data points randomly. It uses distance metric to remove the points from majority class. It finds the pair of points which has less distance between them one from minority class and another from majority class and will remove the majority point from that pair. </p>
+<xmp class="codding-box">
+fromimblearn.under_samplingimportTomekLinks
+
+## Creating the Tomeklink object
+tl=TomekLinks(return_indices=True, ratio='majority')
+
+## Fitting on data
+X_tl, y_tl, id_tl=tl.fit_sample(X, y)
+
+
+print("Count of class after Tomek-links undersampling")
+print(pd.Series(y_tl).value_counts())
+
+## Plotting the class count after the undersampling(Tomeklinks)
+pd.Series(y_tl).value_counts().plot(kind='bar', title='Count of Classes', color= ['r','b'])
+
+Count of class after Tomek-links undersampling
+negative    172
+positive     33
+dtype: int64
+<matplotlib.axes._subplots.AxesSubplot at 0x25d864360b8>
+</xmp>
+                        <div class="single-article-img">
+                            <img src="images/tomek-links-4.jpg" alt="tomek-links-4" />
+                        </div>
+                    </li>
+                    <li>
+
+                        <h3>SMOTE</h3>
+                        <p>It stands from synthetic minority oversampling technique. It also performs oversampling.</p>
+<xmp class="codding-box">
+fromimblearn.over_samplingimport SMOTE
+
+## Performing the Smote oversampling
+smote= SMOTE(ratio='minority')
+X_sm, y_sm=smote.fit_sample(X, y)
+
+## Checking and Plotting the points after smote oversampling
+
+print("Count of class after SMOTE undersampling")
+print(pd.Series(y_sm).value_counts())
+
+pd.Series(y_sm).value_counts().plot(kind='bar', title='Count of Classes', color = ['b','r'])
+
+Count of class after undersampling
+positive    181
+negative    181
+dtype: int64
+
+<matplotlib.axes._subplots.AxesSubplot at 0x25d863f7eb8>
+</xmp>
+                        <div class="single-article-img">
+                            <img src="images/smote-5.jpg" alt="smote-5" />
+                        </div>
+
+                    </li>
+
+                </ul>
+
+
+                <h3>Conclusion</h3>
+                <p>Hope you are clear with different techniques to overcome with imbalanced dataset in Machine Learning. There are many other methods to deal with imbalance thing. It depends upon your dataset when to perform oversampling and when to perform undersampling. If your dataset is immensely large then go for undersampling otherwise perform oversampling or TomekLinks. </p>
+                <p>Hope you enjoyed learning. Keep learning with new stuff in Machine Learning</p>
+            </div>
+        </div>
+        <div class="Clear">&nbsp;</div>
+    </div><!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+</html>

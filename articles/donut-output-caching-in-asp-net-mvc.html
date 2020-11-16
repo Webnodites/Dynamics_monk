@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Understand Donut output caching in ASP.NET</title>
+    <meta name="description" content="First of all, you know that what is actually donut and why to use in ASP.Net. Particularly Donut is useful for the output Cache attribute. Here user an easily understood Donut Output caching in ASP.NET." />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/donut-output-caching-in-asp-net-mvc.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Understand Donut output caching in ASP.NET" />
+    <meta property="og:description" content="First of all, you know that what is actually donut and why to use in ASP.Net. Particularly Donut is useful for the output Cache attribute. Here user an easily understood Donut Output caching in ASP.NET." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/donut-output-caching-in-asp-net-mvc.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/images/donut-output-caching-in-asp-net-mvc-1.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/donut-output-caching-in-asp-net-mvc-1.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="First of all, you know that what is actually donut and why to use in ASP.Net. Particularly Donut is useful for the output Cache attribute. Here user an easily understood Donut Output caching in ASP.NET." />
+    <meta name="twitter:title" content="Understand Donut output caching in ASP.NET" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/images/donut-output-caching-in-asp-net-mvc-1.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Donut output caching in ASP.NET MVC</h1>
+        </div>
+    </div>
+    <!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <p><a href="https://www.nexsoftsys.com/technologies/net-application-development.html">Experts of Asp.net Development Company</a> brings this article to help entire asp.net community understanding Donut Output Caching and its use in asp.net mvc programming. You can read further and explore what they want to explain.</p>
+
+
+            <h2>Output Caching</h2>
+            <p>Output cache in MVC is very similar to the output cache in Asp.Net webforms. In output caching, the controller actions output are stored in the cache. These cached results are returned on subsequent calls on controller actions instead of the executing the actions again. Given that a set of pages in a web application contains data from a service or some database, it will be quicker to return the data from the cached result instead of calling the services. Few people think that output caching does not offer any advantage for a web application and is not the perfect. However, output caching is suitable for many sites and can benefit these sites. Two main points for output cache are:</p>
+
+            <p>1) A high traffic site can have a great impact by cache durations of few seconds. That is, the output caching can be used by real time applications.</p>
+            <p>2) The output caching can significantly boost the performance of the application even if caching is done heavily in the application. It is comparatively slower to retrieve data from cache and then render the page with this data rather than rendering the entire the page with output cache.</p>
+
+
+            <h2>Donut Caching</h2>
+
+
+            <h3>There are three different types of output caching:</h3>
+
+            <h3>1) Full Page Cache</h3>
+            <p>In this type of caching, the entire page of the application is cached without any substitutions. There is an output cache attribute to handle full page caching.</p>
+
+            <h3>2) Partial page Cache (Donut Hole Caching)</h3>
+            <p>In this type of caching, instead of caching the complete page, only some parts of the page are cached. There is a build in attribute to handle partial page caching. This type of caching is available from Asp.Net MVC</p>
+
+            <h3>3. Partial page Caching (Donut Caching)</h3>
+            <p>Donut caching is a type of output caching where the entire page is cached leaving some parts. Donut caching was available in Asp.Net MVC 1 with the help of substitution control. However, it is not possible in Asp.Net MVC 3 and above versions.</p>
+            <p>Donut caching is an important requirement and its omission in MVC 3 is unfortunate.</p>
+
+
+
+            <h3>Working of Donut Caching:</h3>
+            <p>Output caching is performed in Asp.Net MVC with the help of an action filter attribute that is applied to the controller actions individually or to the entire controller. Donut caching is implemented with a simple concept. The output of the page is cached and that page is returned on subsequent calls. However, few extra steps are required in this case. Before caching the page, it is required to find the areas that should not be cached. These areas are referred as donut holes. These holes should be marked such that while retrieving the cached page, these areas can be replaced with the non-cached version.</p>
+
+
+            <h3>Problem while Implementing Donut Caching</h3>
+            <p>There is a difficulty with the way of working of output caching. The implementation of Donut hole caching is entirely different from the full page caching. The full page caching uses the OutputCacheModule for implementing caching while a separate path of code is used in partial page caching to save the output using the MemoryCache object.</p>
+
+            <p>As far as donut caching is concerned, it is very difficult to hook into the HttpModule. So the OutputCache attribute must be completely rewritten so that some of the inconsistencies are fixed in the implementation.</p>
+
+
+            <h3>Main limitations of Output caching are as follows:</h3>
+            <p>
+                <strong>1) Not able to disable caching in Web.config file:</strong>
+                In case of full page caching, it is possible to disable caching by changing a value in web.config file. Partial page caching cannot be disabled with this value.
+            </p>
+            <p>
+                <strong>2) Cache Profiles not supported:</strong>
+                Cache profiles are not supported for child actions in <a href="https://www.nuget.org/packages/Microsoft.AspNet.Mvc/3.0.50813.1">Asp.Net MVC 3</a>. However, these are supported for the controller actions.
+            </p>
+            <p>3) In partial page caching, removing the output cache items is not very easy, especially for the child actions.</p>
+            <p>4) It is problematic to use a store for custom output cache.</p>
+
+
+            <h3>MVCDonutCaching Nuget Package</h3>
+            <p>
+                MVC donut package can be installed using Nuget Package Manager. To install the same, open tools, then Library Package Manager, then go to Package Manager Console. Type the following command in the console:
+                "Install package MvcDonutCaching"
+            </p>
+            <div class="single-article-img"><img src="../images/donut-output-caching-in-asp-net-mvc-1.jpg" alt="Nuget Package" /></div>
+            <p>Once the package is installed, DonutOutputCache attribute can be added to the controller or to the action. Many types of parameters of OutputCache attribute can be seen in Donut cache as below:</p>
+            <div class="single-article-img"><img src="../images/donut-output-caching-in-asp-net-mvc-2.jpg" alt="DonutOutputCache attribute" /></div>
+            <p>Add the profile to the web.config file in case a cache profile is used.</p>
+
+            <p>Now run the application. At this stage, the Donut output cache will run in the similar way as the Output cache and full page will be cached. To start the donut caching, it is required to specify the donut hole. It can be implemented by adding various overloads to Action Html helper. Also, add a true parameter to specify that it should not be cached with the current page. Now run the project and see the execution of donut caching. The donut hole is executed on each request while caching the parent page. It is also possible to add DonutCacheAttribute or OutputCacheAttribute on child action. With this, it is possible to cache one part of the page for five minutes and rest for say an hour.</p>
+
+            <p>
+                An item can be removed from the output cache by using various methods of the output cache manager class.
+                As we have seen, the Donut hole Caching is inverse of the Donut caching. Only some sections of the page are cached in this case, instead of caching the entire page and then leaving few sections aside.
+            </p>
+            <h3>Read More</h3>
+            <ul class="listing">
+                <li><a href="https://www.nexsoftsys.com/articles/net-development-medicated-with-the-dependency-injection.html">.Net Development medicated with the dependency injection</a></li>
+            </ul>
+        </div>
+
+        <div class="Clear">&nbsp;</div>
+
+    </div>
+    <!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+
+</html>

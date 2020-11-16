@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why Python is best for System Focussed Programming?</title>
+    <meta name="description" content="System focused programming is built by the various system resources support and different OS module, monitor data, merge layer between the applications. Python is best language for system programming with platform independent." />
+    <meta name="keywords" content="System programming, Python language, Program" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/system-focussed-programming-in-python.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Why Python is best for System Focussed Programming?" />
+    <meta property="og:description" content="System focused programming is built by the various system resources support and different OS module, monitor data, merge layer between the applications. Python is best language for system programming with platform independent." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/system-focussed-programming-in-python.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/system-focussed-programming-in-python.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/system-focussed-programming-in-python.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="System focused programming is built by the various system resources support and different OS module, monitor data, merge layer between the applications. Python is best language for system programming with platform independent." />
+    <meta name="twitter:title" content="Why Python is best for System Focussed Programming?" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/system-focussed-programming-in-python.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>System Focussed Programming in Python</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <div class="single-content-block apachebeam_article">
+                <h2>Introduction:</h2>
+                <div class="single-article-img align-center">
+                    <p class="d-md-flex text-justify"><img src="images/system-focussed-programming-in-python.jpg" alt="system-focussed-programming-in-python" class="mr-2" />What is meant by “System Focussed Programming in Python”? Well, it means many things, depending on the perspective from which you look at it. For instance, for a system administrator, it is a means to monitor, debug, rectify, shutdown and start services in a system.<br><br>The list for a sys admin actually may be longer than what I specified, but I just wanted to put it in a nutshell (and as you may have already realized, nutshells are not really large).</p>
+                </div>
+                <p> From the perspective of a programmer (I call myself one, but I guess it is open to debate), it means making programs that take advantage of system resources, optimize processing power, etc. From a DB administrator's point of view, it is how to make the database she/he is administering to function in an optimized way, again, managing  system resources wisely (this is a relative term – what is 'wisely' for you may not be very 'wise' for someone else). The list goes on and on, and I really can't do justice to all of them here. Hence, I have decided to address only a couple of perspectives – the perspective of a system administrator and the perspective of a programmer.</p>
+
+                <h3>The Commands:</h3>
+                <p>Python allows you to do system programming in two different ways. Firstly, you have the two python workhorse modules – the 'os' and 'sys' (both of them have their legitimate own child modules which offer more functionality), and secondly, you can run shell commands from within python code, either using the ‘os.system’ or create a subprocess (using the 'subprocess' module). Apart from the above 2 methods, you may also use the information from the 'proc' file system (this is available only on Unix and Linux systems), may be by opening a desired file in the proc file system that contains the information you need. Last, but not the least, there is the python library named “platform” which provides valuable insights about the functioning of the system.</p>
+                <p>Here, I will first go through a list of functions/modules available from the 'os' , 'platform' and the 'sys' modules, and I will try to explain in brief what they do and what you should expect from them.</p>
+                <p>First, let us try to find a brief description of the OS you are working on. On the command line, you may run “uname -a”, which will provide you with an out similar to the one below:</p>
+                <p><em>Linux testyard.in 3.16.0-77-generic #99~14.04.1-Ubuntu SMP Tue Jun 28 19:17:10 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux</em></p>
+                <p>The server name “testyard.in” in the above description will be different for various machines, but you will get much of the same output as above. In order to do the same with python, you may use os.system (“uname -a”). However, the “platform” module allows us to get the specific info that you need, one at a time. So, in case you wish to know the architecture of your system, you may use the following python code: (Please note that the commands are in both italics and bold, whereas the outputs are in simple italic font face.)</p>
+                <p><b>platform.machine()</b></p>
+                <p>The output of the above mentioned command will provide you with something similar to the result mentioned below:</p>
+                <p><em>'x86_64'</em></p>
+                <p>Similarly, you may run the following commands to get a whole view of the system you are working on:</p>
+                <p><b>platform.version()</b></p>
+                <p><em>'#99~14.04.1-Ubuntu SMP Tue Jun 28 19:17:10 UTC 2016'</em></p>
+                <p><b>platform.platform()</b></p>
+                <p><em>'Linux-3.16.0-77-generic-x86_64-with-Ubuntu-14.04-trusty'</em></p>
+                <p>Again, please note that your output may have different information, as it is based on the system you are using.</p>
+                <p>The next command is a replacement for the “uname -a” shell command we discussed earlier, but it provides you with the same info in pure python form.</p>
+                <p><b>platform.uname()</b></p>
+                <p><em>('Linux', 'testyard.in', '3.16.0-77-generic', '#99~14.04.1-Ubuntu SMP Tue Jun 28 19:17:10 UTC 2016', 'x86_64', 'x86_64')</em></p>
+                <p>So, in the above output, you have every bit of information that you derived from the “uname -a” shell command, but the interesting difference here is the fact that every info in the output of “platform.uname” comes as elements in a tuple. This seems to be very convenient for the programmer as she may not need all the information provided by the output. In the case of a tuple, the programmer can specific elements from the tuple and use it as required.</p>
+                <p>Now, every now and then, you may want to know the processor you are using, and the “platform.processor ()” is just the method that can provide you with that information:</p>
+                <p><b>platform.processor()</b></p>
+                <p>For me, the output is a bit disappointing, as it just displays the following:</p>
+                <p><em>'x86_64'</em></p>
+                <p>The output is definitely accurate, but it does miss a few details, and later on we will see how to extract that information using a shell command from within the “os.system” method.</p>
+                <p>In case if you are interested in the release information or the architecture, you may use the following 2 commands. The outputs from my system are provided with the commands.</p>
+                <p><b>platform.release()</b></p>
+                <p><em>'3.16.0-77-generic'</em></p>
+                <p><b>platform.architecture()</b></p>
+                <p><em>('64bit', 'ELF')</em></p>
+                <p>There are quite a few other cool things that you can do with the “platform” module, like finding about your platform you are using, the python branch, build, compiler, revision, version, etc you are using. I will leave that to you as an exercise.</p>
+                
+                <p><a href="https://giphy.com/gifs/web-development-vGU8HPEygX9D2">via GIPHY</a></p>
+                <p>Earlier, we said that the modules “os” and “sys” are workhorses, but so far we haven't got into it. Let us dive into it now and see what we can (and cannot) do with them.</p>
+                <p>The “os” module allows us to do a lot of file and directory manipulations. You can use it to create files, directories, change permissions, spawn child processes, etc. We will look at a sample of such commands here and then we will create a small program to manipulate the file system using it.</p>
+                <p>Well, having said that, it comes as a surprise, that the “os” module too provides a method name “uname()”, and the output is almost identical to the output of “platform.uname()” method.</p>
+                <p><strong><em>os.uname()</em></strong></p>
+                <p><em>('Linux', 'testyard.in',  '3.16.0-77-generic', '#99~14.04.1-Ubuntu SMP Tue Jun 28 19:17:10 UTC 2016',  'x86_64')</em></p>
+                <p>However, as I said, the &ldquo;os&rdquo; module is normally used for  filesystem operations. The &ldquo;os&rdquo; module exposes a number of methods, some of  which are listed below, with some description and a sample output of those  methods:</p>
+                <p><b>os.symlink(src, dest) </b></p>
+                <p>This creates a symbolic link named “dest” that points to “src”. So, if you are creating a program which needs to have a symlink created between 2 entities, you may use this powerful method.</p>
+                <p><b>os.mkdir(path,[perms])</b></p>
+                <p>This creates a directory identified by the path (first argument) with the permissions set as the second argument. By default, that is if you don't specify the second argument, then the permission is set to '0777', which basically means world readable, executable and writable. Not really a good idea. In case the path provided by the first argument doesn't exists, then an exception is raised and the method fails.</p>
+                <p>In order to handle this situation, the “os” module provides a second method that handles the case of a missing path. It is called “makedirs”. It is similar to the shell command “mkdir -p”. So what “makedirs” does it that when it find a missing directory in the path, it creates one and finally creates the directory that is was supposed to create. You may invoke it through the following statement:</p>
+                <p><b>os.makedirs(path,[perms])</b></p>
+                <p>The arguments are similar to the “mkdir” method, and the default permissions are 777.</p>
+                <p>As an aside, I would strongly recommend  that the programmer to make a habit of specifying the permissions, even when  she/he is working on these things as an exercise. Without this habit, in a real  world scenario where one has to meet deadlines, there is a tendency of cutting  corners. And the <strong><a href="../hire/python-developers.html">python web  developers</a></strong> normally cuts the corners in these situations. That  poses a dreadful security risk, and hence, it should be avoided at all costs.  Deadlines should be respected, but it should NOT be at the cost of making a  software vulnerable in any way. If that makes the programmer to miss the  deadline, so be it.</p>
+                <p><b>os.popen and its friends:</b></p>
+                <p>os.popen(command, [mode, [buffersize]]) is a method provided by the “os” module to open an pipe to or from the command being executed (the first parameter of the method). This is a very handy tool for a system admin when she/he wishes to execute a shell command and also wants to have the output of that command saved somewhere in order to use it later. Basically, what happens in case of popen is that a file object is returned to the variable that catches it, and this handle can be later on read to extract the info returned by the command.</p>
+                <p>For example, I ran the following command on my machine:</p>
+                <p><b>fp = os.popen("ls -la")</b></p>
+                <p><b>fp.read()</b></p>
+                <p>The output is as follows:</p>
+<xmp class="codding-box">
+'total 108\ndrwxr-xr-x 11 supriyo root    4096 Nov 29 21:51 .\ndrwxrwxrwx 32 supriyo root    4096 Dec 29 20:02 ..\ndrwxrwxr-x  4 supriyo supriyo 4096 Jan  4 22:37 backup_files\n-rw-rw-rw-  1 root    root     893 Dec  2  2017 dumppostdata.txt\n-rw-rw-r--  1 supriyo supriyo 9209 Apr 16  2017 dump.txt\ndrwxrwxr-x 20 supriyo supriyo 4096 Nov  2 20:19 experiments\ndrwxrwxr-x  2 supriyo supriyo 4096 Nov 29 17:43 latex\ndrwxr-xr-x  2 supriyo root    4096 Jun  3  2017 logs\n-rw-r--r--  1 root    root    5659 Oct 23  2017 logs:tests_tasks.log\n-rw-rw-rw-  1 root    root      77 Dec 29 19:50 logs:testyard.log\n-rw-rw-r--  1 supriyo supriyo  423 Apr 28  2017 prerequisites.txt\n-rw-rw-r--  1 supriyo supriyo  423 Apr 28  2017 prerequisites.txt~\ndrwxr-xr-x  8 supriyo root    4096 Jan  1 05:29 pyenv\n-rw-------  1 root    root      17 Apr 23  2017 .Rhistory\n-rw-rw-r--  1 supriyo supriyo 3124 Nov 29 21:51 sample_latex.txt\n-rw-rw-r--  1 supriyo supriyo 3109 Nov 24 22:13 sample_latex.txt~\ndrwxrwxr-x 19 supriyo root    4096 Nov  9 00:23 softwares\n-rw-rw-r--  1 supriyo supriyo 1728 Oct 21 02:39 ssl_cert_creation_process.txt\n-rw-rw-r--  1 supriyo supriyo 1689 Oct 21 02:31 ssl_cert_creation_process.txt~\n-rw-rw-r--  1 supriyo supriyo 1977 Nov 10  2015 test_responses.txt\n-rw-rw-r--  1 supriyo supriyo 1127 Nov  6  2015 test_responses.txt~\ndrwxr-xr-x  7 supriyo root    4096 Jan  4 21:40 testyard\ndrwxrwxr-x  2 supriyo supriyo 4096 Dec 31 20:00 tmpfiles\ndrwxrwxr-x  4 supriyo supriyo 4096 Oct 25 00:36 WebRTC\n'
+</xmp>
+                <p>The above output looks a little un-nerving, but you may format it by splitting on newlines and make it look better to use it. No big deal.</p>
+                <div class="youtube-videobox">
+                    <iframe src="https://www.youtube.com/embed/IAQCRkGrsCY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p>The methods 'popen2()', 'popen3()' and 'popen4()' are similar, but with slight differences. I  won't go into the differences here (as you can always do a os.popenx.__doc__ to find what happens, 'x' would be either 2, 3 or 4), but what I am going to do here is to explain popen2(), and you should be able to extrapolate the explanation for 3 and 4 variants of popen().</p>
+                <p>In a  nutshell (again, nutshells are not big),  what popen2 does is that it executes a command provided to it as a parameter as a subprocess and returns back a tuple of 2 file handles. One is a read handle (the second one), which you can read and extract the data churned out by the command provided as a parameter, and the first element of the tuple is a write handle. There isn't much that you might extract from this handle, and please also note that popen family has been deprecated since python version 6 onwards. In order to similar things, you now have the “subprocess” module. To execute a command, you may use the “subprocess.call()” method with the name of the command and its switches as a list as shown below:</p>
+                <p><em>subprocesss.call([“ls”, “-la”])</em></p>
+                <p>The above command actually takes 4 more arguments, namely, “stdin”, “stdout”, “stderr” and “shell”. The default values for the first three are “None” and the default for the fourth one (shell) is “False”.</p>
+                <p>“subprocess.call()” waits for the command execution to complete, and  then returns the “returncode” attribute.</p>
+                <p>You may take a look at the elaborate capabilities of the subprocess module here: </p>
+                <p><a href="https://docs.python.org/2/library/subprocess.html#module-subprocess" target="_blank"><em>https://docs.python.org/2/library/subprocess.html#module-subprocess</em></a></p>
+                <p>For now, I will conclude this post with a little more interesting material. There is a library in python named “psutil” and if you need to find out the availability of resources in your system dynamically from within a script, you may use it to do just that. Here is how you do it:</p>
+                <p>First, you need to install psutil in your system using “pip install psutil”. It doesn't come with core python distro. </p>
+                <p>Next, let us suppose you would like to record the status of your virtual_memory, CPU usage, and disk usage. This is what I did on my computer and the outputs are shown below:</p>
+<xmp class="codding-box">
+import psutil
+psutil.virtual_memory()
+svmem(total=4051648512, available=604794880, percent=85.1, used=2922110976, free=174460928, active=2066489344, inactive=1459490816, buffers=54050816, cached=901025792, shared=313266176, slab=132530176)
+
+psutil.cpu_percent()
+5.3
+
+psutil.cpu_percent()
+6.5
+
+psutil.disk_usage('/dev/sda')
+sdiskusage(total=2009702400, used=4096, free=2009698304, percent=0.0)
+
+psutil.disk_partitions()
+[sdiskpart(device='/dev/sda4', mountpoint='/', fstype='ext4', opts='rw,errors=remount-ro'), sdiskpart(device='/dev/sda1', mountpoint='/boot/efi', fstype='vfat', opts='rw')]
+
+psutil.cpu_freq()
+scpufreq(current=1998.984, min=500.0, max=2000.0)
+
+psutil.cpu_count()
+4
+</xmp>
+                <p>So, both from the point of view of a system administrator and a programmer, this is a very useful tool. It can provide both professionals with an adequate understanding of the system's resources and thus help them in providing better solutions.</p>
+                <p><b>End Game</b></p>
+                <p>I didn't go into a full-fledged programming example in this post as that is not what I wanted to do. Rather than that, my intention here was to provide the reader with the tools python provides us and what we can do with them. A programmer can certainly create a program that suits her/his needs based on the information given here. Of course, what I have done here is just a scratch on the surface, and anyone interested should do more research on the topics I have tried to cover here. </p>
+            </div>
+        </div>
+    </div><!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+</html>

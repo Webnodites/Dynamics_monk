@@ -1,0 +1,815 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete guide to Tensorflow</title>
+    <meta name="description" content="Tensorflow is one of the huge used open source libraries for implementing Machine learning, deep learning and other complicate algorithm involving large number of numerical computation operations. Tensorflow was developed by Google." />
+    <meta name="keywords" content="Tensorflow, machine learning, deep learning, Google Brain Team, Python programming" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/introduction-to-tensorflow.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Complete guide to Tensorflow" />
+    <meta property="og:description" content="Tensorflow is one of the huge used open source libraries for implementing Machine learning, deep learning and other complicate algorithm involving large number of numerical computation operations. Tensorflow was developed by Google." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/introduction-to-tensorflow.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/tensorflow1.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/tensorflow1.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Tensorflow is one of the huge used open source libraries for implementing Machine learning, deep learning and other complicate algorithm involving large number of numerical computation operations. Tensorflow was developed by Google." />
+    <meta name="twitter:title" content="Complete guide to Tensorflow" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/tensorflow1.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Introduction to Tensorflow</h1>
+        </div>
+    </div><!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Width-100">
+            <div class="single-content-block">
+                <p>Tensorflow is an open  source numerical computation for implementing machine learning models which is  developed by Google Brain Team. Its architecture allows us to deploy machine  learning, deep learning models with the support of CPU, GPU, TPU and other  distributed machines. It has the support of many programming languages such as  C++, <strong><a href="../technologies/python-development-services.html">python software development</a></strong> etc. The aim of this blog is to make your  aware of powerful API of Tensorflow i.e., High-level API&rsquo;s. Tensorflow consist  of multiple layer API, let&rsquo;s check below diagram.</p>
+                <div class="single-article-img">
+                    <img src="images/tensorflow1.jpg" alt="article" />
+                </div>
+                <p>In this tutorial, we are going to cover mainly estimators in TensorFlow.</p>
+                <h3>Prerequisites</h3>
+                <ul class="listing">
+                    <li>Install Tensorflow</li>
+                    <li>If using Anaconda Environment for Data Science, activate Tensorflow</li>
+                </ul>
+                <h3>Estimators</h3>
+                <p>Tensorflow is used to build machine learning models. Using TensorFlow, we have to implement a model from scratch. But using estimators, we can also use built-in models like scikit-learn instead of bogging into the details. There are premade estimators, custom estimators if you wish to build a model of your choice. All estimators are built under tf.estimator.Estimator class. It encapsulates the following actions -:</p>
+                <ul class="listing">
+                    <li>Training</li>
+                    <li>Evaluation</li>
+                    <li>Prediction</li>
+                    <li>Export for serving</li>
+                </ul>
+                <h3>How to write a program for premade estimators?</h3>
+                <p>For the demo of this estimators, we will use  data of <strong>&ldquo;Churn Prediction&rdquo;</strong>. In this  case study, we have to predict whether this person will churn this Bank i.e.,  stop using the current account with the associated (Single bank in this case)  bank. Let&rsquo;s check out with steps.</p>
+                <h3>Step 1: Writing an input function - A function for importing training and testing data</h3>
+                <p>For model training or model evaluation we have to pass data in every machine learning right? Similarly, in estimator API, we have to pass input data (function) to input_fn (standard function defined inside TensorFlow). Here I will try to show how I am defining the input function for training.</p>
+                <p>#define train input_function</p>
+<xmp>
+1. train_input_fn = tf.estimator.inputs.numpy_input_fn(
+2.  x={"CreditScore": np.array(data.CreditScore),
+3.	"Balance": np.array(data.Balance)},
+4.	y=np.array(data['Exited']),
+5.	num_epochs=None,
+6.	shuffle=True)
+</xmp>
+                <p>Here, x represents the input form, you can pass images, multiple features like here we passed two inputs - “CreditScore”, “Balance”. Y represents output.</p>
+                <h3>Step 2: Define a feature column - Identifying features for the model</h3>
+                <p>At this step, what we are trying to do is defining the feature column to train the model. As while building the model we need features on which model will be trained on.</p>
+<xmp>
+1.	feature_1 = tf.feature_column.numeric_column("CreditScore")
+2.	feature_2 = tf.feature_column.numeric_column("Balance")
+3.	feature_columns = [feature_1,feature_2]
+</xmp>
+                <p>In the above code, the first two lines are converting in form of features. And then appending it into feature columns for training model.</p>
+                <h3>Step 3: Initializing pre-made estimator</h3>
+                <p>At this step, we will define a model to be used for solving the use case. There are two ways, first is to use Premade Estimator and second is a custom estimator. We will use premade estimators of TensorFlow but if you want you can define a custom model as well. Let’s see how to use premade estimator for this dataset.</p>
+<xmp>
+1.	model = tf.estimator.LinearClassifier(feature_columns=feature_columns)
+2.	model.train(input_fn= train_input_fn, steps=2000)
+</xmp>
+                <p>Here, we used LinearClassifier model for the sake of simplicity but we can also use DNNClassifier etc. available in the premade estimator.</p>
+                <p>The output of training is something like this -:</p>
+<xmp>
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 1 into C:\Users\gargr\AppData\Local\Temp\tmphl17weex\model.ckpt.
+INFO:tensorflow:loss = 88.72288, step = 1
+INFO:tensorflow:global_step/sec: 225.266
+INFO:tensorflow:loss = 23414.627, step = 101 (0.444 sec)
+INFO:tensorflow:global_step/sec: 478.944
+INFO:tensorflow:loss = 12692.912, step = 201 (0.227 sec)
+INFO:tensorflow:global_step/sec: 478.156
+INFO:tensorflow:loss = 29577.074, step = 301 (0.191 sec)
+</xmp>
+                <h3>Step 4: Evaluating the model/Prediction for new values</h3>
+                <p>As the last step for model building is evaluating it and predicting for new values. Let’s see how to do it for our case study of Churn Prediction.</p>
+                <p>Here, creating a prediction input function (predict_input_fn)</p>
+<xmp>
+1.	test_data = data.loc[56:67,['CreditScore','Balance','Exited']]
+2.	test_data.reset_index(drop=True)
+3.
+4.	expected = np.array(test_data.Exited)
+5.	expected
+6.
+7.	predict_input_fn = tf.estimator.inputs.numpy_input_fn(
+8.	    x={"CreditScore": np.array(test_data['CreditScore']),
+9.	      "Balance": np.array(test_data['Balance'])},
+10.	    num_epochs=1,
+11.	    shuffle=False)
+12.
+13.	predictions = model.predict(input_fn=predict_input_fn)
+</xmp>
+                <p>In the above code, we defined the input prediction function for inputting data for prediction and used the trained model for predictions.</p>
+                <p>This is all about how to use premade estimators in Tensorflow.</p>
+                <p>If someone wants to write custom estimator, will follow these same steps instead of using premade estimators. In custom estimators, will write own model function. The model function will be written with the use of tf.layers. </p>
+                <p>So, this is all how to use the estimator API. </p>
+                <p>Let’s check out the full code for this case study -:</p>
+                <h3>import required packages</h3>
+<xmp>
+import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+</xmp>
+                <h3>load the data</h3>
+<xmp>
+data = pd.read_csv('./Churn_Modelling.csv')
+data.head()
+</xmp>
+                <div class="responsive-table">
+                    <table>
+                        <tr>
+                            <td>No.</td>
+                            <td><strong>RowNumber</strong></td>
+                            <td><strong>CustomerId</strong></td>
+                            <td><strong>Surname</strong></td>
+                            <td><strong>CreditScore</strong></td>
+                            <td><strong>Geography</strong></td>
+                            <td><strong>Gender</strong></td>
+                            <td><strong>Age</strong></td>
+                            <td><strong>Tenure</strong></td>
+                            <td><strong>Balance</strong></td>
+                            <td><strong>NumOfProducts</strong></td>
+                            <td><strong>HasCrCard</strong></td>
+                            <td><strong>IsActiveMember</strong></td>
+                            <td><strong>EstimatedSalary</strong></td>
+                            <td><strong>Exited</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>0</strong></td>
+                            <td>1</td>
+                            <td>15634602</td>
+                            <td>Hargrave</td>
+                            <td>619</td>
+                            <td>France</td>
+                            <td>Female</td>
+                            <td>42</td>
+                            <td>2</td>
+                            <td>0.00</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>101348.88</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>2</td>
+                            <td>15647311</td>
+                            <td>Hill</td>
+                            <td>608</td>
+                            <td>Spain</td>
+                            <td>Female</td>
+                            <td>41</td>
+                            <td>1</td>
+                            <td>83807.86</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>1</td>
+                            <td>112542.58</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>3</td>
+                            <td>15619304</td>
+                            <td>Onio</td>
+                            <td>502</td>
+                            <td>France</td>
+                            <td>Female</td>
+                            <td>42</td>
+                            <td>8</td>
+                            <td>159660.80</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>113931.57</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>4</td>
+                            <td>15701354</td>
+                            <td>Boni</td>
+                            <td>699</td>
+                            <td>France</td>
+                            <td>Female</td>
+                            <td>39</td>
+                            <td>1</td>
+                            <td>0.00</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>93826.63</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>5</td>
+                            <td>15737888</td>
+                            <td>Mitchell</td>
+                            <td>850</td>
+                            <td>Spain</td>
+                            <td>Female</td>
+                            <td>43</td>
+                            <td>2</td>
+                            <td>125510.82</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>79084.10</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                </div>
+<xmp>
+msk = np.random.rand(len(data)) < 0.8
+train = data[msk]
+test = data[~msk]
+</xmp>
+                <h3>define training input function</h3>
+<xmp>
+#define train input_function
+train_input_fn = tf.estimator.inputs.numpy_input_fn(
+x={"CreditScore": np.array(train.CreditScore),
+"Balance": np.array(train.Balance)},
+y=np.array(train['Exited']),
+num_epochs=None,
+shuffle=True)
+
+train_input_fn()
+
+
+[Output]:
+({'Balance': <tf.Tensor 'random_shuffle_queue_DequeueMany_3:1' shape=(128,) dtype=float64>
+,
+'CreditScore': <tf.Tensor 'random_shuffle_queue_DequeueMany_3:2' shape=(128,) dtype=int64>
+},
+<tf.Tensor 'random_shuffle_queue_DequeueMany_3:3' shape=(128,) dtype=int64>)
+</xmp>
+                <h3>Premade/ Canned Estimator defining</h3>
+<xmp>
+feature_1 = tf.feature_column.numeric_column("CreditScore")
+feature_2 = tf.feature_column.numeric_column("Balance")
+
+feature_columns = [feature_1,feature_2]
+
+model = tf.estimator.LinearClassifier(feature_columns=feature_columns, )
+
+[Output]:
+INFO:tensorflow:Using default config.
+WARNING:tensorflow:Using temporary folder as model directory:
+C:\Users\gargr\AppData\Local\Temp\tmpci0vq1od
+INFO:tensorflow:Using config:{'_task_type': 'worker', '_global_id_in_cluster': 0,
+'_save_checkpoints_steps': None, '_num_ps_replicas': 0, '_save_checkpoints_secs': 600,
+'_train_distribute': None, '_tf_random_seed': None, '_cluster_spec':
+<tensorflow.python.training.server_lib.ClusterSpec object at 0x0000028327B0B390>
+,
+'_log_step_count_steps': 100, '_evaluation_master': '', '_is_chief': True, '_session_config':
+None, '_save_summary_steps': 100, '_service': None, '_num_worker_replicas': 1,
+'_model_dir': 'C:\\Users\\gargr\\AppData\\Local\\Temp\\tmpci0vq1od', '_keep_checkpoint_max': 5,
+'_task_id': 0, '_keep_checkpoint_every_n_hours': 10000, '_master': ''}
+</xmp>
+                <h3>train the model</h3>
+<xmp>
+model.train(
+input_fn= train_input_fn, steps=2000)
+
+{Output]:
+INFO:tensorflow:Calling model_fn.
+INFO:tensorflow:Done calling model_fn.
+INFO:tensorflow:Create CheckpointSaverHook.
+INFO:tensorflow:Graph was finalized.
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+INFO:tensorflow:Saving checkpoints for 1 into C:\Users\gargr\AppData\Local\Temp\tmpci0vq1od\model.ckpt.
+INFO:tensorflow:loss = 88.72288, step = 1
+INFO:tensorflow:global_step/sec: 189.175
+INFO:tensorflow:loss = 46414.156, step = 101 (0.545 sec)
+INFO:tensorflow:global_step/sec: 455.523
+INFO:tensorflow:loss = 58252.188, step = 201 (0.222 sec)
+INFO:tensorflow:global_step/sec: 509.2
+INFO:tensorflow:loss = 12370.604, step = 301 (0.178 sec)
+INFO:tensorflow:global_step/sec: 549.406
+INFO:tensorflow:loss = 16219.006, step = 401 (0.200 sec)
+INFO:tensorflow:global_step/sec: 508.595
+INFO:tensorflow:loss = 9650.512, step = 501 (0.179 sec)
+INFO:tensorflow:global_step/sec: 502.775
+INFO:tensorflow:loss = 3101.44, step = 601 (0.199 sec)
+INFO:tensorflow:global_step/sec: 540.225
+INFO:tensorflow:loss = 7769.735, step = 701 (0.185 sec)
+INFO:tensorflow:global_step/sec: 524.367
+INFO:tensorflow:loss = 36031.816, step = 801 (0.191 sec)
+INFO:tensorflow:global_step/sec: 547.759
+INFO:tensorflow:loss = 1731.166, step = 901 (0.187 sec)
+INFO:tensorflow:global_step/sec: 482.969
+INFO:tensorflow:loss = 23063.988, step = 1001 (0.204 sec)
+INFO:tensorflow:global_step/sec: 673.966
+INFO:tensorflow:loss = 16607.012, step = 1101 (0.149 sec)
+INFO:tensorflow:global_step/sec: 560.367
+INFO:tensorflow:loss = 18532.783, step = 1201 (0.176 sec)
+INFO:tensorflow:global_step/sec: 498.929
+INFO:tensorflow:loss = 4076.1106, step = 1301 (0.205 sec)
+INFO:tensorflow:global_step/sec: 546.074
+INFO:tensorflow:loss = 16558.512, step = 1401 (0.179 sec)
+INFO:tensorflow:global_step/sec: 519.489
+INFO:tensorflow:loss = 4016.436, step = 1501 (0.192 sec)
+INFO:tensorflow:global_step/sec: 530.332
+INFO:tensorflow:loss = 12311.674, step = 1601 (0.189 sec)
+INFO:tensorflow:global_step/sec: 541.875
+INFO:tensorflow:loss = 19032.355, step = 1701 (0.185 sec)
+INFO:tensorflow:global_step/sec: 499.178
+INFO:tensorflow:loss = 15493.949, step = 1801 (0.200 sec)
+INFO:tensorflow:global_step/sec: 568.69
+INFO:tensorflow:loss = 14680.697, step = 1901 (0.176 sec)
+INFO:tensorflow:Saving checkpoints for 2000 into C:\Users\gargr\AppData\Local\Temp\tmpci0vq1od\model.ckpt.
+INFO:tensorflow:Loss for final step: 17477.594.
+<tensorflow.python.estimator.canned.linear.LinearClassifier at 0x283264f3828>
+</xmp>
+                <h3>Make predictions</h3>
+<xmp>
+test_data = test.loc[:,['CreditScore','Balance','Exited']]
+test_data.reset_index(drop=True)
+expected = np.array(test_data.Exited)
+expected
+
+[Output]:
+array([0, 0, 0, ..., 0, 1, 0], dtype=int64)
+
+
+predict_input_fn = tf.estimator.inputs.numpy_input_fn(
+x={"CreditScore": np.array(test_data['CreditScore']),
+"Balance": np.array(test_data['Balance'])},
+num_epochs=1,
+shuffle=False)
+
+predictions = model.predict(input_fn=predict_input_fn)
+predictions
+
+{Output]:
+<generator object Estimator.predict at 0x0000028325D2B990>
+
+    for pred_dict, expect in zip(predictions,expected):
+    class_id = pred_dict['class_ids'][0]
+    probability = pred_dict['probabilities'][class_id]
+    print("Prediction is {} with probability {} and expected is {}".format(class_id, 100 *probability,expect))
+
+    [Output]:
+    INFO:tensorflow:Calling model_fn.
+    INFO:tensorflow:Done calling model_fn.
+    INFO:tensorflow:Graph was finalized.
+    INFO:tensorflow:Restoring parameters from C:\Users\gargr\AppData\Local\Temp\tmpci0vq1od\model.ckpt-2000
+    INFO:tensorflow:Running local_init_op.
+    INFO:tensorflow:Done running local_init_op.
+    Prediction is 0 with probability 85.02780199050903 and expected is 0
+    Prediction is 0 with probability 79.51386570930481 and expected is 0
+    Prediction is 0 with probability 81.03984594345093 and expected is 0
+    Prediction is 0 with probability 89.28243517875671 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 1
+    Prediction is 0 with probability 87.68146634101868 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 1
+    Prediction is 0 with probability 100.0 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 0
+    Prediction is 0 with probability 100.0 and expected is 0
+    Prediction is 0 with probability 78.24604511260986 and expected is 0
+</xmp>
+                <p>I didn’t show full predictions here. </p>
+                <p>This  is the full demo for estimators(pre-made). For accessing data of Churn  prediction go to -:</p>
+                <p><a href="https://www.superdatascience.com/pages/deep-learning" target="_blank">https://www.superdatascience.com/pages/deep-learning</a>. If you will go to this link  go to part-1 and you will be able to download the dataset.</p>
+                <h3>Conclusion</h3>
+                <p>In this blog, we discussed about Tensorflow and how to use high level TensorFlow API. Tensorflow has full stack of interfaces like low level, mid level, etc. In most of the part we see how to use estimators and a quick demo with the dataset. </p>
+                <p>Hope you enjoyed reading this blog. </p>
+            </div>
+        </div>
+    </div><!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer><!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+</html>

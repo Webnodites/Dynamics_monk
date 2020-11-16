@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Table As A Service: Create Data Integration Strategy in Dynamics 365 FO</title>
+    <meta name="description" content="In this tutorial, We will show how to  integrate High Frequency, High Volume Data exchange in Dynamics 365 FO with table as a service storage." />
+    <meta name="keywords" content="Dynamics 365 finance and operations , Data exchange in Dynamics FO, Data Storage in Dynamics 365 FO" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/table-as-a-service-create-data-integration-strategy-dynamics365FO.html" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Table As A Service: Create Data Integration Strategy in Dynamics 365 FO" />
+    <meta property="og:description" content="In this tutorial, We will show how to integrate High Frequency, High Volume Data exchange in Dynamics 365 FO with table as a service storage." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/table-as-a-service-create-data-integration-strategy-dynamics365FO.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/Table-As-A-Service_-Create-Data-Integration-Strategy.png" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/Table-As-A-Service_-Create-Data-Integration-Strategy.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="In this tutorial, We will show how to integrate High Frequency, High Volume Data exchange in Dynamics 365 FO with table as a service storage." />
+    <meta name="twitter:title" content="Table As A Service: Create Data Integration Strategy in Dynamics 365 FO" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/Table-As-A-Service_-Create-Data-Integration-Strategy.png" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Table As A Service: Create Data Integration Strategy</h1>
+        </div>
+    </div>
+
+    <div class="Page-Size margh2">
+        <div class="Text Width-100">
+            <div class="single-article-img"><img src="images/Table-As-A-Service_-Create-Data-Integration-Strategy.png" alt="Data Integration Strategy"/></div>
+            <h2>What is TAAS</h2>
+            <p>Table as a service is a very convenient way of high frequency, high volume data exchange, Dynamics 365 finance and operations, without the need of worrying about the supporting architecture, speed and efficiency. I can make my data be stored and arranged as per any need, without sticking to a fixed metadata, beforehand – as compared to conventional DBMS definition. Your Table exists as an API, whereby you can call the API and enforcing PUT, POST and delete actions thereby.</p>
+            <div class="single-article-img"><img src="images/t1.png" alt="Data Integration Strategy"/></div>
+            <h3>Table as a service as a storage</h3>
+            <p>Azure table storage exists as a patterned NoSql data in Azure, resulting in a schema-less design.</p>
+            <p>Table storage generally comprises of following components:</p>
+            <ul class="listing">
+                <li>Accounts: a subscription account that connects all the storage offerings(Blobs/files, queues, containers, tables)</li>
+                <li>Tables: a table can comprise of several entities</li>
+                <li>Entities: an entity is like a row that comprises of several properties</li>
+                <li>Properties: Key-value pair</li>
+            </ul>
+            <p>Look at the following example, that comes from a TAAS on a successful creation:</p>
+<xmp>
+<content type = “application/xml”>
+    <m:properties>
+        <d:PartitionKey>RecId</d:PartitionKey>
+        <d:RowKey>2121212313</d:RowKey>
+    <d:TimeStamp m:Type=”Edm.DateTime”>2019-12-22T06:06:06.673110727</d:TimeStamp>
+        <d:AcqMethod>Test3</d:acqMethod>
+        <d:Description>Test desc</d:Description>
+
+    <m:properties>
+</content>
+</xmp>
+            <p>The above example results from an attempt to write into a table, with fields AcqMethod and Description. PartitionKey and RowKey are evidently unqiue key pair. Here the record exists as a property (starting from <d:PartitionKey> to <d:Description>). The table does not have any fixed schema as contrary to our concept of RDBMS.</p>
+            <h3>Creating a table storage</h3>
+            <h4>Step 1:</h4>
+            <p>Navigate to ~\Home\All services\Storage accounts\admin storage account. Choose from ‘Tables’.</p>
+            <h4>Step 2:</h4>
+            <p>Create a new table &#8594; give a table name(avoid using ‘_’ or special characters). Press OK to to continue.</p>
+            <p>This would result in creating your table. See the adjoining URL, implying that it exists as an endpoint API.</p>
+            <div class="single-article-img"><img src="images/t2.png" alt="Data Integration Strategy"/></div>
+            <h4>Step3:</h4>
+            <h4>Shared access signature (SAS):</h4>
+            <p>A shared access signature is an easy way common palette of data access for various modes of data storages: Blob, Queues, tables or containers.</p>
+            <p>Navigate to left hand pane &#8594; Shared access signature &#8594; Generate SAS and Connection string button. Tick on ‘Table’ &#8594; to create Keys for Table. Also click on the necessary allowed permissions:</p>
+            <div class="single-article-img"><img src="images/t3.png" alt="Data Integration Strategy"/></div>
+            <p>This will generate the following access key/connection strings:</p>
+            <div class="single-article-img"><img src="images/t4.png" alt="Data Integration Strategy"/></div>
+            <h3>Querying your table from Postman:</h3>
+            <p>Copy the ‘Table service SAS URL’ &#8594; Open postman &#8594; paste it in the browser &#8594; amend to include the table name you have created between ? and the last ‘\’ &#8594; do a ‘GET’ &#8594; Send</p>
+            <p>It will result in the records of the table as an XML’s key value pair dataset:</p>
+            <div class="single-article-img"><img src="images/t5.png" alt="Data Integration Strategy"/></div>
+            <p>Note: how the name of the table has been given at the end of the SAS key.</p>
+            <h4>Viewing from Azure browser</h4>
+            <p>You can download Azure browser from:</p>
+            <p><a href="https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x4009" target="_blank">https://go.microsoft.com/fwlink/?LinkId=708343&clcid=0x4009</a></p>
+            <p>You can install the storage explorer. It’s an ultimate tool to upload, download, maintain and query your storage contents – just like the older days of SSMS.</p>
+            <p>Browse down to &#8594; on the left hand pane Subscription name &#8594; Storage accounts &#8594; created table:</p>
+            <div class="single-article-img"><img src="images/t6.png" alt="Data Integration Strategy"/></div>
+            <p>You can query quite easily using query button from above:</p>
+            <div class="single-article-img"><img src="images/t7.png" alt="Data Integration Strategy"/></div>
+            <h3>Using logic apps: integration</h3>
+            <p>Logic apps could be used successfully as a messenger exposing your Table Services to expose, interpret/Parse and consume data. You can expose your table as a service and then write a trigger to be fired when the data comes to your table as a HTTP request.</p>
+            <p>Steps:</p>
+            <ul class="listing">
+                <li><p>a.   Figure out an HTTP request with the following JSON payload as its sample payload:</p>
+<xmp>
+{
+    “PartitionKey”: “RecId”
+    “RowKey”: 122121212121,
+    “Acqmethod”: “Test1”,
+    “Description”: “Test1 desc”
+}
+</xmp>
+                </li>
+                <li><p>b.   You can optionally choose a ‘compose’ action from above result.</p></li>
+                <li><p>c.   Add an action as ‘Insert entity’ by choosing from ‘Table storage’ connecter.</p></li>
+                <li><p>d.   Choose from step-b, choose from the Table that you have created (evidently it relates the set of tables available from the same azure subscription.</p></li>
+                <li><p>e.   Add a ‘Get entity’ action &#8594; it acts like an query, select the table you created and ‘PartitionKey’ and ‘RowKey’ values from the payload defined on Step-a.</p>
+                    <p>So as a result the code for the logic app looks like:</p>
+<xmp>
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Compose": {
+                "inputs": "@triggerOutputs()['queries']",
+                "runAfter": {}
+                ,
+                "type": "Compose"
+            }
+            ,
+            "Get_entity": {
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['azuretables']['connectionId']"
+                        }
+                    }
+                    ,
+                    "method": "get",
+                    "path": "/Tables/@{encodeURIComponent('_Table_Name_')}/entities(PartitionKey='@{encodeURIComponent(triggerBody()?['PartitionKey'])}',RowKey='@{encodeURIComponent(triggerBody()?['RowKey'])}')"
+                }
+                ,
+                "runAfter": {
+                    "Insert_Entity": [ "Succeeded"]
+                }
+                ,
+                "type": "ApiConnection"
+            }
+            ,
+            "Insert_Entity": {
+                "inputs": {
+                    "body": "@outputs('Compose')",
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['azuretables']['connectionId']"
+                        }
+                    }
+                    ,
+                    "method": "post",
+                    "path": "/Tables/@{encodeURIComponent('_Table_Name_')}/entities"
+                }
+                ,
+                "runAfter": {
+                    "Compose": [ "Succeeded"]
+                }
+                ,
+                "type": "ApiConnection"
+            }
+            ,
+            "Post_a_message_(V3)": {
+                "inputs": {
+                    "body": {
+                        "body": {
+                            "content": "<p>@{outputs('Compose')}</p>",
+                            "contentType": "html"
+                        }
+                    }
+                    ,
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['teams']['connectionId']"
+                        }
+                    }
+                    ,
+                    "method": "post",
+                    "path": "/v3/beta/teams/@{encodeURIComponent('*****')}/channels/@{encodeURIComponent('***@thread.skype')}/messages"
+                }
+                ,
+                "runAfter": {
+                    "Get_entity": [ "Succeeded"]
+                }
+                ,
+                "type": "ApiConnection"
+            }
+        }
+        ,
+        "contentVersion": "1.0.0.0",
+        "outputs": {}
+        ,
+        "parameters": {
+            "$connections": {
+                "defaultValue": {}
+                ,
+                "type": "Object"
+            }
+        }
+        ,
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "AcqMethod": {
+                                "type": "string"
+                            }
+                            ,
+                            "Description": {
+                                "type": "string"
+                            }
+                            ,
+                            "PartitionKey": {
+                                "type": "string"
+                            }
+                            ,
+                            "RowKey": {
+                                "type": "string"
+                            }
+                        }
+                        ,
+                        "type": "object"
+                    }
+                }
+                ,
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    }
+    ,
+    "parameters": {
+        "$connections": {
+            "value": {
+                "azuretables": {
+                    "connectionId": "/subscriptions/****/resourceGroups/****/providers/Microsoft.Web/connections/azuretables", "connectionName": "azuretables", "id": "/subscriptions/*****/providers/Microsoft.Web/locations/westus/managedApis/azuretables"
+                }
+                ,
+                "teams": {
+                    "connectionId": "/subscriptions/****/resourceGroups/****/providers/Microsoft.Web/connections/teams-1", "connectionName": "teams-1", "id": "/subscriptions/****/providers/Microsoft.Web/locations/westus/managedApis/teams"
+                }
+            }
+        }
+    }
+}
+</xmp>                    
+                </li>
+            </ul>
+            <p>The logic app gives the following outcome, when fired from Postman:</p>
+            <div class="single-article-img"><img src="images/t8.png" alt="Data Integration Strategy"/></div>
+            <h3>Conclusion</h3>
+            <p>Over expertise of <a href="https://www.nexsoftsys.com/technologies/dynamics365-finance-and-operations.html" target="_blank">dynamics 365 for finance and operations</a> team share this document related on Table As A Service: Create Data Integration Strategy. This team owns the knack help to grow your business in the best possible manner.</p>
+            <!-- # -->
+        </div>
+    
+
+</div>
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+<div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+
+</html>

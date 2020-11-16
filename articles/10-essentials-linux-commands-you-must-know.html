@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top 10 Useful Linux commands every Linux User must learn</title>
+    <meta name="description" content="Here, top 10 essential Linux command every system admin must aware of to be successful following software like RedHat, Ubuntu, and Linux OS." />
+    <meta name="keywords" content="Linux command, OS, RedHat, Ubuntu, open-source" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/10-essentials-linux-commands-you-must-know.html" />
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Top 10 Useful Linux commands every Linux User must learn" />
+    <meta property="og:description" content="Here, top 10 essential Linux command every system admin must aware of to be successful following software like RedHat, Ubuntu, and Linux OS." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/10-essentials-linux-commands-you-must-know.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/10-Essentials-linux-Commands.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/10-Essentials-linux-Commands.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Here, top 10 essential Linux command every system admin must aware of to be successful following software like RedHat, Ubuntu, and Linux OS." />
+    <meta name="twitter:title" content="Top 10 Useful Linux commands every Linux User must learn" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/10-Essentials-linux-Commands.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email">&#8594;</i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Linux essentials: 10 commands you must know</h1>
+        </div>
+    </div>
+    <!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100">
+            <div class="single-content-block">
+                <div class="single-article-img"><img src="images/10-Essentials-linux-Commands.jpg" alt="Linux essentials" /></div>
+                <p>Linux is an operating system kernel which was released on 17th September 1991 by Linus Torvalds who initially worked on it for his college thesis and later released it as an open-source under the Free Software Foundation.</p>
+                <p>We can see these days that there are numerous distributions of Linux such as Debian, Fedora, Ubuntu and many more. Red Hat Enterprise is one of the widely used commercial operating systems in which we are going to work on implementing several commands.</p>
+                <p>Here we are going to learn 10 most essential commands in Linux for personal as well as commercial use.</p>
+                <p>Software: - Virtual Box, Linux OS (RedHat, Ubuntu)</p>
+                <h3>1)  Screen</h3>
+                <p>This is perhaps the most versatile command that can be used by developers to launch and use several shell sessions from a single ssh login. The working is as follows it follows two processes detach and reattach. Detach is you have started some task in that particular session then you need not have it processing on your screen, just Detach it and it will keep running in the background. Once you want to check the progress just reattach the session and you will find the progressed task. This helps in managing several tasks simultaneously for an instance we can put a file to unzip using screen command and start working on other tasks instead of waiting for it to finish to continue with other work.</p>
+                <ul class="listing">
+                    <li>
+                        <p>1) Yum install screen (REDHAT)</p>
+                        <p>Sudo apt install screen (UBUNTU)</p>
+                        <div class="single-article-img"><img src="images/linux-command-img1.jpg" alt="Linux essentials" /></div>
+                    </li>
+                    <li>
+                        <p>2) screen -S file &#8594; Give name to the screen within the window</p>
+                        <div class="single-article-img"><img src="images/linux-command-img2.jpg" alt="Linux essentials" /></div>
+                    </li>
+                    <li>
+                        <p>3) Screen -ls &#8594; we can monitor the screens of both the categories here as you can see in the screenshot.</p>
+                        <div class="single-article-img"><img src="images/linux-command-img3.jpg" alt="Linux essentials" /></div>
+                    </li>
+                    <li>
+                        <p>4) screen -d 1111 &#8594; Detaches screen with 1111 id</p>
+                        <div class="single-article-img"><img src="images/linux-command-img4.jpg" alt="Linux essentials" /></div>
+                    </li>
+                    <li>
+                        <p>5) screen -r 1111 &#8594; Reattaches screen with 1111 id</p>
+                        <div class="single-article-img"><img src="images/linux-command-img5.jpg" alt="Linux essentials" /></div>
+                    </li>
+                </ul>
+                <h3>2) Top</h3>
+                <p>The top command gives real-time information about the CPU processes and the memory being used. It is a continuous task and press q to exit the command.</p>
+                <p><strong>Screenshot:</strong></p>
+                <div class="single-article-img"><img src="images/linux-command-img6.jpg" alt="Linux essentials" /></div>
+                <h3>3)  Kill</h3>
+                <p>The kill command is used to abruptly kill a process that might lead to data corruption or data loss. The syntax to kill command is:</p>
+<xmp>
+kill -15 <PID> (Process ID) 
+kill -9 <PID> (Process ID) 
+</xmp>
+                <p>-9 &#8594; The process is killed instantly and it does not take into reference whether any subprocess associated with it is currently running in background.</p>
+                <div class="single-article-img"><img src="images/linux-command-img7.jpg" alt="Linux essentials" /></div>
+                <p>-15 &#8594; The process is killed once all the subprocesses associated with it are completed.</p>
+                <div class="single-article-img"><img src="images/linux-command-img8.jpg" alt="Linux essentials" /></div>
+                <p>kill all -> It is used to terminate all processes of that particular task for the user. Eg: - chrome instance is running so killall will kill all its instances.</p>
+                <div class="single-article-img"><img src="images/linux-command-img9.jpg" alt="Linux essentials" /></div>
+                <h3>4) Grep</h3>
+                <p>It is a search utility that is used to search or find a particular pattern or a file. It is difficult to check for a pattern scrolling through several lines manually. This command creates it a lot smoother.</p>
+                <div class="single-article-img"><img src="images/linux-command-img10.jpg" alt="Linux essentials" /></div>
+                <p>It works well with piping also i.e. output of one command can be used as an input for other commands.</p>
+                <div class="single-article-img"><img src="images/linux-command-img11.jpg" alt="Linux essentials" /></div>
+                <h3>5) Chmod</h3>
+                <p>It sets permissions for a particular file of a folder to be accessed by a particular user or root. A flag is associated which defines its accessibility for read and write operations.</p>
+                <ul class="listing">
+                    <li><strong>0:</strong> No permission</li>
+                    <li><strong>1:</strong> To execute</li>
+                    <li><strong>2:</strong> To write</li>
+                    <li><strong>3:</strong> To write and execute</li>
+                    <li><strong>4:</strong> To read</li>
+                    <li><strong>5:</strong> To read and execute</li>
+                    <li><strong>6:</strong> To read and write</li>
+                    <li><strong>7:</strong> To read, write and execute.</li>
+                </ul>
+                <div class="single-article-img"><img src="images/linux-command-img12.jpg" alt="Linux essentials" /></div>
+                <p>Example: To set permission for a file to be readable, writable and executable for owner 6 will be used and to make it writable for a group we will use 6. And executable for others 7 will be used. So our syntax will be:</p>
+                <p><strong>Command: chmod 765 a2.txt</strong></p>
+                <div class="single-article-img"><img src="images/linux-command-img13.jpg" alt="Linux essentials" /></div>
+                <div class="single-article-img"><img src="images/linux-command-img14.jpg" alt="Linux essentials" /></div>
+                <h3>6) Lsblk</h3>
+                <p>The lsblk a widely used command which gives us a tree structure of the block devices of our system. It shows the partitions within the storage system along with size, type and mount point. It is installed as part of the util-Linux package.</p>
+                <div class="single-article-img"><img src="images/linux-command-img15.jpg" alt="Linux essentials" /></div>
+                <h3>7) Df</h3>
+                <p>The df command is one of the most dominant Linux terminal commands that example element knowledge about the disk space on your filesystem.</p>
+                <p>Real-Time monitoring of disk-management is done using this command which shows detailed info about the mount point, size-available, size-used and no of blocks.</p>
+                <div class="single-article-img"><img src="images/linux-command-img16.jpg" alt="Linux essentials" /></div>
+                <h3>8) Touch</h3>
+                <p>Touch is a very simple command to create a blank validated file that can be written in the future according to the user’s requirement. It’s also the go-to command for changing the timestamps of that particular file.</p>
+                <div class="single-article-img"><img src="images/linux-command-img17.jpg" alt="Linux essentials" /></div>
+                <h3>9) Demicode</h3>
+                <p>Demidecode is an effective command which arranges material about hardware of the system. It will list a lot of detail about CPU, Memory, Mainboard, Devices, and Network, etc. by default without providing any option.</p>
+                <div class="single-article-img"><img src="images/linux-command-img18.jpg" alt="Linux essentials" /></div>
+                <h3>10) Comm</h3>
+                <p>This is used mainly by firms and developers to manage huge amounts of data to check and reduce redundancy. It basically compares two sorted files and shows the output in 3 different columns where in the first column: - contents present distinctly in the first file, second column: - contents present distinctly in the second file, third column: - content present in both the files.</p>
+                <p><a href="https://www.nexsoftsys.com/technologies/python-development-services.html" target="_blank">Learning python development</a> provide us to access the Linux command and to create the use of OOP (Object Oriented Programming) concepts.</p>
+                <p>If the 2 files are not sorted then use the sort command to sort the files using the below given syntax.</p>
+<xmp>
+Syntax to sort a file: - sort [filename]
+Syntax for comm: - comm < (sort file1.txt) < (sort file2.txt)
+To show the output of a particular column use the following syntax: 
+Syntax: - comm -12 < (sort file1.txt) < (sort file2.txt) 
+</xmp>
+                <p><strong>Explanation: </strong>Column 1, 2 will be eliminated and only the third column will be outputted which has the contents prevailing in both the files.</p>
+                <p><strong>TO SORT</strong></p>
+                <div class="single-article-img"><img src="images/linux-command-img19.jpg" alt="Linux essentials" /></div>
+                <p><strong>Comm Command:</strong></p>
+                <div class="single-article-img"><img src="images/linux-command-img20.jpg" alt="Linux essentials" /></div>
+                <p><strong>Comm Command with options:</strong></p>
+                <div class="single-article-img"><img src="images/linux-command-img21.jpg" alt="Linux essentials" /></div>
+                <p><a href="https://www.nexsoftsys.com/hire/python-developers.html" target="_blank">This blog will also help Python Developers</a></p>
+                <!-- # -->
+                </ul>
+            </div>
+        </div>
+        <div class="Clear">&nbsp;</div>
+    </div>
+    <!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer /- -->
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>   
+</body>
+</html>

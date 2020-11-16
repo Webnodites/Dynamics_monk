@@ -1,0 +1,1352 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introducing GraphQL with Spring Boot Starter</title>
+<meta name="description" content="The connection between Spring boot starter for GraphQL java implementation Java tool libraries create it extensively simple to add this operations to any latest apps or previous Spring Boot applications." />
+<meta name="keywords" content="GraphQL, Spring Boot, RESTful API, maven project, Facebook" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/graphql-with-spring-boot.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Introducing GraphQL with Spring Boot Starter" />
+<meta property="og:description" content="The connection between Spring boot starter for GraphQL java implementation Java tool libraries create it extensively simple to add this operations to any latest apps or previous Spring Boot applications." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/graphql-with-spring-boot.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/images/springboot-1.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/springboot-1.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The connection between Spring boot starter for GraphQL java implementation Java tool libraries create it extensively simple to add this operations to any latest apps or previous Spring Boot applications." />
+<meta name="twitter:title" content="Introducing GraphQL with Spring Boot Starter" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/images/springboot-1.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+
+<body>
+	<!-- Header Section -->
+	<div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+		<div class="container-fluid">
+			<div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+				<div class="container">	
+					<nav class="menu-navigation">
+						<div class="logo-block">
+							<a class="navbar-brand" href="/">
+								<img src="../images/logo.png" alt="logo"/>
+							</a>
+						</div>
+						<a class="menuswitch" href="#">
+							<span class="menuline bar1"></span>
+							<span class="menuline bar2"></span>
+							<span class="menuline bar3"></span>
+						</a>
+						<div class="menu-collapse">
+							<ul class="navigation-menu">
+								<li><a href="/">Home</a></li>
+								<li><a href="../company.html">About Us</a></li>
+								<li class="dropdown">
+									<i class="ddl-switch"></i>
+									<a href="#">Services</a>
+									<ul class="dropdown-menu">
+										<div class="dropdown-menubox">
+											<li><a href="../services/application-development.html">Application Development</a></li>
+											<li><a href="#">Digital Transformation</a></li>
+											<li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+											<li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+											<li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/big-data-services.html">Big Data</a></li>
+											<li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+											<li><a href="#">Block Chain</a></li>
+											<li><a href="../services/devops-consulting.html">DevOps</a></li>
+											<li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+											<li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+											<li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+											<li><a href="#">Business Intelligence</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+											<li><a href="#">Data Integration</a></li>
+											<li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+											<li><a href="#">Dashboards</a></li>
+										</div>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<i class="ddl-switch"></i>
+									<a href="#">Technologies</a>
+									<ul class="dropdown-menu two_col">
+										<div class="dropdown-menubox">
+											<li><a href="../technologies/java-application-development.html">Java</a></li>
+											<li><a href="../technologies/python-development-services.html">Python</a></li>
+											<li><a href="../technologies/scala-development.html">Scala</a></li>
+											<li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+										</div>
+										<div class="dropdown-menubox">
+											<li><a href="../technologies/android-app-development.html">Android</a></li>
+											<li><a href="../technologies/ios-application-development.html">iOS</a></li>
+											<li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+										</div>
+										<div class="dropdown-menubox microsoft_nested">
+											<li class="full_width"><strong>Microsoft</strong></li>
+											<li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+											<li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+											<li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+											<li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+											<li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+											<li><a href="#">Power BI</a></li>
+										</div>
+									</ul>
+								</li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header><!-- Header Section /- -->
+    
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+        <div class="Inner-Banner">
+    	<div class="Page-Size">
+            	<h1>GRAPHQL WITH SPRING BOOT</h1>
+            </div>
+        </div><!--Web-Banner-->
+    
+    <div class="Page-Size">
+        <div class="Text Width-100">
+			<h3>1. Introduction</h3>
+			<p>GraphQL is a new concept devised by Facebook to design Web APIs. It is billed to be an alternative to widely used REST APIs.</p>
+			<p>Following are the major highlights of graphQL :</p>
+		<ul class="listing">
+			<li>1.	Home Page :<a href="https://graphql.org/" target="_blank"> https://graphql.org/</a></li>
+			<li>2.	Github Repo : <a href="https://github.com/facebook/graphql" target="_blank">https://github.com/facebook/graphql</a></li>
+			<li>3.	Predictable results : Send a GraphQL query to your API and get exactly what you need, nothing more and nothing less. GraphQL queries always return predictable results. </li>
+			<li>4.	Unlike REST (where we have a end points per resource), application using graphQL exposes a single endpoint. Since GraphQL APIs are organized in terms of types and fields and not endpoints, it provides far more flexibility than traditional REST API. </li>
+			<li>5.	GraphQL queries handle not just the attribute of one source but also simply follow source between them. GraphQL enables us to fetch data from nested data set in a single request (Eg: Get All Posts + latest comments associated with each post). This is achieved in REST, by calling multiple endpoints (1 endpoint to fetch posts + 1 endpoint to fetch comments from each post. This leaves us with hazardous n+1 fetching problem).</li>
+		</ul>
+		<p>Before we dive further into GraphQL, let's discuss REST and the problems with it which GraphQL attempts to solve.</p>
+		<p><b>1.1 RESTful API</b></p>
+		<ul class="listing">
+			<li>The Representational State Transfer (REST) architecture is the most popular way to expose server data over web. </li>
+			<li>In the RESTful architectural style, servers only offer resources. Resources are conceptual things about which clients and servers communicate (Eg User, ShoppingItem, Reviews, ShoppingCart are common resources in a typical shopping portal application). Each resource is identified by a URL.</li>
+			<li>REST uses standard HTTP verbs are used to perform actions on resources.
+				<ul class="list">
+					<li>1.	GET - retrieve a resource</li>
+					<li>2.	PUT - update a resource</li>
+					<li>3.	POST - create a new resource </li>
+					<li>4.	DELETE - remove a resource</li>
+				</ul>
+			<li>In RestFul API, resources can be represented in number of formats. Popular formats being Json, XML, RSS.</li>
+		</ul>
+		<p><b>1.2 Problems with Restful API:</b></p>
+		<ul class="listing">
+			<li><b>Under and Over Fetching data :</b> In RESTful API, client has no control on the amount of data server sends for a resource, it can only ask for the resource to server.</li>
+			<li>Over Fetching means the client is retrieving data that is actually not needed at the moment when it’s being fetched. (Eg : while fetching User details, we might not want his address, but with REST we have no control on it)</li>
+			<li><b>Under Fetching</b> is the opposite of overfetching and means that not enough data is included in an API response. (Eg : Get All Posts + latest comments associated with each post). This is achieved in REST, by calling multiple endpoints (1 endpoint to fetch posts + 1 endpoint to fetch comments from each post. This leaves us with hazardous n+1 fetching problem)</li>
+		</ul>
+		<p><b>1.3 GraphQL Server</b></p>
+		
+		<ul class="listing">
+			<li>GraphQL solves this issue, as control rests with API client as what data it actually needs from server. It asks for specific fields and server happily obliges.</li>
+			<li>At the heart of any GraphQL implementation is graphQL schema, which is typically  description of types of objects, relationships between them and further operations permitted on them (queries and mutations).</li>
+		</ul>
+<xmp>
+type Human {
+id: String
+name: String
+homePlanet: String
+}
+</xmp>
+<ul class="listing">
+	<li>Queries are commonly sent over HTTP to a specific server endpoint (unlike a REST architecture, where there are various endpoints for different solutions).</li>
+	<li>Type `Query` is used to expose the query operations on our schema</li>
+</ul>
+<xmp>
+type Query {
+	human(id: String!): Human
+}
+</xmp>
+<xmp>
+The query sent to graphQL server is
+POST /graphql?query={ human(id: "1") {id, name } }
+This will return Human type with id=1.
+Of these only attributes returned are id and name
+</xmp>
+		<ul class="listing">
+			<li>Type ‘Mutation’ is typically used to modify the server side resources.</li>
+		</ul>
+<xmp>
+type Mutation {
+addHuman(name: String!) : Human!
+}
+</xmp>
+	<xmp>
+Similar to Query we can even define what fields we need from the return type of mutation
+
+POST /graphql?mutation={ addHuman(name: "xyz") {id, name } }
+
+This will add a human resource as well as return it.
+Of these only attributes returned are id and name
+</xmp>	
+
+		<h3>2. GraphQL Server Application :</h3>
+		<p>Lets try to build a simple API using Spring Boot and GraphQL</p>
+		<ul class="listing">
+			<li>1.	In our application the core entities are Article and Feedback. An article is similar to a user post and feedback are the replies/comments on it. Thus an article has many feedbacks.</li>
+			<li>2.	Basic operations are get articles, feedbacks for an article, create article and create a feedback.</li>
+			<li>3.	We are using MongoDb as the persistence layer for our application.</li>
+			<li>4.	We will be using Spring boot starter for graphQL java implementation.</li>		
+		</ul>	
+		<p><b>2.1 Application HLD</b></p>		
+		<div class="single-article-img"><img src="../images/springboot-1.jpg" alt="spring"/></div>
+		<p><b>2.2 Project Structure</b></p>
+		<p>We will be creating a spring-boot maven project.</p>
+		<p>The project layout is as follows :</p>
+		<xmp>
+└───maven-project
+    ├───pom.xml
+    └───src
+        ├───main
+        │   ├───java (java source files)
+        │   ├───resources (properties files)
+		</xmp>
+		<p>The project structure screenshot is as follows :</p>
+		<div class="single-article-img"><img src="../images/springboot-2.jpg" alt="spring"/></div>
+		
+		<p><b>2.3 Application Code</b></p>
+		<p>2.3.1 Maven Dependencies :</p>
+		<p>At the very beginning our project has only pom.xml, with following content:</p>
+<xmp>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.hemant.graphql</groupId>
+	<artifactId>spring-boot-graphql</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-graphql</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.1.RELEASE</version>
+		<relativePath /><!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-spring-boot-starter</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-tools</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+</xmp>	
+			<p><b>Explanation :</b></p>
+			<ul class="listing">
+			  <li><strong>graphql-spring-boot-starter</strong> - autoconfigure a GraphQL Servlet at <strong>/graphql</strong></li>
+			  <li><strong>graphql-java-tools</strong> - to parse GraphQL schemas</li>
+			  <li><strong>graphiql-spring-boot-starter</strong> - we can use GraphiQL, an Electron app that you can use to test your GraphQL endpoint (<strong>/graphiql</strong>)</li>
+			  <li><strong>spring-boot-starter-web</strong> - for enabling web MVC nature of spring boot app</li>
+			  <li><strong>spring-boot-starter-data-mongodb</strong> - for interacting with MongoDB which is our persistence layer</li>
+			</ul>
+<p><b>2.3.2 Model classes :</b></p>
+<p>As explained earlier, we have 2 model classes : Article and Feedback. An article can have multiple feedbacks (thus 1: many) relationship between them.</p>
+
+<xmp>
+packagecom.hemant.graphql.model;
+
+importjava.util.Date;
+
+publicclassArticle {
+
+    private String id;
+    private String name;
+    private String createdByUserId;
+    private Date createdOn;
+    private Date lastUpdatedOn;
+
+    public String getId() {
+        return id;
+    }
+
+    publicvoidsetId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    publicvoidsetName(String name) {
+        this.name = name;
+    }
+
+    public String getCreatedByUserId() {
+        returncreatedByUserId;
+    }
+
+    publicvoidsetCreatedByUserId(String createdByUserId) {
+        this.createdByUserId = createdByUserId;
+    }
+
+    public Date getCreatedOn() {
+        returncreatedOn;
+    }
+
+    publicvoidsetCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public Date getLastUpdatedOn() {
+        returnlastUpdatedOn;
+    }
+
+    publicvoidsetLastUpdatedOn(Date lastUpdatedOn) {
+        this.lastUpdatedOn = lastUpdatedOn;
+    }
+
+    @Override
+    publicinthashCode() {
+        finalint prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    publicbooleanequals(Object obj) {
+        if (this == obj)
+            returntrue;
+        if (obj == null)
+            returnfalse;
+        if (getClass() != obj.getClass())
+            returnfalse;
+        Article other = (Article) obj;
+        if (id == null) {
+            if (other.id != null)
+                returnfalse;
+        }
+        elseif(!id.equals(other.id))
+        returnfalse;
+        returntrue;
+    }
+
+    @Override
+    public String toString() {
+        return "Article [id=" + id + ", name=" + name + ", createdByUserId=" + createdByUserId + "]";
+    }
+}
+</xmp>	
+		
+<xmp>
+packagecom.hemant.graphql.model;
+
+importjava.util.Date;
+
+publicclassFeedback {
+
+	private String id;
+	private String feedbackText;
+	private String articleId;
+	private String createdByUserId;
+	private Date createdOn;
+	private Date lastUpdatedOn;
+
+	public String getId() {
+		return id;
+	}
+
+	publicvoidsetId(String id) {
+		this.id = id;
+	}
+
+	public String getFeedbackText() {
+		returnfeedbackText;
+	}
+
+	publicvoidsetFeedbackText(String feedbackText) {
+		this.feedbackText = feedbackText;
+	}
+
+	public String getArticleId() {
+		returnarticleId;
+	}
+
+	publicvoidsetArticleId(String articleId) {
+		this.articleId = articleId;
+	}
+
+	public String getCreatedByUserId() {
+		returncreatedByUserId;
+	}
+
+	publicvoidsetCreatedByUserId(String createdByUserId) {
+		this.createdByUserId = createdByUserId;
+	}
+
+	public Date getCreatedOn() {
+		returncreatedOn;
+	}
+
+	publicvoidsetCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public Date getLastUpdatedOn() {
+		returnlastUpdatedOn;
+	}
+
+	publicvoidsetLastUpdatedOn(Date lastUpdatedOn) {
+		this.lastUpdatedOn = lastUpdatedOn;
+	}
+
+	@Override
+	publicinthashCode() {
+		finalint prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	publicbooleanequals(Object obj) {
+		if (this == obj)
+			returntrue;
+		if (obj == null)
+			returnfalse;
+		if (getClass() != obj.getClass())
+			returnfalse;
+		Feedback other = (Feedback) obj;
+		if (id == null) {
+			if (other.id != null)
+				returnfalse;
+		} elseif (!id.equals(other.id))
+			returnfalse;
+		returntrue;
+	}
+
+	@Override
+	public String toString() {
+		return"Feedback [id=" + id + ", feedbackText=" + feedbackText + ", articleId=" + articleId
+				+ ", createdByUserId=" + createdByUserId + "]";
+	}
+
+}
+
+</xmp>		
+	<p>In addition to it, we have also defined an enum for SortOrder.</p>
+<xmp>
+packagecom.hemant.graphql.model.pagination;
+
+publicenumSortOrder {
+	ASC, DESC;
+}
+		</xmp>	
+
+<p><b>2.3.3 GraphQL Schema :</b></p>
+<p>We have devised our graphQL schema complimenting our models.</p>
+<p>Also in schema we have defined the graphQL query and mutations.</p>
+<p>The schema is defined as article.graphqls file in <strong>src/main/resources</strong> folder.</p>	
+<xmp>
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+enumSortOrder {
+	ASC
+	DESC
+}
+
+type Article {
+   id: String
+   name: String
+createdByUserId: String
+createdOn: String
+lastUpdatedOn: String
+}
+
+type Feedback {
+    id: String
+feedbackText: String
+articleId: String
+createdByUserId: String
+createdOn: String
+lastUpdatedOn: String
+}
+
+type Query {
+	getAllArticles(pageNumber: Int!, pageSize : Int!, sortOrder: SortOrder!, sortBy: String!): [Article]
+	getFeedBacksForArticle(articleId: String!): [Feedback]
+}
+
+type Mutation {
+	createArticle(name: String!, createdByUserId: String!): Article
+	createNewFeedback(feedbackText: String!, articleId: String!, createdByUserId: String!): Feedback
+}
+		</xmp>
+
+<p><b>2.3.4 Application properties file :</b></p>
+<p>Spring boot gets its properties from default <strong>application.properties</strong> file in <strong>src/main/resources</strong> directory.</p>
+<xmp>
+spring.application.name=spring-boot-graphql
+server.port = 8080
+
+logging.pattern.console=%d{HH:mm:ss} %-5level %logger{10} - %msg%n
+logging.level.org.springframework=INFO
+
+#mongoDB
+app.mongodb.host=localhost
+app.mongodb.port=27017
+app.mongodb.database=graphql-demo
+app.mongodb.username=root
+app.mongodb.password=root
+app.mongodb.authdb=admin
+
+#GraphQL Properties
+graphql.servlet.mapping=/graphql
+graphql.servlet.enabled=true
+graphql.servlet.corsEnabled=false
+</xmp>
+		<p><b>2.3.5 QueryResolver class</b></p>
+		<p>For all the queries defined in <strong><em>`Query` type in article.graphqls  file</em></strong>, this class will provide its implementation.</p>
+<xmp>
+type Query {
+	getAllArticles(pageNumber: Int!, pageSize : Int!, sortOrder: SortOrder!, sortBy: String!): [Article]
+	getFeedBacksForArticle(articleId: String!): [Feedback]
+}
+</xmp>
+<xmp>
+packagecom.hemant.graphql.resolvers;
+
+importjava.util.List;
+
+importorg.springframework.beans.factory.annotation.Autowired;
+importorg.springframework.stereotype.Component;
+
+importcom.coxautodev.graphql.tools.GraphQLQueryResolver;
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.model.pagination.SortOrder;
+importcom.hemant.graphql.service.ArticleService;
+
+@Component
+publicclassQueryimplementsGraphQLQueryResolver {
+	
+	@Autowired
+	privateArticleServicearticleService;
+
+	public List<Article>getAllArticles(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy) {
+		returnarticleService.getAllArticles(pageNumber, pageSize, sortOrder, sortBy);
+	}
+	
+	public List<Feedback>getFeedBacksForArticle(String articleId) {
+		returnarticleService.getFeedbacksForArticle(articleId);
+	}
+}
+		</xmp>
+		<p><b>2.3.6 Mutation Resolver :</b></p>
+		<p>For all the mutations defined in <strong><em>`Mutation` type in  article.graphqls</em></strong> file, this class provides its implementation.</p>
+		<xmp>
+type Mutation {
+	createArticle(name: String!, createdByUserId: String!): Article
+	createNewFeedback(feedbackText: String!, articleId: String!, createdByUserId: String!): Feedback
+}
+		</xmp>
+		<xmp>
+packagecom.hemant.graphql.resolvers;
+
+importorg.springframework.beans.factory.annotation.Autowired;
+importorg.springframework.stereotype.Component;
+
+importcom.coxautodev.graphql.tools.GraphQLMutationResolver;
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.service.ArticleService;
+
+@Component
+publicclassMutationimplementsGraphQLMutationResolver {
+	
+	@Autowired
+	privateArticleServicearticleService;
+	
+	public Article createArticle(String name, String createdByUserId) {
+		returnarticleService.createArticle(name, createdByUserId);
+	}
+	
+	public Feedback createNewFeedback(String feedbackText, String articleId,StringcreatedByUserId) {
+		returnarticleService.createFeedback(feedbackText, articleId, createdByUserId);
+	}
+}
+</xmp>
+		<p><b>2.3.7 Service Layer</b></p>		
+		<p>This layer defines the business rules/logic.</p>
+<xmp>
+packagecom.hemant.graphql.service;
+
+importjava.util.List;
+
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.model.pagination.SortOrder;
+
+publicinterfaceArticleService {
+
+	List<Article>getAllArticles(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy);
+
+	Article createArticle(String name, String createdByUserId);
+
+	List<Feedback>getFeedbacksForArticle(String articleId);
+
+	Feedback createFeedback(String feedbackText, String articleId, String createdByUserId);
+
+}
+</xmp>
+<xmp>
+packagecom.hemant.graphql.service;
+
+importstatic org.apache.commons.lang3.StringUtils.isBlank;
+importstatic org.apache.commons.lang3.StringUtils.isNotBlank;
+
+importjava.util.ArrayList;
+importjava.util.Date;
+importjava.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+importorg.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+importorg.springframework.beans.factory.annotation.Autowired;
+importorg.springframework.stereotype.Service;
+importorg.springframework.util.CollectionUtils;
+
+importcom.hemant.graphql.dal.ArticleDAL;
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.model.pagination.SortOrder;
+
+@Service
+publicclassArticleServiceImplimplementsArticleService {
+	
+	@Autowired
+	privateArticleDALarticleDAL;
+
+	privatestaticfinal Logger LOG = LoggerFactory.getLogger(ArticleServiceImpl.class);
+
+	@Override
+	public List<Article>getAllArticles(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy) {
+		String validationErrors = validatePaginationParams(pageNumber, pageSize, sortOrder, sortBy);
+		if(isNotBlank(validationErrors)) {
+			thrownewIllegalArgumentException(validationErrors);
+		}
+		
+		returnarticleDAL.getAllArticles(pageNumber, pageSize, sortOrder, sortBy);
+	}
+	
+	@Override
+	public Article createArticle(String name, String createdByUserId) {
+		if(isBlank(name)) {
+			thrownewIllegalArgumentException("Article name cannot be blank");
+		}
+		
+		if(isBlank(createdByUserId)) {
+			thrownewIllegalArgumentException("CreatedByUserId cannot be blank");
+		}
+		
+		String id = newObjectId().toString();
+		Article art = new Article();
+		art.setId(id);
+		art.setCreatedByUserId(createdByUserId);
+		art.setName(name);
+		art.setCreatedOn(new Date());
+		art.setLastUpdatedOn(new Date());
+		
+		articleDAL.saveArticle(art);
+		LOG.info("Article created successfully :{}", art);
+		return art;
+		
+	}
+
+	@Override
+	public List<Feedback>getFeedbacksForArticle(String articleId) {
+		returnarticleDAL.getFeedbacksForArticle(articleId);
+	}
+	
+	@Override
+	public Feedback createFeedback(String feedbackText, String articleId, String createdByUserId) {
+		
+		if(isBlank(feedbackText)) {
+			thrownewIllegalArgumentException("FeedbackText name cannot be blank");
+		}
+		
+		if(isBlank(createdByUserId)) {
+			thrownewIllegalArgumentException("CreatedByUserId cannot be blank");
+		}
+		
+		Article article = articleDAL.getArticleById(articleId);
+		if(null == article) {
+			LOG.error("No article exists for articleId :{}", articleId);
+			thrownewIllegalArgumentException("No article exists for articleId :" + articleId);
+		}
+		
+		Feedback feedback = new Feedback();
+		feedback.setArticleId(articleId);
+		feedback.setCreatedByUserId(createdByUserId);
+		feedback.setFeedbackText(feedbackText);
+		feedback.setCreatedOn(new Date());
+		feedback.setLastUpdatedOn(new Date());
+		
+		articleDAL.saveFeedback(feedback);
+		LOG.info("Feedback created as :{} for article :{}", feedback, article);
+		return feedback;
+	}
+	
+	public String validatePaginationParams(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy) {
+		List<String>validationErrors = new ArrayList<>();
+		if (pageNumber<0) {
+			LOG.error("Minimum PageNumber =0. PageNumber :{} must be greater than 0", pageNumber);
+			validationErrors.add("PageNumber must be greater than or equal to 0!");
+		}
+
+		if (pageSize<1) {
+			LOG.error("PageSize :{} must be greater than 0", pageSize);
+			validationErrors.add("PageSize must be greater than 0");
+		}
+
+		if (null == sortOrder) {
+			LOG.error("SortOrder :{} must be specified", sortOrder);
+			validationErrors.add("SortOrder must be specified");
+		}
+
+		if (StringUtils.isBlank(sortBy)) {
+			LOG.error("SortBy :{} must be specified", sortBy);
+			validationErrors.add("SortBy must be specified");
+		}
+		
+		if (CollectionUtils.isEmpty(validationErrors)) {
+			returnnull;
+		}
+		returnStringUtils.join(validationErrors, "/n");
+	}	
+}
+		</xmp>
+		<p><b>2.3.8 Data Access layer</b></p>		
+		<p>This layer defines the interaction with database ieMongoDB.</p>
+<xmp>
+packagecom.hemant.graphql.dal;
+
+importjava.util.List;
+
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.model.pagination.SortOrder;
+
+publicinterfaceArticleDAL {
+	
+	List<Article>getAllArticles(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy);
+
+	voidsaveArticle(Article art);
+
+	List<Feedback>getFeedbacksForArticle(String articleId);
+
+	Article getArticleById(String articleId);
+
+	voidsaveFeedback(Feedback feedback);
+
+}
+</xmp>
+<xmp>
+packagecom.hemant.graphql.dal;
+
+importjava.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+importorg.springframework.beans.factory.annotation.Autowired;
+importorg.springframework.data.domain.Sort;
+importorg.springframework.data.mongodb.core.MongoTemplate;
+importorg.springframework.data.mongodb.core.query.Criteria;
+importorg.springframework.data.mongodb.core.query.Query;
+importorg.springframework.stereotype.Repository;
+
+importcom.hemant.graphql.model.Article;
+importcom.hemant.graphql.model.Feedback;
+importcom.hemant.graphql.model.pagination.SortOrder;
+
+@Repository
+publicclassArticleDALImplimplementsArticleDAL {
+	
+	privatestaticfinal Logger LOG = LoggerFactory.getLogger(ArticleDALImpl.class);
+
+	@Autowired
+	privateMongoTemplate mongo;
+
+	@Override
+	public List<Article>getAllArticles(intpageNumber, intpageSize, SortOrdersortOrder, String sortBy) {
+		finalint limit = pageSize;
+		finalint offset = pageNumber * pageSize;
+		Query query = new Query();
+
+		query.skip(offset).limit(limit).with(new Sort(Sort.Direction.fromString(sortOrder.toString()), sortBy));
+		LOG.info("The pagination query is limit:{}, offset:{}, sort:{}", query.getLimit(), query.getSkip(),
+				query.getSortObject());
+		returnmongo.find(query, Article.class);
+	}
+
+	@Override
+	publicvoidsaveArticle(Article art) {
+		mongo.save(art);
+	}
+
+	@Override
+	public List<Feedback>getFeedbacksForArticle(String articleId) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("articleId").is(articleId));
+		returnmongo.find(query, Feedback.class);
+	}
+
+	@Override
+	public Article getArticleById(String articleId) {
+		returnmongo.findById(articleId, Article.class);
+	}
+
+	@Override
+	publicvoidsaveFeedback(Feedback fb) {
+		mongo.save(fb);
+	}
+
+}
+</xmp>
+		<p><b>2.3.9 Spring Boot Starter class:</b></p>
+		<p>The final piece of puzzle is main class for spring boot.</p>
+<xmp>
+packagecom.hemant.graphql;
+
+importorg.springframework.boot.SpringApplication;
+importorg.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+publicclassSpringBootGraphqlApp {
+
+	publicstaticvoidmain(String[] args) {
+		SpringApplication.run(SpringBootGraphqlApp.class, args);
+	}
+}
+</xmp>
+		<h3>3. Executing The Project</h3>
+		<p><b>3.1 Running the application</b></p>
+	<ul class="listing">
+		<li>Run the main application class (<strong>SpringBootGraphqlApp</strong><strong>.java</strong>)       as <b><a href="../technologies/java-web-development.html" target="_blank">Java web development</a></b> in IDE (Eclipse/IntelliJ) OR</li>
+		<li>If you want to run it from       terminal, then 
+			<ul class="list">
+					<li>a. Go to root directory, execute &ldquo;<strong>mvn clean install</strong>&rdquo;. This will create  the jar in /target child directory.</li>
+					<li> b. Execute the jar as &ldquo;<strong>java -jar  target/spring-boot-graphql-0.0.1-SNAPSHOT.jar</strong>&rdquo;</li>
+				</ul>
+		</li>
+		<li>3. Once the application is started, its  endpoints can be called.</li>
+		<li>4. Once application is started, you can go  to &ldquo; <span class="locallink"> http://localhost:8080/graphiql</span>&rdquo; in your browser. This will launch  graphiql - an electron application to test our graphQL endpoints. This comes  with content-assist, auto-complete for building quick building of queries and  mutations.</li>
+	</ul>
+	<div class="single-article-img"><img src="../images/springboot-3.jpg" alt="spring"/></div>
+	<h3>3.2 Sample User Flow</h3>
+	<p><b>3.2.1 Let’s start by creating a few Articles.</b></p>
+	<div class="single-article-img"><img src="../images/springboot-4.jpg" alt="spring"/></div>
+	<p>Here we have asked only <strong>id,  name, createdByUserId and createdOn attributes</strong>.</p>
+	<p><b>3.2.2 Now lets create 1 more article, now asking for only id, name</b></p>
+	<div class="single-article-img"><img src="../images/springboot-5.jpg" alt="spring"/></div>
+	<p><b>3.2.3 Lets list all the articles :</b></p>
+<xmp>
+query{
+getAllArticles(pageNumber:0, pageSize:5, sortOrder:ASC, sortBy: "name"){
+    id,
+    name,
+createdOn
+  }
+}
+</xmp>
+<xmp>
+The response is :
+
+{
+"data": {
+"getAllArticles": [
+      {
+"id": "5b2a4cbb7ae2648fbaa2ce9e",
+"name": "A1",
+"createdOn": "Wed Jun 20 18:16:51 IST 2018"
+      },
+      {
+"id": "5b2a4d417ae2648fbaa2ce9f",
+"name": "A2",
+"createdOn": "Wed Jun 20 18:19:05 IST 2018"
+      }
+    ]
+  }
+}
+</xmp>
+
+		<p>As predicted, we only got id, name and createdOn for each article fetched.</p>
+		<p><b>3.2.4 Lets create a feedback against an article :</b></p>
+<xmp>
+mutation {
+createNewFeedback(feedbackText: "fB1", articleId : "5b2a4cbb7ae2648fbaa2ce9e", createdByUserId:"1") {
+    id
+  }
+}
+</xmp>
+<xmp>
+Result is :
+
+{
+"data": {
+"createNewFeedback": {
+"id": "5b2a4e1d7ae2648fbaa2cea0"
+    }
+  }
+}
+</xmp>
+		
+	<p><b>3.2.5 List Feedbacks :</b></p>	
+		<p>After creating a few more feedbacks, lets list the feedbacks for an article</p>
+<xmp>
+query{
+getFeedBacksForArticle(articleId:"5b2a4cbb7ae2648fbaa2ce9e") {
+    id
+feedbackText
+  }
+}
+</xmp>
+<xmp>
+{
+"data": {
+"getFeedBacksForArticle": [
+      {
+"id": "5b2a4e1d7ae2648fbaa2cea0",
+"feedbackText": "fB1"
+      },
+      {
+"id": "5b2a4e577ae2648fbaa2cea1",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5a7ae2648fbaa2cea2",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5a7ae2648fbaa2cea3",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5a7ae2648fbaa2cea4",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5b7ae2648fbaa2cea5",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5b7ae2648fbaa2cea6",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5b7ae2648fbaa2cea7",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5b7ae2648fbaa2cea8",
+"feedbackText": "fB2"
+      },
+      {
+"id": "5b2a4e5b7ae2648fbaa2cea9",
+"feedbackText": "fB2"
+      }
+    ]
+  }
+}
+</xmp>
+		<h3>Conclusion</h3>
+		<ul class="listing">
+			<li>Thus we have tested the graphQL application and its end-points using graphIQL interface.</li>
+			<li>We have queried the graphQL schema, using query and verified that it returns only those attributes which client explicitly asks in API.</li>
+			<li>We also performed server changes, using mutations. Again we verified that it returns only those attributes which client explicitly asks in API.</li>
+			<li>This is quite a different API building experience than typical REST APIs.</li>
+		</ul>        
+		</div>
+    </div><!--Page-Size-->
+
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note"/></div>
+    
+	<div class="clients-section margin_top30">
+		<div class="section-header ourclients">
+			<h4>Some of our clients</h4>
+		</div>	
+		<div class="container">
+			<div class="clients-block owl-carousel owl-theme">
+				<div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+				<div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+			</div>
+		</div>	
+	</div>
+	<div class="teams-section">
+		<div class="container">
+			<div class="teams-title">
+				<img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+			</div>
+		</div>
+	</div>
+    
+	<!-- Footer -->
+	<footer class="footer-main">
+		<div class="container">
+			<div class="row">
+				<div class="footer-box">
+					<h3>Services</h3>
+					<div class="footer-innerbox-block">
+						<div class="footer-innerbox">
+							<ul class="listing">
+								<li><a href="../services/application-development.html">Application Development</a></li>
+								<li><a href="#">Digital Transformation</a></li>
+								<li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+								<li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+								<li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+								<li><a href="../services/big-data-services.html">Big Data</a></li>
+								<li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+								<li><a href="#">Block Chain</a></li>
+								<li><a href="../services/devops-consulting.html">DevOps</a></li>
+							</ul>
+						</div>
+						<div class="footer-innerbox">
+							<ul class="listing">
+								<li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+								<li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+								<li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+								<li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+								<li><a href="#">Business Intelligence</a></li>
+								<li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+								<li><a href="#">Data Integration</a></li>
+								<li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+								<li><a href="#">Dashboards</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-box">
+					<h3>Technologies</h3>
+					<div class="footer-innerbox w35">
+						<ul class="listing">
+							<li><a href="../technologies/java-application-development.html">Java</a></li>
+							<li><a href="../technologies/python-development-services.html">Python</a></li>
+							<li><a href="../technologies/scala-development.html">Scala</a></li>
+							<li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+							<li><a href="../technologies/android-app-development.html">Android</a></li>
+							<li><a href="../technologies/ios-application-development.html">iOS</a></li>
+							<li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+						</ul>
+					</div>
+					<div class="footer-innerbox w65">
+						<ul class="listing">
+							<li class="list-title"><strong>Microsoft</strong></li>
+							<li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+							<li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+							<li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+							<li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+							<li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+							<li><a href="#">Power BI</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="footer-box footer_sm">
+					<div class="footer-box-business">
+						<h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+						<div class="footer-socialbox">
+							<h3>Follow NEX</h3>
+							<div class="ft-social">
+								<a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								<a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								<a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+	</footer><!-- Footer /- -->
+	
+<script defer src="../js/jquery-1.12.4.min.js"></script>
+<script defer src="../js/lib.js"></script>
+<script defer src="js/functions.js"></script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Logging Creation of Each Job in ETL and Email Notification Failure</title>
+    <meta name="description" content="ETL job failed in most of the real-time production level in Pentaho due to the problem in Database or Network. Here we have shown email notification success/failure to client or vendors." />
+    <meta name="keywords" content="" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/pentaho-logging-creation-job-etl-email-notification-failure.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Logging Creation of Each Job in ETL and Email Notification Failure" />
+    <meta property="og:description" content="ETL job failed in most of the real-time production level in Pentaho due to the problem in Database or Network. Here we have shown email notification success/failure to client or vendors." />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/pentaho-logging-creation-job-etl-email-notification-failure.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/articles/images/Pentaho-Data-Integration.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/articles/images/Pentaho-Data-Integration.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="ETL job failed in most of the real-time production level in Pentaho due to the problem in Database or Network. Here we have shown email notification success/failure to client or vendors." />
+    <meta name="twitter:title" content="Logging Creation of Each Job in ETL and Email Notification Failure" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/articles/images/Pentaho-Data-Integration.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+        <!-- Social Links -->
+        <ul class="btnlist">
+            <li class="item skype">
+                <a href="skype:aegissoftware?call">
+                    <div class="sticky-box">
+                        <p><i class="fa fa-skype"></i></p>
+                        <p>Skype</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- # Social Links -->
+
+        <!-- Inquiry Form -->
+        <ul class="btnlist">
+            <li class="item inquiry">
+                <div id="inquiry_form" class="btn sticky-box">
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                    <p>Quick Inquiry</p>
+                </div>
+                <div class="info-box inq">
+                    <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                    <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                    <form>
+                        <div class="inquiry-box">
+                            <div class="form-group fullwidth">
+                                <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                            </div>
+                            <div class="form-group-block">
+                                <div class="form-group">
+                                    <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                    <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                </div>
+                                <div class="form-group Clear">
+                                    <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                </div>
+                                <div class="form-group Clear">
+                                    <span id="lblInfo"> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <!-- Inquiry Form /- -->
+        <!--Btns-->
+        <ul class="btnlist">
+            <li class="item case-studies">
+                <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                    <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                    <p>Case Studies</p>
+                </div>
+            </li>
+            <li class="item client-speaks">
+                <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                    <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                    <p>Client Speaks</p>
+                </div>
+            </li>
+        </ul>
+        <!--Btns-->
+    </div>
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Create logging for each Transformation/Jobs into ETL PDI and setup Email notification failure on each component level.</h1>
+        </div>
+    </div>
+    </div>
+    <!--Web-Banner-->
+    <div class="Page-Size">
+        <div class="Text Width-100 margh2">
+            <p>Most of real time production level Pentaho ETL job are of complex design which will result into run time failures. As if job is scheduled to run at predefined time slot it may gets failed due to Data, Network or Database related issues.</p>   
+            <p>So while monitoring job execution manually we need to keep close look at the log file, Which is tedious task. While monitoring these complex jobs it may gets error prone.</p>
+            <p>Solution to this problem is by sending an email notification which will provide information related to running status of a job and send email in case of failure occurs. Resulting into lesser response time and making job running again from failure point in short duration of time with greater accuracy.</p>
+            <p>Also,The convenient way to share reports is to set up an email server that can send reports to recipients. This feature works with the report scheduling feature to automate the process of emailing reports to your user community. Setting up an email server is not required. If you want to get started quickly or do not have information about your email server, skip this for now. You can always come back to it later.</p>
+            <p>Consider this kind of complex job, In this job it will be very difficult to find whether job is running or it gets failed.</p>
+            <div class="single-article-img"><img src="images/Pentaho-Data-Integration.jpg" alt="Pentaho Data Integration" /></div>
+            <p>In order to deal with such situation one option is that we can send an email upon failure or success along with log file attached to it.</p>
+            <p>So that it will be helpful for clients and vendor to identify and analyze the issues faced during scheduled run. Below is the example of configuring the email notification in <a href="https://www.nexsoftsys.com/technologies/pentaho-BI-Services.html" target="_blank">Pentaho Data Integration</a>.</p>
+            <p>For sending email notification, we have very usefull Mail component provided by PDI.</p>
+            <h2>Mail Component</h2>
+            <p>Mail job entry allow us to send a text or HTML email with optional file attachments.</p>
+            <p>It can be used to indicate both a job failure or success.</p>
+            <p>It will send email to client and vendors to inform them at the end of a successful/unsuccessful load along with log file supplied for their reference.</p>
+            <div class="single-article-img"><img src="images/SMTP-server.jpg" alt="SMTP server" /></div>
+            <p>As it needs to send an email, we need to provide SMTP server details.</p>
+            <p>You can attach files to your email messages such as error logs and regular logs. In addition, logs can be zipped into a single archive for convenience.</p>
+            <p>The important options here are- </p>
+            <p><strong>Destination addresses</strong> - Email addresses of receiver which will be receiving notifications related to job execution.</p>
+            <p><strong>Sender name</strong> - Name of sender which you want to appear on email.</p>
+            <p><strong>Sender Address</strong> - Email address through which email notifications will be sent, Typically set for SMTP.</p>
+            <h2>Server Tab</h2>
+            <div class="single-article-img"><img src="images/server-tab.jpg" alt="server tab" /></div>
+            <p><em>SMTP Server-</em> Specify the SMTP Server IP address.</p>
+            <p><em>Port-</em> The port on which the SMTP Server is running</p>
+            <h3>Email Message Tab</h3>
+            <div class="single-article-img"><img src="images/Email-Message-Tab.jpg" alt="Email Message Tab" /></div>
+            <p><em>Subject-</em> Subject of email notifications.</p>
+            <p><em>Comment-</em> Body of email notifications.</p>
+            <p>Another important tab is Attached Files-</p>
+            <p>Specify the details to send attachment with email notification.</p>
+            <div class="single-article-img"><img src="images/job-mail-details.jpg" alt="job mail details" /></div>
+            <p><em>Attach files to message?</em></p>
+            <p>Enable to attach a file to your email message</p>
+            <p><strong>Select file type</strong></p>
+            <p>The files to send are defined within the internal files result set. Every file in this list is marked with a file type and you can select what type of file you want to send (see also the tips at the end of this document):</p>
+            <ul class="listing">
+                <li>General</li>
+                <li>Log</li>
+                <li>Error line</li>
+                <li>Error</li>
+                <li>Warning</li>
+            </ul>
+            <p><em>Zip files to single archive?</em></p>
+            <p>Enable to have attachments archived in a zip file</p>
+            <p><em>Name of the zip archive</em></p>
+            <p>Define the filename of your zip archive</p>
+            <p>Here is an example of creating logging for each Transformation/Jobs into ETL PDI and setup Email notification failure on each component level.</p>            
+            <div class="single-article-img"><img src="images/ETL-PDI-and-Email.jpg" alt="ETL PDI and Email" /></div>
+            <p>Above is Main Automation job in which complete processing is done, and we need to log details for jobs and transformations inside this job. So we can create wrapper job which can be called as Master Automation Job which will have component for sending success and failure emails along with log files.</p>
+            <div class="single-article-img"><img src="images/Master-Automation-Job.jpg" alt="Master-Automation-Job" /></div>
+            <p>Here are the details snapshots of configuration of email notification. As the details specified in configurations are passed dynamically through Kettle Properties which is good practice.</p>
+            <div class="single-article-img"><img src="images/email-notification.jpg" alt="email notification" /></div>
+            <p>We can open kettle properties by pressing <strong><kbd>CTRL+ALT+P</kbd></strong></p>
+            <p>Specify the details which need to pass dynamically to Master Automation job.</p>
+            <p>Here variable name include name of variable which we have placed in ${variable_name} in Mail Component along with value of it.</p>
+            <div class="single-article-img"><img src="images/Mail-Component.jpg" alt="Mail Component" /></div>
+            <p>In order to to activate jobs and transformation level logging into log file, we need to check the checkbox indicating Specify LogFile.</p>
+            <p>Below are the steps we need to follow to enable job and transformation level logging.</p>
+            <p>1. Double Click on job for which we need log details to be populated into log file which we are sending to client and vendors.</p>
+            <div class="single-article-img"><img src="images/executing-job.jpg" alt="executing job" /></div>
+            <h2>Logging Settings tab</h2>
+            <p>By default, if you do not set logging, Pentaho Data Integration will take log entries that are being generated and create a log record inside the job. For example, suppose a job has three transformations to run and you have not set logging. The transformations will not output logging information to other files, locations, or special configuration. In this instance, the job executes and puts logging information into its master job log.</p>
+            <p>In most instances, it is acceptable for logging information to be available in the job log. For example, if you have load dimensions, you want logs for your load dimension runs to display in the job logs. If there are errors in the transformations, they will be displayed in the job logs. If, however, you want all your log information kept in one place, you must set up logging.</p>
+            <h3><em>Specify logfile?</em></h3>
+            <p>We need to check this checkbox to specify a separate logging file for the execution of this job.</p>
+            <h3><em>Append logfile?</em></h3>
+            <p>Enable to append to the logfile as opposed to creating a new one.</p>
+            <p>This will append the logs of different jobs and transformation enclosed in Main Automation job instead of creating new log file for each job and transformation</p>
+            <h3><em>Name of logfile</em></h3>
+            <p>The directory and base name of the log file; for example C:\logs</p>
+            <p>In our example we have set it to <strong>incremental_log.</strong></p>
+            <h3><em>Extension of logfile</em></h3>
+            <p>The file name extension; for example, log or txt by default it will be of .log extension.</p>
+            <h3><em>Loglevel</em></h3>
+            <p>This is most important dropdown that will help to write logs depending upon level of abstraction specified.</p>
+            <p>It can be Basic,Detail,Debug or Row level etc.</p>
+            <h3>Conclusion:</h3>
+            <p>Here, we have created automated way of sending success/failure email notification to client and vendors by specifying Mail configuration details into Kettle Properties file which will send email as soon as running job gets failed due to any data,connection or database issue without wasting time.</p>
+            <h3>Read More:</h3>
+            <ul class="listing">
+                <li><a href="https://www.nexsoftsys.com/articles/is-pentaho-the-key-factor-driving-agility-in-the-businesses.html">Is Pentaho the key factor driving agility in the businesses?</a></li>
+                <li><a href="https://www.nexsoftsys.com/articles/pentaho-bi-and-healthcare-institutes.html">Is Pentaho a magic wand for the healthcare institutes?</a></li>
+                <li><a href="https://www.nexsoftsys.com/articles/derive-competitive-value-with-pentaho-business-intelligence.html">How can you derive competitive value with Pentaho BI?</a></li>
+                <li><a href="https://www.nexsoftsys.com/articles/pentaho-job-scheduling-on-linux-machine.html">Pentahojob Scheduling on Linux Machine</a></li>
+                <li><a href="https://www.nexsoftsys.com/articles/pentaho-for-e-commerce-big-data-analytics.html">Pentaho for E-Commerce: Big Data Analytics with No Data Skills</a></li>
+            </ul>
+
+        </div>
+        <div class="Clear">&nbsp;</div>
+    
+
+</div>
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+<div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox w35">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox w65">
+                        <ul class="listing">
+                            <li class="list-title">
+                                <h3>Microsoft</h3></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+
+</body>
+
+</html>

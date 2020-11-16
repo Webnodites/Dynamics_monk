@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to create and bind Kendo Stack100 chart in Asp.net development using Remote data</title>
+<meta name="description" content="ASP.NET is an open source, server-side web application framework. First of all you know that the ASP.NET using the remote data .but there are you know all about that related information." />
+<meta name="keywords" content="asp.net development" />
+<link rel="canonical" href="https://www.nexsoftsys.com/articles/how-to-create-and-bind-kendo-stack100-chart-in-asp-net-development.html" />
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to create and bind Kendo Stack100 chart in Asp.net development using Remote data" />
+<meta property="og:description" content="ASP.NET is an open source, server-side web application framework. First of all you know that the ASP.NET using the remote data .but there are you know all about that related information." />
+<meta property="og:url" content="https://www.nexsoftsys.com/articles/how-to-create-and-bind-kendo-stack100-chart-in-asp-net-development.html" />
+<meta property="og:site_name" content="NEX Softsys" />
+<meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+<meta property="article:section" content="Trending" />
+<meta property="og:image" content="https://www.nexsoftsys.com/images/article-01.jpg" />
+<meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/article-01.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="ASP.NET is an open source, server-side web application framework. First of all you know that the ASP.NET using the remote data .but there are you know all about that related information." />
+<meta name="twitter:title" content="How to create and bind Kendo Stack100 chart in Asp.net development using Remote data" />
+<meta name="twitter:site" content="@nexsoftsys" />
+<meta name="twitter:image" content="https://www.nexsoftsys.com/images/article-01.jpg" />
+<meta name="twitter:creator" content="@nexsoftsys" />
+
+<link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+<link rel="manifest" href="../images/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-64517863-1', 'auto');
+		ga('send', 'pageview');
+	</script><!-- Google Analytics /- -->
+	
+	<!-- Library -->
+	<link rel="stylesheet" type="text/css" href="../css/lib.css">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../style.css"/>
+
+<noscript>
+<div class="ndiv">
+<div class="ntext">
+<b>JavaScript Required</b>
+<p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+</div>
+</div>
+</noscript>
+</head>
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlist">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlist">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlist">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>How to create and bind Kendo Stack100 chart in Asp.net development using Remote data</h1>
+        </div>
+    </div>
+    </div>
+    <!--Web-Banner-->
+    <div class="Page-Size">
+        <div class="Text Width-100">
+            <p>Have you ever thought about learning the best way to create and bind Kendo Stack100 chart with remote data in MVC? A <a href="https://www.nexsoftsys.com/technologies/net-application-development.html">leading Asp.net Development Company of India</a> is here to let you know about the same. Through this article you will find great tips and steps that will help you in developing and binding Kendo Stack100 chart.</p>
+
+            <h3>Introduction:</h3>
+            <p>This article explain how to create and bind Stack100 chart with remote data in MVC. Simply I have created Stack100 Chart in MVC view and bind with remote data.</p>
+
+            <h3>Code Behind:</h3>
+            <p> Follow the following steps.</p>
+
+            <h3>Step 1:</h3>
+            <p>Create a simple MVC application. Currently I am going to create MVC application using Visual Studio 2015.</p>
+
+            <div class="single-article-img"><img src="../images/article-01.jpg" alt="MVC application" /></div>
+
+            <h3>Step 2:</h3>
+            <p>Download Telerik UI for ASP.NET MVC and add reference “Kendo.MVC.dll” in your solution. You can download Telerick UI for Asp.NET MVC here("<a href="https://www.telerik.com/download-trial-file/v2/ui-for-asp.net-mvc">https://www.telerik.com/download-trial-file/v2/ui-for-asp.net-mvc</a>")</p>
+
+            <div class="single-article-img"><img src="../images/article-02.jpg" alt="Telerik UI for ASP.NET MVC" /></div>
+
+            <h3>Step 3:</h3>
+            <p> Download following javascript file from here(“<a href="https://github.com/telerik/kendo-ui-core/tree/master/src">https://github.com/telerik/kendo-ui-core/tree/master/src</a>”) and put in script folder as below.</p>
+
+            <div class="single-article-img"><img src="../images/article3.jpg" alt="kendo javascript" /></div>
+            <p>You can see in above image I have added following kendo javascript files.</p>
+            <ul>
+                <li>kendo.all.min.js</li>
+                <li>kendo.aspnetmvc.min</li>
+            </ul>
+            <h3>Step 4:</h3>
+            <p>Download following CSS file from here(“<a href="https://github.com/telerik/kendo-ui-core/tree/master/styles">https://github.com/telerik/kendo-ui-core/tree/master/styles</a>”) and put as like below.</p>
+            <div class="single-article-img"><img src="../images/article4.jpg" alt="Download CSS" /></div>
+            <p>As you seen in above image I added 3 folders in Content folder</p>
+
+            <h3>1)	dataviz</h3>
+            <p>- Put kendo.dataviz.default.min.css and kendo.dataviz.min.css file</p>
+
+            <h3>2)	Mobile</h3>
+            <p>- Put kendo.mobile.all.min.css file</p>
+
+            <h3>3)	Web</h3>
+            <p>- Put kendo.common.min.css, kendo.default.min.css, kendo.default.mobile.min.css and kendo.rtl.css file</p>
+
+
+            <h3>Step 5:</h3>
+            <p>Add following code in App_Start => Bundle.config file under RegisterBundles method.</p>
+
+<xmp>
+bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+"~/Scripts/kendo.all.min.js",
+"~/Scripts/kendo.aspnetmvc.min.js"));
+
+bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
+"~/Content/web/kendo.common.min.css",
+"~/Content/web/kendo.rtl.min.css",
+"~/Content/web/kendo.default.min.css",
+"~/Content/web/kendo.default.mobile.min.css",
+"~/Content/dataviz/kendo.dataviz.min.css",
+"~/Content/dataviz/kendo.dataviz.default.min.css",
+"~/Content/mobile/kendo.mobile.all.min.css"));
+
+bundles.Add(new StyleBundle("~/Content/mobile/css").Include(
+"~/Content/mobile/kendo.mobile.all.min.css"));
+
+</xmp>
+            <h3>Step 6:</h3>
+            <p>Add above bundle configuration in _Lalyout.cshtml file as shown below.</p>
+<xmp>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title tag - @ViewBag.Title - My ASP.NET Application
+        @Styles.Render("~/Content/css") @Styles.Render("~/Content/kendo/css") @Scripts.Render("~/bundles/modernizr") @Scripts.Render("~/bundles/jquery") @Scripts.Render("~/bundles/kendo") @Scripts.Render("~/bundles/bootstrap")
+
+        <noscript>
+            <div class="ndiv">
+                <div class="ntext">
+                    <b>JavaScript Required</b>
+                    <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+                </div>
+            </div>
+        </noscript>
+    </head>
+
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @RenderSection("scripts", required: false)
+    </body>
+
+</html>
+</xmp>
+        <p>Now all configuration is done which is required to work with Kendo UI MVC.</p>
+        <h3>Step 7:</h3>
+        <p>Create Stack100Model.cs class under Models folder. This class is helpful to store and display data in Stack100 chart.</p>
+<xmp>
+public class Stack100Model
+{
+public int Year { get; set; }
+
+public int GoldMedals { get; set; }
+
+public int SilverMedals { get; set; }
+
+public int BronzeMedals { get; set; }
+}
+</xmp>
+        <h3>Step 8:</h3>
+        <p>Create a ChartController in Controller folder and add following code on it.</p>
+<xmp>
+public class ChartController: Controller {
+    public ActionResult Stack100() {
+        return View();
+    }
+
+    public ActionResult Read() {
+        List < Stack100Model >
+            model = GetList();
+        return Json(model);
+    }
+
+    public List < Stack100Model >
+        GetList() {
+            return new List < Stack100Model >
+                () {
+                    new Stack100Model {
+                        Year = 2001, GoldMedals = 10, SilverMedals = 8, BronzeMedals = 7
+                    },
+                    new Stack100Model {
+                        Year = 2002, GoldMedals = 8, SilverMedals = 9, BronzeMedals = 5
+                    },
+                    new Stack100Model {
+                        Year = 2003, GoldMedals = 5, SilverMedals = 7, BronzeMedals = 3
+                    },
+                    new Stack100Model {
+                        Year = 2004, GoldMedals = 7, SilverMedals = 7, BronzeMedals = 6
+                    },
+                    new Stack100Model {
+                        Year = 2005, GoldMedals = 8, SilverMedals = 2, BronzeMedals = 8
+                    },
+                    new Stack100Model {
+                        Year = 2006, GoldMedals = 3, SilverMedals = 10, BronzeMedals = 2
+                    },
+                    new Stack100Model {
+                        Year = 2007, GoldMedals = 5, SilverMedals = 5, BronzeMedals = 8
+                    },
+                    new Stack100Model {
+                        Year = 2008, GoldMedals = 4, SilverMedals = 6, BronzeMedals = 7
+                    },
+                    new Stack100Model {
+                        Year = 2009, GoldMedals = 6, SilverMedals = 4, BronzeMedals = 3
+                    },
+                    new Stack100Model {
+                        Year = 2010, GoldMedals = 8, SilverMedals = 2, BronzeMedals = 8
+                    },
+                };
+        }
+}
+</xmp>
+        <h3>Step 9:</h3>
+        <p>Create a Chart folder under View folder and Create a Stack100.cshtml view. Put below code on that.</p>
+<xmp>
+using Kendo.Mvc.UI
+@using KendoStack100Chart.Models
+
+@{
+ViewBag.Title = "Stack100";
+Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Stack100</h2>
+
+<div class="chart-wrapper">
+    @(Html.Kendo().Chart<Stack100Model>
+        ()
+        .Name("stack100Chart")
+        .Title("")
+        .Legend(legend => legend
+        .Visible(false)
+        )
+        .SeriesDefaults(seriesDefaults =>
+        seriesDefaults.Bar().Stack(ChartStackType.Stack100)
+        )
+        .DataSource(ds => ds.Read(read => read.Action("Read", "Chart")))
+        .Series(series =>
+        {
+        series.Bar(model => model.GoldMedals).Name("Gold Medals").Color("#f3ac32");
+        series.Bar(model => model.SilverMedals).Name("Silver Medals").Color("#b8b8b8");
+        series.Bar(model => model.BronzeMedals).Name("Bronze Medals").Color("#bb6e36");
+        })
+        .CategoryAxis(axis => axis
+        .Categories(model => model.Year)
+        .MajorGridLines(lines => lines.Visible(false))
+        )
+        .ValueAxis(axis => axis
+        .Numeric()
+        .Line(line => line.Visible(false))
+        .MajorGridLines(lines => lines.Visible(true))
+        .Labels(labels => labels.Rotation("auto"))
+        )
+        .Tooltip(tooltip => tooltip
+        .Visible(true)
+        .Template("#= series.name #: #= value #")
+        ))
+</div>
+</xmp>
+
+        <p>As you can see in code of Stack100 view we are calling Read method of ChartController and bind data to the chart.</p>
+        <h3>Read More</h3>
+        <ul class="listing">
+            <li><a href="https://www.nexsoftsys.com/articles/7-solutions-of-the-question-asp-net-or-node-for-fresher.html">7 Solutions of the Question, ASP.NET or Node? For Fresher</a></li>
+        </ul>
+    </div>
+    <div class="Clear">&nbsp;</div>
+
+
+</div>
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+<div class="clients-section margin_top30">
+    <div class="section-header ourclients">
+        <h4>Some of our clients</h4>
+    </div>
+    <div class="container">
+        <div class="clients-block owl-carousel owl-theme">
+            <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+            <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+        </div>
+    </div>
+</div>
+<div class="teams-section">
+    <div class="container">
+        <div class="teams-title">
+            <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-main">
+    <div class="container">
+        <div class="row">
+            <div class="footer-box">
+                <h3>Services</h3>
+                <div class="footer-innerbox-block">
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li><a href="../services/application-development.html">Application Development</a></li>
+                            <li><a href="#">Digital Transformation</a></li>
+                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                            <li><a href="#">Block Chain</a></li>
+                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                            <li><a href="#">Business Intelligence</a></li>
+                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                            <li><a href="#">Data Integration</a></li>
+                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                            <li><a href="#">Dashboards</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>Technologies</h3>
+                <div class="footer-innerbox w35">
+                    <ul class="listing">
+                        <li><a href="../technologies/java-application-development.html">Java</a></li>
+                        <li><a href="../technologies/python-development-services.html">Python</a></li>
+                        <li><a href="../technologies/scala-development.html">Scala</a></li>
+                        <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                        <li><a href="../technologies/android-app-development.html">Android</a></li>
+                        <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                        <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                    </ul>
+                </div>
+                <div class="footer-innerbox w65">
+                    <ul class="listing">
+                        <li class="list-title"><h3>Microsoft</h3></li>
+                        <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                        <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                        <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                        <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                        <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                        <li><a href="#">Power BI</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-box footer_sm">
+                <div class="footer-box-business">
+                    <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                    <div class="footer-socialbox">
+                        <h3>Follow NEX</h3>
+                        <div class="ft-social">
+                            <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+</footer><!-- Footer /- -->
+
+<script defer src="../js/jquery-1.12.4.min.js"></script>
+<script defer src="../js/lib.js"></script>
+<script defer src="js/functions.js"></script>
+
+
+
+</body>
+</html>

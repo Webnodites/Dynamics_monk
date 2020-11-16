@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Build ASP.NET Core 2.0 application with Angular & Deploying</title>
+    <meta name="description" content="Do you want to build an ASP.NET core 2.O application with Angular & Deploying? Then just a few minutes visit this post and get the idea of how it possible?" />
+    <meta name="keywords" content="ASP.Net development company" />
+    <link rel="canonical" href="https://www.nexsoftsys.com/articles/building-asp-net-core-2-0-application-with-angular-and-deploying.html" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Build ASP.NET Core 2.0 application with Angular & Deploying" />
+    <meta property="og:description" content="Do you want to build an ASP.NET core 2.O application with Angular & Deploying? Then just a few minutes visit this post and get the idea of how it possible?" />
+    <meta property="og:url" content="https://www.nexsoftsys.com/articles/building-asp-net-core-2-0-application-with-angular-and-deploying.html" />
+    <meta property="og:site_name" content="NEX Softsys" />
+    <meta property="article:publisher" content="https://www.facebook.com/NexSoftSys/" />
+    <meta property="article:section" content="Trending" />
+    <meta property="og:image" content="https://www.nexsoftsys.com/images/building-ms-asp-net-core-article-01.jpg" />
+    <meta property="og:image:secure_url" content="https://www.nexsoftsys.com/images/building-ms-asp-net-core-article-01.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="Do you want to build an ASP.NET core 2.O application with Angular & Deploying? Then just a few minutes visit this post and get the idea of how it possible?" />
+    <meta name="twitter:title" content="Build ASP.NET Core 2.0 application with Angular & Deploying" />
+    <meta name="twitter:site" content="@nexsoftsys" />
+    <meta name="twitter:image" content="https://www.nexsoftsys.com/images/building-ms-asp-net-core-article-01.jpg" />
+    <meta name="twitter:creator" content="@nexsoftsys" />
+
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+    <link rel="manifest" href="../images/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-64517863-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Google Analytics /- -->
+
+    <!-- Library -->
+    <link rel="stylesheet" type="text/css" href="../css/lib.css">
+
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <noscript>
+        <div class="ndiv">
+            <div class="ntext">
+                <b>JavaScript Required</b>
+                <p>We're sorry, but we doesn't work properly without JavaScript enabled.</p>
+            </div>
+        </div>
+    </noscript>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="return-to-top"><i class="fa fa-angle-up"></i></div>
+
+    <header class="header_s">
+        <!-- ===== Popup Box ===== -->
+        <section class="top-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 same-line">
+                        <div class="contain-box">
+                            <p>Looking for an Expert Development Team? Take two weeks Trial! <a href="javascript:;" id="myBtn">Try Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="modal" id="myModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <strong>Free 2 Week Trial</strong>
+                </div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Your Name *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Name" placeholder="Your Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Email" placeholder="Your Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Mobile *</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Phone" placeholder="Your Mobile" />
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="question-title" class="form-control" id="txt2Subject" placeholder="Subject" />
+                            <input type="hidden" id="txt2Page" value="" />
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea class="form-control" cols="5" rows="5" placeholder="Your Message" id="txt2Message" name="message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            
+
+<img id="imgCaptchaRFP" alt="captcha" src="" class="captcha-style" />
+                            <input class="form-control captcha-txt" type="text" placeholder="Captcha" id="txt2Captcha" name="txtCaptcha" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                    <button type="button" id="btn2WeekSubmit" value="Send" name="Submit">Send</button>
+                    <p><span id="lbl2WeekInfo" class="lblblack"></span></p>
+                </div>
+            </div>
+        </section>
+        <!-- # -->
+        <div class="container-fluid">
+            <div class="menu-block">
+                <div class="mobile-sticky-footer">
+                    <a target="_blank" class="skype" href="skype:aegissoftware?call"><i class="fa fa-fw" aria-hidden="true" title="Skype"></i></a>
+                    <a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=919824127020&text=Hi&sbquo;&nbsp;I&nbsp;am&nbsp;Connect&nbsp;through&nbsp;your&nbsp;website"><i class="fa fa-fw" aria-hidden="true" title="Whatsapp"></i></a>
+                    <a target="_blank" class="inquiry" href="tel:+16469710799"><i class="fa fa-fw" aria-hidden="true" title="Phone"></i></a>
+                    <a target="_blank" class="case-studies" href="mailto:info@nexsoftsys.com"><i class="fa fa-fw" aria-hidden="true" title="Email"></i></a>
+                    <a href="../rfp.html" class="client-speaks"><i class="fa fa-fw" aria-hidden="true" title="RFP"></i></a>
+                </div>	
+                <div class="container">
+                    <nav class="menu-navigation">
+                        <div class="logo-block">
+                            <a class="navbar-brand" href="/">
+                                <img src="../images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <a class="menuswitch" href="#">
+                            <span class="menuline bar1"></span>
+                            <span class="menuline bar2"></span>
+                            <span class="menuline bar3"></span>
+                        </a>
+                        <div class="menu-collapse">
+                            <ul class="navigation-menu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="../company.html">About Us</a></li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/application-development.html">Application Development</a></li>
+                                            <li><a href="#">Digital Transformation</a></li>
+                                            <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                            <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                            <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                            <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                            <li><a href="#">Block Chain</a></li>
+                                            <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                                            <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                            <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                            <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                            <li><a href="#">Business Intelligence</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                            <li><a href="#">Data Integration</a></li>
+                                            <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                            <li><a href="#">Dashboards</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <i class="ddl-switch"></i>
+                                    <a href="#">Technologies</a>
+                                    <ul class="dropdown-menu two_col">
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox">
+                                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                                        </div>
+                                        <div class="dropdown-menubox microsoft_nested">
+                                            <li class="full_width"><strong>Microsoft</strong></li>
+                                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
+                                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                                            <li><a href="#">Power BI</a></li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li><a href="/articles/">Blog</a></li>
+                                <li><a href="../contact.html" class="menu-box">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section /- -->
+
+    <div class="b-notification-bar">
+            <!-- Social Links -->
+            <ul class="btnlisting">
+                <li class="item skype">
+                    <a href="skype:aegissoftware?call">
+                        <div class="sticky-box">
+                            <p><i class="fa fa-skype"></i></p>
+                            <p>Skype</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!-- # Social Links -->
+
+            <!-- Inquiry Form -->
+            <ul class="btnlisting">
+                <li class="item inquiry">
+                    <div id="inquiry_form" class="btn sticky-box">
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+                        <p>Quick Inquiry</p>
+                    </div>
+                    <div class="info-box inq">
+                        <img src="images/close-icon.png" class="closeInquiry" alt="close" />
+                        <strong class="title">Fill the details and We’ll get back to you soon</strong>
+                        <form>
+                            <div class="inquiry-box">
+                                <div class="form-group fullwidth">
+                                    <textarea class="form-control" id="txtcomments" placeholder="Tell us your requirements"></textarea>
+                                </div>
+                                <div class="form-group-block">
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtphone" placeholder="Phone" type="text" onkeydown="javascript:backspacerDOWN(this, event);" onkeyup="javascript:backspacerUP(this, event);">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtemail" placeholder="Email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" id="txtskype" placeholder="Skype" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="imgCaptcha" alt="captcha" src="/Captcha.ashx" />
+                                        <input class="form-control" type="text" placeholder="Captcha" id="txtCaptcha" name="txtCaptcha" />
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <button type="button" id="btnSubmit" value="Submit" name="Submit" class="btn-submit">Submit</button>
+                                    </div>
+                                    <div class="form-group Clear">
+                                        <span id="lblInfo"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul><!-- Inquiry Form /- -->
+            <!--Btns-->
+            <ul class="btnlisting">
+                <li class="item case-studies">
+                    <div class="btn sticky-box" onClick="window.location.href='../casestudy/java/java-case-studies.html'">
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
+                        <p>Case Studies</p>
+                    </div>
+                </li>
+                <li class="item client-speaks">
+                    <div class="btn sticky-box" onClick="window.location.href='../testimonials/java-testimonials.html'">
+                        <p><i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                        <p>Client Speaks</p>
+                    </div>
+                </li>
+            </ul><!--Btns-->
+        </div>
+
+    <div class="Inner-Banner">
+        <div class="Page-Size">
+            <h1>Building ASP.NET Core 2.0 application with Angular & Deploying it Azure Web apps using Visual Studio 2017</h1>
+        </div>
+    </div>
+    <!--Web-Banner-->
+
+    <div class="Page-Size">
+        <div class="Text Width-100">
+            <p>In this tutorial, we will be learning as how to create ASP.NET Core 2.0 application with Angular and to deploy the application on Microsoft Public Cloud i.e. Microsoft Azure, using Microsoft Visual Studio 2017 v15.3</p>
+
+            <p>For novice Angular / Cloud developers, aspiring .NET / Cloud architects, and all other IT professionals associated with the .NET Core framework & Cloud computing, especially with Microsoft Azure, this tutorial will explain the importance and capabilities of newly released NET Core 2.0 framework.</p>
+
+
+            <h4>Quick Overview</h4>
+            <p>.NET Core 2.0 is all about making things easier. It just made simpler to get started with developing web apps along with building great rich UI. Angular Template are now only supported by .NET Core 2.0 or higher (all depends upon the feedback of developers) and Visual Studio 2017 v 15.3 or later only.</p>
+
+
+            <h4>Prerequisites</h4>
+            <p>For accomplishing above task, we need below set up as requirement,</p>
+            <ul class="listing">
+                <li>For creating a web app, we need Microsoft Azure Account. If you don’t have one, create your free trial account by clicking <a href="https://azure.microsoft.com/en-us/free/">here</a>.</li>
+                <li>Visual Studio 2017 v15.3 (as of writing, it’s in preview). <a href="https://visualstudio.microsoft.com/vs/preview/" target="_blank">Download Visual Studio 2017 v15.3</a>.</li>
+                <li>.NET Core 2.0 – <a href="https://www.microsoft.com/net/core#windowscmd">Download .NET Core 2.0</a></li>
+                <li>Node.js – <a href="https://nodejs.org/en/download/">Download Node.js</a> ( Better to have, though optional, as it helps in compile run for TypeScript file to get them into JavaScript file )</li>
+            </ul>
+            <h4>Getting started with Angular</h4>
+            <p>Angular is one of the most in fame JavaScript framework based on Object Oriented web development technique, used by web designers (developer) around the globe for building smart web applications.</p>
+
+            <p><a href="https://docs.google.com/document/d/1ksBjyCgwuiEUGn9h2NYQGtmQkP5N9HbehMBgaxMtwfs/edit">Click here to learn more about Angular</a>.</p>
+
+            <p>ASP.NET Core 2.0 provides template for building application with Angular.</p>
+            <p>Let’s start,</p>
+
+            <p>Open Microsoft Visual Studio and select Web => ASP.NET Core Web Application. Give some valid name for the application. Here we have given application name as, ‘AngularAppCore2’. Click OK to move ahead with next template selection screen.</p>
+            <div class="single-article-img"><img src="../images/building-ms-asp-net-core-article-01.jpg" alt="Building MS Asp .Net" /></div>
+            <p>As you can see in below image, .NET Core 2.0 has come up with new templates</p>
+
+            <p>For creating application with Angular, select ’Angular’ template. This template builds up Angular application ready for development.</p>
+
+            <p>Make sure, you select ‘’ASP.NET 2.0’ from dropdown available to choose framework. Though if you choses any lower version, this newly added application, frameworks templates options would no longer be available.</p>
+
+            <p>For keeping this article simpler, let the authentication as ‘No Authentication, with ‘Enable Docker Support’ checkbox, unchecked.</p>
+
+            <p>Once done with selecting framework and template, click OK.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-2.jpg" alt="ASP.NET web application" /></div>
+
+            <p>This will create an ASP.NET web application with Angular.</p>
+
+            <p>In Solution Explorer, right click on Project => select Edit .csproj option.</p>
+
+            <p>Notice it has only one package, with one version! We don’t need any other packages. This single package bring in all of ASP.NET Core into this application. Also, it includes all necessary configurations like node.js, npm making application run with Angular hassle free.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-3.jpg" alt="ASP.NET Core" /></div>
+
+            <p>Also notice, it includes all required dependencies libraries with respect to Angular.</p>
+
+            <p>So we need not have to make any installation or run any pre-installation steps, as we used to do earlier while developing Angular application. ASP.NET Core 2.0 framework, sets all required configuration with newly added Angular template, making it fast to get started in real time.</p>
+
+            <p>By default it’s Angular 2.0</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-4.jpg" alt="Angular 2.0" /></div>
+
+            <h4>Below is the project structure.</h4>
+
+            <p>By default project consist of three components naming Home, Counter and Fetch Data.</p>
+            <ul class="listing">
+                <li>Home component provides code with plain model binding View to display static data.</li>
+                <li>Counter component provides code implementing counter logic and binding its results to view. This sample can be used for implementing any business logic as required.</li>
+                <li>Fetch Data component provides code implementing calling an API, and then binding it response to model call, for displaying result in View. This sample can be used for calling any RESTful APIs in to application.</li>
+            </ul>
+            <p>It comes up with a very clean and define structure, placing all related TypeScript file with .ts extension and html file specific to each component under separate folder.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-5.jpg" alt="clicking CNTRL + F5" /></div>
+
+            <p>Let’s build & Run the application by clicking CNTRL + F5.</p>
+
+            <p>Great! it works fine, with a responsive display.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-6.jpg" alt="Microsoft Azure Web Apps" /></div>
+
+            <h4>Deploying to Azure Web Apps</h4>
+            <p>Now let’s deploy this ASP.Net application with Angular to Microsoft public Cloud i.e. Microsoft Azure Web Apps.</p>
+
+            <p>There are multiple ways of deploying application to Azure web apps, like, through Azure web portal, Azure CLI and Repository Stacks. Along with this listinged items, we can also deploy application using Visual Studio.</p>
+
+            <p>As mentioned above, we will be using Visual Studio 2017 v15.3 for performing deployment. Follow below steps,</p>
+
+            <p>In Solution Explorer, right click on project and click on ‘Publish’, as shown below,</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-7.jpg" alt="Web Deploy deployment method" /></div>
+
+            <p>Clicking on, ‘Publish’ will open up below window. We will be using ‘Web Deploy’ deployment method. As we are pushing this application for the first time, Select ‘Microsoft Azure App Service’, selecting ‘Create New’ option and click ‘Publish’ as highlighted below.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-8.png" alt="Microsoft Azure App Service" /></div>
+
+            <p>Now, this part is most important in this entire process. Here, we will be creating new Azure Web App for deploying application.</p>
+
+            <p>It has the following details,</p>
+
+            <p>App Name- Enter a Unique name for your application. This name is unique across Azure. As part of this article, I have entered ‘AngularAppcore2’ Subscription – Your Azure subscription.</p>
+
+            <p>Resource Group- Group of related products / service created on Azure Portal. You can select existing resource group or create new. Here I have created resource group with name ‘RND’, App Service Plan- You can select an existing App Service Plan or create new.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-9.png" alt="App Service Plan" /></div>
+
+            <p>Tab name ‘Services’, recommends with other related Azure services may require for application, like SQL Database. In this tutorial, we are not using any Database.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-10.png" alt="Azure Web App with the submitted details" /></div>
+
+            <p>Enter the details and click ‘Create’. This will create an Azure Web App with the submitted details. This could take several seconds to get on to the next screen.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-11.png" alt="details of Azure web app" /></div>
+
+            <p>This screen mentions important though few details of Azure web app.</p>
+            <ul class="listing">
+                <li>‘AngularAppcore2 – Web Deploy’, application name with deployment method selected.</li>
+                <li>Summary with Site URL. This will be our public cloud URL for accessing application. This forms as ‘ app-name’.azurewebsites.net</li>
+            </ul>
+            <p>Screen allows you to perform multiple activities with Azure Web App profile like,</p>
+            <ul class="listing">
+                <li>Renaming profile name, ( note you can’t change Web app name)</li>
+                <li>Deleting app profile.</li>
+                <li>Preview files details being modified. This usually come in picture during next round of deployment.</li>
+            </ul>
+            <p>You can see the progress of deployment along with details under ‘Web Publish Activity’ window part of Visual Studio</p>
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-12.png" alt="‘Web Publish Activity" /></div>
+
+            <p>Once publishing succeeds, it will open the browser with our web application running.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-13.png" alt="web application running" /></div>
+
+            <p>Great! Our ASP.NET Core 2.0 application with Angular is now live on Azure Cloud! Notice the Web URL, as mentioned above.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-14.png" alt="live on Azure Cloud" /></div>
+
+            <p>With Responsive fashion as mentioned above,</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-15.png" alt="Responsive fashion" /></div>
+
+            <p>Verify on Azure Portal</p>
+
+            <p>Go to Azure portal, <a href="http://portal.azure.com/">http://portal.azure.com/</a></p>
+
+            <p>Click on ‘App Services’ option.</p>
+
+            <p>We can see our newly created Web App been listinged.</p>
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-16.png" alt="newly created Web App" /></div>
+
+            <p>Click on Web App name</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-17.png" alt="Click on Web App name" /></div>
+
+            <p>So we have successfully created Azure web app using Visual Studio 2017 v15.3</p>
+
+
+            <h3>Modifying & Redeploying</h3>
+            <p>Now, let’s modify our application.</p>
+            <p>With interest to our article, will make small text changes in Home view heading text, as shown below. So as once redeployed, we can notice this change made.</p>
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-18.png" alt="Modifying & Redeploying" /></div>
+
+            <p>Save the changes, open Solution Explorer = > Right click on project => Click on ‘Publish’ Below window will be open up, with earlier details. We can review the details of files where the changes were done, on clicking ‘Preview’ option (Though it’s optional as we made minor change.)</p>
+
+            <p>Now the only this we need to do is,</p>
+
+            <p>Click on ‘Publish’ button.</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-19.png" alt="Click on ‘Publish’ button" /></div>
+
+            <p>Once publishing succeeds, it will open the browser with our web application running with changes being made, Check below image, updated text is now live!</p>
+
+            <div class="single-article-img"><img src="../images/building-asp-net-core-article-20.png" alt="web application running with changes" /></div>
+
+            <p>So we learned how creating <a href="https://www.nexsoftsys.com/technologies/net-application-development.html">ASP.NET Core 2.0 Application Development</a> with Angular and deploying it to Azure Web Apps using Visual Studio 2017 v15.3 is a much simpler task. Also, modifying the application and re-deploying it to Azure was accomplished in minimal efforts.</p>
+
+            <p>ASP.NET Core 2.0 framework release has practically made getting started activity with Angular, easier for developers,<p>
+
+            <p>Thank You!</p>
+        <div class="Clear">&nbsp;</div>
+    </div>
+    </div>
+    <!--Page-Size-->
+    
+
+<div id="nss-note"><img src="../images/nss.jpg" alt="NSS Note" /></div>
+
+    <div class="clients-section margin_top30">
+        <div class="section-header ourclients">
+            <h4>Some of our clients</h4>
+        </div>
+        <div class="container">
+            <div class="clients-block owl-carousel owl-theme">
+                <div class="item client1"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client2"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client3"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client4"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client5"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client8"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client9"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client10"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client11"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client15"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client16"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client17"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client12"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client13"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client14"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client6"><img src="../images/spacer.gif" alt="client" /></div>
+                <div class="item client7"><img src="../images/spacer.gif" alt="client" /></div>
+            </div>
+        </div>
+    </div>
+    <div class="teams-section">
+        <div class="container">
+            <div class="teams-title">
+                <img data-src="../images/team-title.svg" class="lazyload" alt="team" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="footer-box">
+                    <h3>Services</h3>
+                    <div class="footer-innerbox-block">
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/application-development.html">Application Development</a></li>
+                                <li><a href="#">Digital Transformation</a></li>
+                                <li><a href="../services/software-consulting-services.html">Software Consulting Services</a></li>
+                                <li><a href="../services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
+                                <li><a href="../services/offshore-development-center.html">Offshore Development</a></li>
+                                <li><a href="../services/big-data-services.html">Big Data</a></li>
+                                <li><a href="../services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
+                                <li><a href="#">Block Chain</a></li>
+                                <li><a href="../services/devops-consulting.html">DevOps</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-innerbox">
+                            <ul class="listing">
+                                <li><a href="../services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
+                                <li><a href="../services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
+                                <li><a href="../services/cloud-application-development.html">Cloud Application</a></li>
+                                <li><a href="../services/mobility-solutions.html">Enterprise Mobility</a></li>
+                                <li><a href="#">Business Intelligence</a></li>
+                                <li><a href="../services/data-warehousing-solutions.html">Data ware Housing</a></li>
+                                <li><a href="#">Data Integration</a></li>
+                                <li><a href="../services/ETL-data-integration-services.html">ETL</a></li>
+                                <li><a href="#">Dashboards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box">
+                    <h3>Technologies</h3>
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li><a href="../technologies/java-application-development.html">Java</a></li>
+                            <li><a href="../technologies/python-development-services.html">Python</a></li>
+                            <li><a href="../technologies/scala-development.html">Scala</a></li>
+                            <li><a href="../technologies/magento-ecommerce.html">Magento</a></li>
+                            <li><a href="../technologies/android-app-development.html">Android</a></li>
+                            <li><a href="../technologies/ios-application-development.html">iOS</a></li>
+                            <li><a href="../technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-innerbox">
+                        <ul class="listing">
+                            <li class="list-title"><strong>Microsoft</strong></li>
+                            <li><a href="../technologies/net-application-development.html">.Net Development</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
+                            <li><a href="../technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
+                            <li><a href="../technologies/dynamics365-finance-and-operations.html">Finance and Operations</a></li>
+                            <li><a href="../technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
+                            <li><a href="#">Power BI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-box footer_sm">
+                    <div class="footer-box-business">
+                        <h3>Business with us</h3>
+                        <ul class="listing">
+                            <li><a href="../company.html">Company</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../careers.html">Careers</a></li>
+                            <li><a href="/articles/">Blog</a></li>
+                            <li><a href="mailto:info@nexsoftsys.com">Mail Us</a></li>
+                        </ul>
+                        <div class="footer-socialbox">
+                            <h3>Follow NEX</h3>
+                            <div class="ft-social">
+                                <a href="https://www.facebook.com/NexSoftSys/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/nexsoftsys" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/company/nexsoftware/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="https://www.youtube.com/c/Nexsoftsys" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="ast"><p>An Aegis Group Company</p><span></span></div>
+            </div>
+        </div>
+        <div class="copyright_text">
+            <div class="copyright_text">
+                <div class="container footer-rating">
+                    <p>Copyright &copy; <span id="year"></span> NEX Software All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+
+    <script defer src="../js/jquery-1.12.4.min.js"></script>
+    <script defer src="../js/lib.js"></script>
+    <script defer src="js/functions.js"></script>
+
+    
+</body>
+
+</html>
