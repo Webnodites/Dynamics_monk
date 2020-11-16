@@ -1043,7 +1043,8 @@ a.menu-box::after {
 }
 
 .pagebanner-section.contactus_pagebanner {
-	background: url(images/pagebanner/contactus_pagebanner.webp) center no-repeat
+	background: url(images/about/b5.jpg) center no-repeat;
+	 background-size: cover;
 }
 
 .pagebanner-section.javasoftware_development_pagebanner {
