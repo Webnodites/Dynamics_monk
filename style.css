@@ -1392,7 +1392,7 @@ a.menu-box::after {
 	color: #fff
 }
 
-.home-about a {
+/*.home-about a {
 	color: #d35b0b;
 	border: 2px solid #d35b0b;
     border-radius: 25px;
@@ -1403,7 +1403,7 @@ a.menu-box::after {
 .home-about a:hover {
 	color: #fff;
 	border: 2px solid #fff;
-}
+}*/
 
 .case-study-section {
 	width: 100%;
@@ -10122,4 +10122,108 @@ ul.article-listing .article-disc li {
 
 .m-white {
 	color: #fff!important
+}
+
+
+.nabtn{
+	transform: scale(1);
+	color: #D35B0B;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 20px;
+	display: flex;
+    align-items: center;
+}
+.nabtn span{
+	    width: 100%;
+    text-align: center;
+    /* text-transform: uppercase; */
+    /* height: 100%; */
+    max-width: 150px;
+    max-height: 40px;
+    border-radius: 50em;
+    /* top: 50%; */
+    position: absolute;
+    color: #D35B0B;
+
+}
+.nabtn .line1{
+	fill: none;
+	stroke: #D35B0B;
+	stroke-width:1;
+}
+.nabtn .line2{
+	fill: none;
+	stroke: #D35B0B;
+	stroke-width:15;
+	stroke-linecap: round;
+	stroke-dasharray: 230;
+	stroke-dashoffset:-345;
+	transition: 0.5s all cubic-bezier(0.23, 1, 0.32, 1.2);
+
+}
+.nabtn:hover .line2{
+	stroke-dashoffset:-580;
+
+}
+.nabtn:focus .line2{
+	stroke-dashoffset:-580;
+
+}
+.nabtn,
+.nabtn>*,
+.nabtn>*>*{
+	transition: all 0.4s ease-out;
+}
+
+.abtn{
+	transform: scale(1);
+	color: yellow;
+	cursor: pointer;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 20px;
+}
+.abtn span{
+	    width: 100%;
+    text-align: center;
+    /* text-transform: uppercase; */
+    /* height: 100%; */
+    max-width: 200px;
+    max-height: 50px;
+    border-radius: 50em;
+    margin: 15px 0 0px 0px;
+    /* top: 50%; */
+    position: absolute;
+    color: #D35B0B;
+
+}
+.abtn .line1{
+	fill: none;
+	stroke: #D35B0B;
+	stroke-width:1;
+}
+.abtn .line2{
+	fill: none;
+	stroke: #D35B0B;
+	stroke-width:15;
+	stroke-linecap: round;
+	stroke-dasharray: 230;
+	stroke-dashoffset:-345;
+	transition: 0.5s all cubic-bezier(0.23, 1, 0.32, 1.2);
+
+}
+.abtn:hover .line2{
+	stroke-dashoffset:-580;
+
+}
+.abtn:focus .line2{
+	stroke-dashoffset:-580;
+
+}
+.abtn,
+.abtn>*,
+.abtn>*>*{
+	transition: all 0.4s ease-out;
 }
