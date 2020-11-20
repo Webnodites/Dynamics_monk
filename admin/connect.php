@@ -1,11 +1,13 @@
  <?php
 
-$con=mysqli_connect("mi3-wts3.my-hosting-panel.com","bellehom","J261?xmb","anjitait_bellehom");
+$con=mysqli_connect("localhost",'nuqjbfmy_dm','admin@123dm',"nuqjbfmy_dm");
 session_start();
    
 if(!isset($_SESSION['username']))
 {
 	header("location:index.php");
 }
+
+
 ?> 
 
