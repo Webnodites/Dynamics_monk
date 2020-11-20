@@ -13,6 +13,10 @@
 	position: relative
 }
 
+.hello{
+	width: 150px;
+}
+
 .menu-block .navigation-menu li a {
 	color: #0a222d;
 	text-decoration: none;
@@ -457,7 +461,10 @@
 	}
 	.navbar-brand {
 		display: inline-block;
-		max-width: 80px
+		max-width: 80px;
+	}
+	.navbar-brand .logo {
+		max-width: 10px;
 	}
 	.menu-block .navigation-menu li a {
 		width: 100%;
