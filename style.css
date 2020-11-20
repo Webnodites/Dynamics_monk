@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :(input, textarea) {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none
+}
+body{
+	font-family: 'Raleway', sans-serif;
 }
 
 .ndiv {
@@ -14,7 +19,6 @@
 }
 
 .ntext {
-	font-family: Trebuchet MS;
 	font-size: 18px;
 	background-color: #00a8ff;
 	padding: 10pt;
@@ -33,6 +37,7 @@ xmp {
 body,
 table {
 	overflow-x: hidden
+
 }
 
 table td,
@@ -42,7 +47,6 @@ table th {
 
 body,
 textarea.form-control {
-	font-family: Roboto, sans-serif
 }
 
 *,
@@ -639,7 +643,7 @@ a.menu-box::after {
 .sectionlist-box h3,
 .sectionlist-box strong,
 .sectionlist-box ul li {
-	font-family: Roboto, sans-serif
+
 }
 
 .Page-Size.Content.aboutservice {
@@ -698,7 +702,6 @@ a.menu-box::after {
 	font-weight: 400;
 	margin-bottom: 15px;
 	display: block;
-	font-family: Roboto, sans-serif
 }
 
 .white_txt.section-header h3 {
@@ -1184,15 +1187,6 @@ a.menu-box::after {
 	text-align: center
 }
 
-.about-technologies-box p,
-.aboutcontent-block.crm-style p,
-.aboutservice-block.style2 .aboutservice-box h3,
-.aboutservice-box,
-.aboutservice-box h3,
-.aboutservice-box strong,
-.crmimg-sm span {
-	font-family: Roboto, sans-serif
-}
 
 .slider-section .bx-wrapper .bx-next,
 .slider-section .bx-wrapper .bx-prev {
@@ -1270,7 +1264,6 @@ a.menu-box::after {
     margin: auto;
     /* padding-bottom: 10px; */
     font-weight: 400;
-    font-family: Roboto, sans-serif;
     margin-bottom: 50px;
     border-bottom: 2px solid #d35b0b;
 }
@@ -1457,7 +1450,6 @@ a.menu-box::after {
 	color: #333;
 	padding-bottom: 10px;
 	font-weight: 400;
-	font-family: Roboto, sans-serif
 }
 
 .csbox h3 a,
@@ -1548,7 +1540,6 @@ a.menu-box::after {
 	font-weight: 500;
 	margin-bottom: 10px;
 	line-height: 24px;
-	font-family: Roboto, sans-serif
 }
 
 .clients-section,
@@ -1815,7 +1806,6 @@ a.menu-box::after {
 .stack-box-inner h5,
 .stack-box-inner strong,
 .stack-box-inner ul li {
-	font-family: Roboto, sans-serif
 }
 
 .aboutservice-block.style2.crmstyle .aboutservice-box {
@@ -2621,7 +2611,7 @@ iframe {
 .servicesbusiness-box-inner>p {
 	line-height: 22px;
 	color: #333;
-	font-family: Roboto, sans-serif;
+	
 	margin-top: 15px
 }
 
@@ -2629,7 +2619,7 @@ iframe {
 .startups-content-box .section-header h4 {
 	text-align: left;
 	color: #000;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .startups-section {
@@ -2692,7 +2682,7 @@ iframe {
 	padding-left: 40px;
 	margin-bottom: 30px;
 	border-left: 2px solid #ed1c24;
-	font-family: Roboto, sans-serif;
+	
 	color: #000;
 	line-height: 22px
 }
@@ -2731,7 +2721,7 @@ iframe {
 	color: #000;
 	font-size: 26px;
 	line-height: 30px;
-	font-family: Roboto, sans-serif;
+	
 	font-weight: 300;
 	display: inline-block;
 	float: left;
@@ -2791,7 +2781,7 @@ iframe {
 	line-height: 30px;
 	margin-bottom: 15px;
 	font-weight: 400;
-	font-family: Roboto, sans-serif;
+	
 	display: block;
 	margin-top: 20px
 }
@@ -2817,7 +2807,7 @@ iframe {
 	width: 100%;
 	padding-left: 20px;
 	position: relative;
-	font-family: Roboto, sans-serif;
+	
 	margin-bottom: 10px
 }
 
@@ -2891,7 +2881,7 @@ iframe {
 
 .expertises-content-box p {
 	color: #000;
-	font-family: Roboto, sans-serif;
+	
 	margin-top: 10px;
 	font-weight: 500
 }
@@ -2918,7 +2908,7 @@ iframe {
 .virtual-header {
 	float: left;
 	width: 60%;
-	font-family: Roboto, sans-serif;
+	
 	padding-left: 20px;
 	font-weight: 400
 }
@@ -2926,7 +2916,7 @@ iframe {
 .virtual-header h4 {
 	font-size: 24px;
 	color: #000;
-	font-family: Roboto, sans-serif;
+	
 	margin-bottom: 20px;
 	font-weight: 400
 }
@@ -2997,7 +2987,6 @@ iframe {
 	display: inline-block;
 	width: 100%;
 	padding-top: 60px;
-	font-family: Roboto, sans-serif
 }
 
 .development-content-box {
@@ -3013,7 +3002,7 @@ iframe {
 	font-size: 26px;
 	line-height: 36px;
 	color: #05283f;
-	font-family: Roboto, sans-serif;
+	
 	font-weight: 400;
 	padding-right: 30px
 }
@@ -3077,7 +3066,7 @@ iframe {
 	margin-bottom: 15px;
 	color: #fff;
 	line-height: 34px;
-	font-family: Roboto, sans-serif;
+	
 	font-weight: 400;
 	display: block
 }
@@ -3102,7 +3091,7 @@ iframe {
 .developement_process-box.pr_2 h3,
 .developement_process-box.pr_2 p {
 	color: #000;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .whatwedo-section {
@@ -3149,7 +3138,7 @@ iframe {
 	position: relative;
 	padding-left: 90px;
 	margin-bottom: 30px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .whatwedo-boxes-inner img {
@@ -3164,7 +3153,7 @@ iframe {
 	color: #000;
 	margin-bottom: 7px;
 	font-weight: 500;
-	font-family: Roboto, sans-serif;
+	
 	display: inline-block;
 	width: 100%
 }
@@ -3191,7 +3180,7 @@ iframe {
 	float: left;
 	padding: 0 5px;
 	font-size: 16px;
-	font-family: Roboto, sans-serif;
+	
 	color: #333;
 	line-height: 22px;
 	margin-bottom: 15px
@@ -3213,7 +3202,7 @@ iframe {
 .integration-imgbox h4 {
 	font-size: 24px;
 	font-weight: 700;
-	font-family: Roboto, sans-serif;
+	
 	padding: 5px 20px;
 	line-height: 28px
 }
@@ -3223,7 +3212,7 @@ iframe {
 .devlopment-features-box,
 .integration-content {
 	font-size: 16px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .integration-innerbox p {
@@ -3271,7 +3260,7 @@ iframe {
 	display: inline-block;
 	width: 100%;
 	padding: 20px 15px;
-	font-family: Roboto, sans-serif;
+	
 	min-height: 181px
 }
 
@@ -3369,7 +3358,7 @@ iframe {
 	position: relative;
 	padding-left: 380px;
 	color: #fff;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .technolog-expertise-title {
@@ -3388,7 +3377,7 @@ iframe {
 .technolog-expertise-title h3 {
 	font-size: 24px;
 	font-weight: 300;
-	font-family: Roboto, sans-serif;
+	
 	display: inline-block;
 	color: #fff;
 	margin-top: 11px
@@ -3437,7 +3426,7 @@ iframe {
 	font-weight: 400;
 	text-transform: uppercase;
 	margin-bottom: 15px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .differentiators-contentbox ul li,
@@ -3445,7 +3434,7 @@ iframe {
 	font-size: 16px;
 	width: 100%;
 	display: inline-block;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .differentiators-contentbox ul li {
@@ -3473,7 +3462,7 @@ iframe {
 .java_differentiators .differentiators-box p {
 	color: #fff;
 	line-height: 22px;
-	font-family: Roboto, sans-serif;
+	
 	max-width: 290px
 }
 
@@ -3522,12 +3511,12 @@ iframe {
 
 .style3 .aboutservice-block.style2 .aboutservice-box h3 {
 	font-size: 24px;
-	font-family: Roboto, sans-serif;
+	
 	line-height: 30px
 }
 
 .style3 .aboutservice-block.style2 .aboutservice-box ul li {
-	font-family: Roboto, sans-serif;
+	
 	font-size: 16px;
 	font-weight: 500
 }
@@ -3558,7 +3547,7 @@ iframe {
 .our-value-box h3 {
 	font-size: 24px;
 	color: #000;
-	font-family: Roboto, sans-serif;
+	
 	font-weight: 400;
 	line-height: 30px;
 	margin-top: 15px;
@@ -3569,7 +3558,7 @@ iframe {
 .our-value-box p {
 	color: #000;
 	font-size: 16px;
-	font-family: Roboto, sans-serif;
+	
 	line-height: 22px
 }
 
@@ -3595,7 +3584,7 @@ iframe {
 	font-size: 60px;
 	font-weight: 300;
 	text-transform: capitalize;
-	font-family: Roboto, sans-serif;
+	
 	color: #fff;
 	margin-top: 300px
 }
@@ -3800,7 +3789,7 @@ iframe {
 }
 
 .microsoft-dynamics-box p {
-	font-family: Roboto, sans-serif;
+	
 	line-height: 22px
 }
 
@@ -6062,14 +6051,14 @@ iframe {
 	color: #000;
 	margin-bottom: 10px;
 	font-size: 20px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .pentaho-servicebox p {
 	color: #333;
 	font-size: 16px;
 	line-height: 22px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .pentaho-service-section .share_requirement {
@@ -6108,7 +6097,7 @@ iframe {
 	color: #105b9e;
 	font-weight: 700;
 	margin-bottom: 20px;
-	font-family: Roboto, sans-serif;
+	
 	padding: 0 45px
 }
 
@@ -6136,7 +6125,7 @@ iframe {
 	color: #120d35;
 	font-size: 20px;
 	margin-bottom: 15px;
-	font-family: Roboto, sans-serif;
+	
 	font-weight: 500
 }
 
@@ -6185,7 +6174,7 @@ iframe {
 	font-weight: 700;
 	margin-top: 15px;
 	margin-bottom: 20px;
-	font-family: Roboto, sans-serif;
+	
 	padding: 0 30px;
 	letter-spacing: .02em
 }
@@ -6214,7 +6203,7 @@ iframe {
 	font-size: 22px;
 	line-height: 24px;
 	margin-bottom: 20px;
-	font-family: Roboto, sans-serif
+	 
 }
 
 .pentaho-competencies-block .listing_style2 li,
@@ -6514,7 +6503,7 @@ iframe {
 }
 
 .offshoreqabox_innerbox h3 {
-	font-family: Roboto, sans-serif;
+	
 	margin-bottom: 5px
 }
 
@@ -6617,7 +6606,7 @@ iframe {
 }
 
 .etlsupport-section .features-box h3 {
-	font-family: Roboto, sans-serif;
+	
 	margin-top: 20px;
 	padding: 0 50px;
 	font-weight: 400
@@ -6681,7 +6670,7 @@ iframe {
 }
 
 .etlprocess-differentiation .automated-testing-block .microsoft-crm-innerbox h3 {
-	font-family: Roboto, sans-serif
+	 
 }
 
 .pagebanner-section.microsoft_dynamic365_finance_pagebanner {

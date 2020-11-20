@@ -29,7 +29,7 @@
 	transition: all .3s;
 	padding: 10px 19px;
 	position: relative;
-	font-family: Roboto, sans-serif
+	   
 }
 .menu-block .navigation-menu li:last-of-type a {
 	display: flex;

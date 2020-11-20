@@ -28,7 +28,7 @@ xmp {
 	list-style: none
 }
 
-@font-face {
+/*@font-face {
 	font-family: 'Open Sans Regular';
 	src: url(fonts/OpenSans-Regular.ttf) format('truetype');
 	font-weight: 400;
@@ -50,7 +50,7 @@ xmp {
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap
-}
+}*/
 
 @font-face {
 	font-family: FontAwesome;
@@ -409,7 +409,6 @@ h4 {
 	float: right;
 	font-size: 14px;
 	color: #fff;
-	font-family: 'Open Sans', sans-serif;
 	display: inline-block;
 	position: relative;
 	top: -50px
@@ -971,14 +970,13 @@ h4 {
 	margin-bottom: 25px;
 	font-weight: 400;
 	color: #000;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .section-header p {
 	font-size: 16px;
 	line-height: 22px;
 	color: #000;
-	font-family: Roboto, sans-serif
 }
 
 .section-header.mainpage-header h2 {
@@ -1022,7 +1020,7 @@ h4 {
 .about-technologies-box p {
 	font-size: 16px;
 	font-weight: 700;
-	font-family: Roboto, sans-serif;
+	   
 	width: 30%;
 	float: left;
 	display: inline-block;
@@ -1066,7 +1064,7 @@ h4 {
 	width: 50%;
 	position: relative;
 	padding-left: 90px;
-	font-family: Roboto, sans-serif;
+	   
 	margin-bottom: 50px
 }
 
@@ -1080,14 +1078,13 @@ h4 {
 	color: #000;
 	font-weight: 700;
 	margin-bottom: 10px;
-	font-family: Roboto, sans-serif
 }
 
 .aboutservice-box p {
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 20px;
-	font-family: Roboto, sans-serif;
+	   
 	color: #000
 }
 
@@ -1175,7 +1172,6 @@ h4 {
 .aboutservice p {
 	margin-bottom: 30px;
 	font-size: 16px;
-	font-family: Roboto, sans-serif
 }
 
 .about-contentboxes {
@@ -1188,14 +1184,12 @@ h4 {
 	font-size: 24px;
 	color: #000;
 	margin-bottom: 25px;
-	font-family: Roboto, sans-serif
 }
 
 .about-contentboxes p {
 	margin-bottom: 15px;
 	font-size: 16px;
 	line-height: 20px;
-	font-family: Roboto, sans-serif
 }
 
 .document-section {
@@ -1473,7 +1467,7 @@ h4 {
 	width: 20%;
 	float: left;
 	margin: 0;
-	font-family: Roboto, sans-serif;
+	   
 	position: relative;
 	padding-bottom: 12px
 }
@@ -1515,12 +1509,10 @@ h4 {
 	font-weight: 600;
 	margin-bottom: 10px;
 	color: #333;
-	font-family: 'Open Sans', sans-serif;
 	line-height: 22px
 }
 
 .CSBox p {
-	font-family: Roboto, sans-serif
 }
 
 .Updates {
@@ -1538,7 +1530,6 @@ h4 {
 }
 
 .Updates p {
-	font-family: Roboto, sans-serif
 }
 
 .Updates h4::after {
@@ -1617,7 +1608,6 @@ h4 {
 	font-size: 14px;
 	margin-top: 15px;
 	border-radius: 5px;
-	font-family: Roboto, sans-serif
 }
 
 .entry-date {
@@ -1697,7 +1687,6 @@ h4 {
 }
 
 .pagebanner-content h1 {
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	color: #fff;
 	font-size: 36px;
@@ -1780,7 +1769,7 @@ h4 {
 .about-technologies-box p {
 	font-size: 16px;
 	font-weight: 700;
-	font-family: Roboto, sans-serif;
+	   
 	width: 30%;
 	float: left;
 	display: inline-block;
@@ -1832,7 +1821,7 @@ h4 {
 	width: 50%;
 	position: relative;
 	padding-left: 90px;
-	font-family: Roboto, sans-serif;
+	   
 	margin-bottom: 50px
 }
 
@@ -1846,14 +1835,13 @@ h4 {
 	color: #000;
 	font-weight: 700;
 	margin-bottom: 10px;
-	font-family: Roboto, sans-serif
 }
 
 .aboutservice-box p {
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 20px;
-	font-family: Roboto, sans-serif;
+	   
 	color: #000
 }
 
@@ -1900,7 +1888,7 @@ h4 {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 20px;
-	font-family: Roboto, sans-serif;
+	   
 	color: #000
 }
 
@@ -1938,7 +1926,7 @@ h4 {
 	font-size: 20px;
 	line-height: 22px;
 	text-transform: capitalize;
-	font-family: Roboto, sans-serif;
+	   
 	text-align: center;
 	display: inline-block;
 	width: 100%;
@@ -1950,7 +1938,6 @@ h4 {
 	color: #222;
 	font-size: 15px;
 	line-height: 22px;
-	font-family: Roboto, sans-serif
 }
 
 .aboutservice-block.style2 .aboutservice-box-content {
@@ -2043,7 +2030,7 @@ h4 {
 	font-size: 60px;
 	font-weight: 300;
 	text-transition: capitalize;
-	font-family: Roboto, sans-serif;
+	   
 	color: #fff;
 	margin-top: 300px
 }
@@ -2077,7 +2064,6 @@ h4 {
 .proposition-box p {
 	color: #333;
 	font-size: 16px;
-	font-family: Roboto, sans-serif
 }
 
 .about-service-offer {
@@ -2143,7 +2129,6 @@ h4 {
 	margin-bottom: 30px;
 	color: #000;
 	font-size: 16px;
-	font-family: Roboto, sans-serif
 }
 
 .bigdata-aboutus .about-contentboxes,
@@ -2155,7 +2140,6 @@ h4 {
 .bigdata_service_offer .aboutservice p {
 	color: #fff;
 	background-color: transparent;
-	font-family: Roboto, sans-serif
 }
 
 .bigdata_service_offer .aboutservice .bigdata_service_offer2 p {
@@ -2188,7 +2172,6 @@ h4 {
 
 .bigdata_service_offer .service-offer-box ul li {
 	color: #fff;
-	font-family: 'Open Sans', sans-serif
 }
 
 .about-contentboxes {
@@ -2201,14 +2184,12 @@ h4 {
 	font-size: 24px;
 	color: #000;
 	margin-bottom: 25px;
-	font-family: Roboto, sans-serif
 }
 
 .about-contentboxes p {
 	margin-bottom: 15px;
 	font-size: 16px;
 	line-height: 20px;
-	font-family: Roboto, sans-serif
 }
 
 .about-service-offer.style2 {
@@ -2226,7 +2207,7 @@ h4 {
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 15px;
-	font-family: Roboto, sans-serif;
+	   
 	margin-top: 30px;
 	color: #000
 }
@@ -2234,7 +2215,7 @@ h4 {
 .about-service-offer.style2 .aboutservice p {
 	padding: 0;
 	min-height: auto;
-	font-family: Roboto, sans-serif;
+	   
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 400;
@@ -2264,7 +2245,6 @@ h4 {
 	color: #000;
 	font-weight: 500;
 	margin-top: 15px;
-	font-family: Roboto, sans-serif
 }
 
 .our-differentiators-section {
@@ -2296,7 +2276,6 @@ h4 {
 	font-weight: 400;
 	text-transform: uppercase;
 	margin-bottom: 15px;
-	font-family: Roboto, sans-serif
 }
 
 .differentiators-contentbox ul li {
@@ -2305,7 +2284,7 @@ h4 {
 	color: #fff;
 	font-size: 16px;
 	margin-bottom: 10px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .our-differentiators-section p {
@@ -2313,7 +2292,7 @@ h4 {
 	color: #000;
 	line-height: 22px;
 	margin-bottom: 30px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .our-differentiators-section .about-contentboxes {
@@ -2357,7 +2336,7 @@ h4 {
 	float: left;
 	padding: 0 5px;
 	font-size: 16px;
-	font-family: Roboto, sans-serif;
+	   
 	color: #333;
 	line-height: 22px;
 	margin-bottom: 15px
@@ -2378,7 +2357,7 @@ h4 {
 .integration-imgbox h4 {
 	font-size: 22px;
 	font-weight: 700;
-	font-family: Roboto, sans-serif;
+	   
 	padding: 5px 20px
 }
 
@@ -2394,7 +2373,7 @@ h4 {
 	color: #000;
 	font-size: 16px;
 	line-height: 22px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .devlopment-services-section {
@@ -2429,19 +2408,19 @@ h4 {
 	display: inline-block;
 	width: 100%;
 	padding: 20px 15px;
-	font-family: Roboto, sans-serif;
+	   
 	min-height: 150px
 }
 
 .devlopment-content-innerbox h3 {
-	font-family: Roboto, sans-serif;
+	   
 	font-weight: 700;
 	font-size: 16px;
 	margin-bottom: 10px
 }
 
 .devlopment-content-innerbox p {
-	font-family: Roboto, sans-serif;
+	   
 	font-size: 16px
 }
 
@@ -2486,7 +2465,7 @@ h4 {
 	float: left;
 	padding: 0 15px;
 	text-align: center;
-	font-family: Roboto, sans-serif;
+	   
 	font-weight: 700;
 	font-size: 16px;
 	color: #000;
@@ -2543,7 +2522,7 @@ h4 {
 	position: relative;
 	padding-left: 380px;
 	color: #fff;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .technolog-expertise-title {
@@ -2562,7 +2541,7 @@ h4 {
 .technolog-expertise-title h3 {
 	font-size: 24px;
 	font-weight: 300;
-	font-family: Roboto, sans-serif;
+	   
 	display: inline-block;
 	color: #fff;
 	margin-top: 11px
@@ -2586,7 +2565,7 @@ h4 {
 	color: #fff;
 	font-size: 15px;
 	line-height: 22px;
-	font-family: Roboto, sans-serif;
+	   
 	max-width: 290px
 }
 
@@ -2611,11 +2590,11 @@ h4 {
 
 .style3 .aboutservice-block.style2 .aboutservice-box h3 {
 	font-size: 24px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .style3 .aboutservice-block.style2 .aboutservice-box ul li {
-	font-family: Roboto, sans-serif;
+	   
 	font-size: 16px;
 	font-weight: 500
 }
@@ -2646,7 +2625,7 @@ h4 {
 .our-value-box h3 {
 	font-size: 24px;
 	color: #000;
-	font-family: Roboto, sans-serif;
+	   
 	line-height: 30px;
 	margin-top: 15px;
 	margin-bottom: 10px;
@@ -2656,7 +2635,7 @@ h4 {
 .our-value-box p {
 	color: #000;
 	font-size: 16px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .aboutus-page-section {
@@ -2694,7 +2673,7 @@ h4 {
 	color: #333;
 	font-size: 20px;
 	line-height: 28px;
-	font-family: Roboto, sans-serif
+	   
 }
 
 .company-vision-section {
@@ -2718,7 +2697,7 @@ h4 {
 .company-vision-section .section-header p {
 	font-size: 72px;
 	font-weight: 700;
-	font-family: Roboto, sans-serif;
+	   
 	line-height: 85px;
 	color: #fff;
 	margin-bottom: 50px

@@ -1,66 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 @charset "UTF-8";
-/* ------------------------------------------------------------------
- * Name         : Sirin - HTML Template
- * File         : main.css
- * Author       : ScanThemes
- * Author URI   : scanthemes@gmail.com
- *
- * All Rights Reserved.
- * --------------------------------------------------------------------- */
-/* ---------------------------------------------------------------------
 
-	[Table of contents]
-
-		- Bootstrap 4 library
-		- Accordion
-		- Alert
-		- Animations
-		- Aspect_ratio
-		- Badge
-		- Bgs
-		- Breadcrumb
-		- Buttons
-		- Border
-		- Block
-		- Card
-		- Carousel
-		- Colors
-		- Countdown
-		- Forms
-		- Global
-		- Grid
-		- Image
-		- Input-group
-		- Modal
-		- Nav
-		- Sizing
-		- Pagination
-		- Position
-		- Preloader
-		- Pricing table
-		- Process
-		- Shapes
-		- Effects
-		- Overlay
-		- Tab
-		- Tables
-		- Text
-		- Theme
-		- Typography
-		- WebGL
-			-- Background decorative
-		- Plugins
-			-- Letter effects
-
------------------------------------------------------------------------- */
-/*---------------------------------------------------------------------- */
-/* [ Bootstrap 4 library ] */
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
   --blue: #3265f3;
   --indigo: #6610f2;
@@ -108,7 +50,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.9;
@@ -208,7 +150,6 @@ pre,
 code,
 kbd,
 samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em; }
 
 pre {
@@ -357,7 +298,6 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Istok Web", sans-serif;
   font-weight: 500;
   line-height: 1.5;
   color: #1e1e21; }
@@ -4528,7 +4468,6 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.9;
@@ -6488,8 +6427,13 @@ button.bg-dark:focus {
   padding-left: 3rem !important; }
 
 .p-9 {
+  padding: 4rem !important; }
+
+@media(min-width: 400px){
+  .p-9 {
   padding: 5rem !important; }
 
+}
 .pt-9,
 .py-9 {
   padding-top: 5rem !important; }
@@ -10839,7 +10783,7 @@ button.bg-dark:focus {
   .mx-lp-auto {
     margin-left: auto !important; } }
 .text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important; }
+ }
 
 .text-justify {
   text-align: justify !important; }
@@ -14286,6 +14230,14 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos], [data-aos][data-aos][data-
   content: " ";
   width: 100%;
   padding-top: 100%; }
+@media(max-width: 767px){
+  .ar-1_1:before, .aspect-ratio-1_1:before {
+    display: block;
+    content: " ";
+    width: 100%;
+    padding-top: 90%;
+}
+}
 
 .ar-3_2:before,
 .aspect-ratio-3_2:before {
@@ -16987,8 +16939,8 @@ pre {
 
 @media (min-width: 992px) {
   .content-section {
-    padding-top: 7rem;
-    padding-bottom: 7rem; } }
+    padding-top: 5rem;
+    padding-bottom: 5rem; } }
 .right-fluid {
   position: relative;
   z-index: -1;
@@ -24748,7 +24700,6 @@ a.text-gray:hover, a.text-gray:focus {
 
 /* [ Typography ] */
 body {
-  font-family: "Open Sans", sans-serif;
   font-size: 0.9375rem;
   font-weight: 300;
   line-height: 1.9; }
@@ -25305,6 +25256,11 @@ ul.list-style-square {
   font-weight: 300;
   line-height: 1.5; }
 
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.5; }  
+
 @media (min-width: 576px) {
   .display-sm-1 {
     font-size: 6rem;
@@ -25465,4 +25421,30 @@ ul.list-style-square {
 
 .text-primary {
      color: #d35b0b !important; 
+}
+.ser_ul ul{
+      list-style: none;
+      display: inline-block;
+}
+.ser_ul li{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+.ser_ul li a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.ser_ul li a:hover{
+  color: #d35b0b;
+}
+.ser_ul li::before {
+    position: absolute;
+    content: "\f101";
+    left: 0;
+    font-family: FontAwesome;
+    color: #d35b0b;
 }
