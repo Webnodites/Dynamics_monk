@@ -3247,6 +3247,7 @@ File: Menu
   position: relative;
   width: 240px;
   z-index: 1;
+  padding-top: 10px;
 }
 
 .logo, .logo-sm {
@@ -3305,6 +3306,8 @@ File: Menu
   color: #435057 !important;
   padding: 0px 15px;
   position: relative;
+  display: flex;
+    align-items: center;
 }
 
 .nav > li > a i {
@@ -3506,7 +3509,7 @@ body.fixed-left .side-menu.left {
 }
 
 .button-menu-mobile {
-  background: #96bc33;
+  background: #d35b0b;
   border: none;
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
@@ -3665,11 +3668,11 @@ body.fixed-left .side-menu.left {
 }
 
 #sidebar-menu > ul > li > a.active {
-  color: #96bc33;
+  color: #d35b0b;
 }
 
 #sidebar-menu > ul > li > a.active i {
-  color: #96bc33;
+  color: #d35b0b;
 }
 
 .subdrop {
@@ -3807,7 +3810,7 @@ body.fixed-left .side-menu.left {
 
 .user-details {
   min-height: 80px;
-  padding: 10px 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   position: relative;
 }
 
@@ -3982,7 +3985,7 @@ body.fixed-left-void {
 }
 
 .layout2 .topbar-left .logo, .layout2 .topbar-left .logo-sm {
-  color: #96bc33 !important;
+  color: #d35b0b !important;
 }
 
 .layout2 .page-header-title {
@@ -4100,13 +4103,17 @@ File: Responsive
   }
 }
 /*# sourceMappingURL=style.css.map */
+.logo{
+      width: 150px;
+      height:auto;
+}
 
 .themebtn{
-  background-color: #96bc33;
+  background-color: #D35B0B;
   color: #fff;
 }
 .themebtn:hover{
-  background-color: #96bc33;
+  background-color: #D35B0B;
   color: #fff;
   outline: none;
 }
@@ -4114,14 +4121,14 @@ File: Responsive
  outline: none;
 }
 .logo{
-  color: #96bc33 !important;
+  color: #d35b0b !important;
 }
 .pagination > .page-item.active > a, .pagination > .page-item.active > span, .pagination > .page-item.active > a:hover, .pagination > .page-item.active > span:hover, .pagination > .page-item.active > a:focus, .pagination > .page-item.active > span:focus {
-    background-color:  #96bc33 !important;
-    border-color: #96bc33 !important;
+    background-color:  #d35b0b !important;
+    border-color: #d35b0b !important;
 }
 table a {
-    color: #96bc33 !important;
+    color: #d35b0b !important;
     }
 table img{
   height: 80px ;
@@ -4130,12 +4137,12 @@ table img{
   width: 100%;
 }
 .modal-footer .yes{
-  background-color:  #96bc33 !important;
+  background-color:  #d35b0b !important;
   color: #fff;
 }
 .modal-footer .no{
   background-color: #fff !important;
-  border:1px solid #96bc33 !important;
+  border:1px solid #d35b0b !important;
 }
 .dashboard{
     height: 60vh;
@@ -4146,5 +4153,5 @@ table img{
     
 }
 .dashboard h3{
-  color: #96bc33;
+  color: #d35b0b;
 }

@@ -1,6 +1,6 @@
  <?php
 
-$con=mysqli_connect("localhost",'nuqjbfmy_dm','admin@123dm',"nuqjbfmy_dm");
+$con=mysqli_connect("localhost",'root','',"dm");
 session_start();
    
 if(!isset($_SESSION['username']))

@@ -1,6 +1,4 @@
 
-
-<!doctype html>
 <html lang="en">
 
 <head>
@@ -32,8 +30,8 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a href="../index" class="logo"><img src="../images/logo1.jpg"></a>
-                    <a href="../index" class="logo-sm"><img src="../images/fav.jpg"></a>
+                    <a href="../index" class="logo"><img src="../images/logo3.png"  class="logo" /></a>
+                    <a href="../index" class="logo-sm"><img src="../images/fav.png"></a>
                 </div>
             </div>
             <!-- Button mobile view to collapse sidebar menu -->
@@ -98,22 +96,23 @@
                         </li>
 
 
-                        <li class="has_sub">
+                        <!-- <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i><span> Gallery
                                 </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="addfolder.php">Add folder</a></li>
                                 <li><a href="managegallery.php">Manage gallery</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Product
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Services
                                 </span><span class="float-right"><i class="mdi mdi-plus"></i></span></a>
                             <ul class="list-unstyled">
                                 <!-- <li><a href="category.php">Manage category</a></li> -->
-                                <li><a href="addproduct.php">Add Product</a></li>
-                                <li><a href="manageproduct.php">Manage Product</a></li>
+                                <li><a href="mservice.php">Add Main Service</a></li>
+                                <li><a href="addsubservice.php">Add Sub Service</a></li>
+                                <li><a href="managesubservice.php">Manage Services</a></li>
                                 
                             </ul>
                         </li>
@@ -142,7 +141,7 @@
 
                     <div class="container-fluid">
                        <div>
-                           <h3>Welcome to Bellehom Admin Panel!!</h3>
+                           <h3>Welcome to Dynamics Monk  Admin Panel!!</h3>
                        </div>
 
 
@@ -155,7 +154,7 @@
         </div>
 
             <footer class="footer">
-                ©2020 Bellehom <span class="d-none d-md-inline-block"> - Developed with by ais.</span>
+                ©2020 Dynamics Monk <span class="d-none d-md-inline-block"> - Developed by webnodites.</span>
             </footer>
 
         </div>

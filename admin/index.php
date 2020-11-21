@@ -58,7 +58,7 @@ if(isset($_POST["login-btn"]))
 
                 <div class="card-body">
                     <div class="text-center m-t-0 m-b-15">
-                            <a href="../index" class="logo logo-admin"><img src="../images/logo1.jpg"></a>
+                            <a href="../index" class="logo logo-admin"><img src="../images/logo3.png" class="logo" /></a>
                     </div>
                          <p class="text-center text-danger" style="color: red;"><?php echo $error;?></p>
 

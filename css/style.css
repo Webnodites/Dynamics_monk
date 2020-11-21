@@ -3492,5 +3492,31 @@ h4 {
 }
 
 .red-border {
-	border-color: red!important
+	border-color: red!important;
+}
+
+.subservice{
+
+}
+.subservice h2{
+margin: 20px 0;
+    text-decoration: underline;
+    font-size: 30px;
+    color: #D35B0B;
+}
+.subservice a{
+	color: #D35B0B;
+}
+.subservice h3{
+margin: 20px 0;
+    font-size: 22px;
+}
+.subservice ul,.subservice ol{
+	    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: .07rem;
+    margin-bottom: 1rem;
+}
+.subservice ul{
+	list-style: disc;
 }
