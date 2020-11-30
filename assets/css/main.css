@@ -25257,7 +25257,7 @@ ul.list-style-square {
   line-height: 1.5; }
 
 .display-5 {
-  font-size: 2.5rem;
+  font-size: 30px;
   font-weight: 300;
   line-height: 1.5; }  
 
@@ -25298,7 +25298,7 @@ ul.list-style-square {
     line-height: 1.5; }
 
   .display-md-4 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 300;
     line-height: 1.5; } }
 @media (min-width: 992px) {
@@ -25333,7 +25333,7 @@ ul.list-style-square {
     line-height: 1.5; }
 
   .display-xl-3 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.5; }
 
@@ -25448,3 +25448,5 @@ ul.list-style-square {
     font-family: FontAwesome;
     color: #d35b0b;
 }
+
+

@@ -20,7 +20,7 @@ foreach ($res1 as $s) {
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-  
+     <link rel="shortcut icon" href="images/fav.png">
 	
 	<!-- Standard Favicon -->
 	<link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon" /> 
@@ -89,7 +89,7 @@ foreach ($res1 as $s) {
                             <ul class="navigation-menu">
                                 <li><a href="index">Home</a></li>
                                 <li><a href="company">About Us</a></li>
-                                <li><a href="services">Services</a></li>
+                                <li><a href="ourservices">Services</a></li>
                             
                                 <li><a href="/articles/">Blog</a></li>
                                 <li>

@@ -1,3 +1,7 @@
+<?php 
+include('connect.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -7,7 +11,7 @@
     <title>Dynamics Monk</title>
     <meta name="description" content="We are a homegrown Full Stack IT company. We provide customised services for our customers in the NBFC, Learning and CRM space." />
 
-  
+    <link rel="shortcut icon" href="images/fav.png">
     <!-- Library -->
     <link rel="stylesheet" type="text/css" href="css/lib.css" async>
     
@@ -15,17 +19,12 @@
     <link rel="stylesheet" type="text/css" href="css/navigation.css" async>
     
     <link rel="stylesheet" type="text/css" href="style.css" async/>
-    <link href="assets/css/fonts/fontawesome/all.min.css" rel="stylesheet">
+   
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
 
 
-    <!-- Fonts -->
-    <link href="assets/css/fonts/theme.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700,700i&display=swap" rel="stylesheet">
-
+  
     <link rel="stylesheet" type="text/css" href="css/style1.css" async/>
 </head>
 <body>
@@ -57,13 +56,13 @@
                         </a>
                         <div class="menu-collapse">
                             <ul class="navigation-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="company.html">About Us</a></li>
-                                <li><a href="services.html">Services</a></li>
+                                <li><a href="index">Home</a></li>
+                                <li><a href="company">About Us</a></li>
+                                <li><a href="ourservices">Services</a></li>
                              
                                 <li><a href="/articles/">Blog</a></li>
                                 <li>
-                                    <a href="contact.html" class="nabtn">
+                                    <a href="contact" class="nabtn">
                                     <span>Contact Us</span>
                                     <svg width="150" height="39" viewBox="0 0 400 120" xmlns="https://www.w3.org/2000/svg">
                                         <rect class="line1" x="10" y="4" width="379" height="112" rx="59.5" />
@@ -90,180 +89,121 @@
                 </div>
             </div>
         </div><!-- PageBanner /- -->
-<!-- features-section -->
-<section id="features" class="content-section overflow-hidden" style="">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-5 mb-8 mb-lg-0 ml-auto pr-md-0 pr-xl-9">
-                <div class="position-relative gray-box-gr ar-1_1">
-                    <div class="position-absolute b-8 r-0 l-0 r-lg--8 text-center text-lg-right">
-                        <img src="images/tr.jpg" class="app-img w-100 parallax-img p-9 p-lg-8 " data-parallax="true" alt="Img">
-                    </div>
-                </div>
-            </div>
+       <?php
+            $q = "select * from service";
+            $res1 = mysqli_query($con,$q);
+            $counter = 0;
+            foreach ($res1 as $s) {
+                $counter++;
+                if($counter%2 == 0){
+                     ?>
+                        <!-- content-section -->
+                        <section class="content-section">
+                            <div class="container-fluid">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 mb-8 mb-lg-0 ml-auto pr-md-0 order-lg-2">
+                                        <div class="position-relative gray-box-gr ar-1_1">
+                                            <div class="position-absolute b-8 r-0 l-0 l-lg--9 text-center text-lg-left">
+                                                <img src="images/sr2.png" class="app-img w-100 parallax-img p-9" data-parallax="true" alt="Img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-lp-6 pl-md-10 order-lg-1">
+                                        <div class="pr-xl-7 pr-lp-10 pl-xl-8">
+                                            <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
+                                                <svg height="150" width="220" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
+                                                    <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">0<?php echo $counter; ?></text>
+                                                </svg>
+                                            </div>
+                                            <div class="px-8">
+                                                <div class="aos-init zi-2 position-relative " data-aos="slideUp" data-aos-delay="50">
+                                                    <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2"><?php echo $s['sname']; ?></h2>
+                                                </div>
+                                                <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
+                                                    <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                                                  <ul>
+                                                    <?php 
+                                                         $sbq = "select * from subservice where s_id =".$s['sid'];
+                                                         $resb = mysqli_query($con,$sbq);
             
-            <div class="col-lg-7  ml-auto">
-                <div class="pl-md-10 pr-md-8">
-                    <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
-                        <svg height="150" width="200" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
-                            <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">01</text>
-                        </svg>
-                    </div>
-                    <div class="px-8 px-lg-0">
-                        <div class="aos-init zi-2 position-relative mb-5" data-aos="slideUp" data-aos-delay="50">
-                            <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2">Training</h2>
-                        </div>
-                        <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
-                            <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                          <ul>
-                              <li><a href="#">Dynamics 365 Core</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /.content-section -->
+                                                        foreach ($resb as $sb) {
 
-<!-- content-section -->
-<section class="content-section">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-5 mb-8 mb-lg-0 ml-auto pr-md-0 order-lg-2">
-                <div class="position-relative gray-box-gr ar-1_1">
-                    <div class="position-absolute b-8 r-0 l-0 l-lg--9 text-center text-lg-left">
-                        <img src="images/sr2.png" class="app-img w-100 parallax-img p-9" data-parallax="true" alt="Img">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 col-lp-6 pl-md-10 order-lg-1">
-                <div class="pr-xl-7 pr-lp-10 pl-xl-8">
-                    <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
-                        <svg height="150" width="200" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
-                            <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">02</text>
-                        </svg>
-                    </div>
-                    <div class="px-8">
-                        <div class="aos-init zi-2 position-relative mb-8" data-aos="slideUp" data-aos-delay="50">
-                            <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2">Dynamics 365 Consultancy</h2>
-                            <h2 class="lh-3">Lorem ipsum dolor sit amet</h2>
-                        </div>
-                        <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
-                            <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                          <ul>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /.content-section -->
+                                                    ?>
+                                                      <li><a href="subservice?sid=<?php echo $sb['sub_id']; ?>"><?php echo $sb['sub_name']; ?></a></li>
+                                                     
+                                                    <?php } ?>
+                                                  </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- /.content-section -->
+                    <?php
+                }
+                else{
+                    ?>
+                        <!-- features-section -->
+                        <section id="features" class="content-section overflow-hidden" style="">
+                            <div class="container-fluid">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-5 mb-8 mb-lg-0 ml-auto pr-md-0 pr-xl-9">
+                                        <div class="position-relative gray-box-gr ar-1_1">
+                                            <div class="position-absolute b-8 r-0 l-0 r-lg--8 text-center text-lg-right">
+                                                <img src="images/tr.jpg" class="app-img w-100 parallax-img p-9 p-lg-8 " data-parallax="true" alt="Img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-7  ml-auto">
+                                        <div class="pl-md-10 pr-md-8">
+                                            <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
+                                                <svg height="150" width="220" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
+                                                    <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">0<?php echo $counter; ?></text>
+                                                </svg>
+                                            </div>
+                                           
 
-<!-- features-section -->
-<section id="features" class="content-section overflow-hidden" style="margin: 1rem;">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class=" col-lg-5  ml-auto mr-auto ml-lg-0 mb-8 mb-lg-0 pr-xl-12">
-                <div class="pe-n position-relative gray-box-gr ar-1_1 rounded-circle">
-                    <div class="position-absolute text-center  b-8 r-0 l-0 l-lg--9">
-                       
-                        <div class="simpleParallax" style="overflow: hidden;">
-                            <!-- <img class="app-img w-100 parallax-img p-9"  src="assets/img/app/appvideo32x_2093736915.png" alt="Img"> -->
-                            <img src="images/crm-png.png" class="app-img w-100 parallax-img p-9" data-parallax="true" alt="Img" style="transform: translate3d(0px, 16px, 0px) scale(1.3); transition: transform 0.4s cubic-bezier(0, 0, 0, 1) 0s; will-change: transform;">
-                        </div>
-                        <!-- <object type="image/svg+xml" class="d-block w-300" data="assets/img/app/appvideo2_1642782994.svg">
+                                            <div class="px-8 px-lg-0">
+                                                <div class="aos-init zi-2 position-relative mb-5" data-aos="slideUp" data-aos-delay="50">
+                                                    <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2"><?php echo $s['sname']; ?></h2>
+                                                </div>
+                                                <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
+                                                    <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                                                  <ul>
+                                                     <?php 
+                                                         $sbq = "select * from subservice where s_id =".$s['sid'];
+                                                         $resb = mysqli_query($con,$sbq);
+            
+                                                        foreach ($resb as $sb) {
 
-        </object> -->
-                        <!-- <div class="media-progress-wrapper progress position-absolute b-0">
-            <div class="media-prog progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-            </div>
-        </div> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7  ml-auto">
-                <div class="pl-md-10 pr-md-8">
-                    <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
-                        <svg height="150" width="200" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
-                            <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">03</text>
-                        </svg>
-                    </div>
-                    <div class="px-8 px-lg-0">
-                        <div class="aos-init zi-2 position-relative mb-8" data-aos="slideUp" data-aos-delay="50">
-                            <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2">Products</h2>
-                            <h2 class="lh-1">Lorem ipsum dolor sit amet,</h2>
-                        </div>
-                        <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
-                            <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                          <ul>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /.content-section -->
-
-<!-- content-section -->
-<section class="content-section">
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-5 mb-8 mb-lg-0 ml-auto pr-md-0 order-lg-2">
-                <div class="position-relative gray-box-gr ar-1_1">
-                    <div class="position-absolute b-8 r-0 l-0 l-lg--9 text-center text-lg-left">
-                        <img src="images/sr2.png" class="app-img w-100 parallax-img p-9" data-parallax="true" alt="Img">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 col-lp-6 pl-md-10 order-lg-1">
-                <div class="pr-xl-7 pr-lp-10 pl-xl-8">
-                    <div class="aos-init zi-1" data-aos="fade" data-aos-delay="50" data-aos-once="false">
-                        <svg height="150" width="200" stroke="#dbdee1" stroke-width="2" class="text-dshAim mb--9 ml--4 ml-md--10">
-                            <text style="font-family: 'Istok Web', sans-serif; font-weight: 800;" x="23" y="125" fill="none" font-size="150">04</text>
-                        </svg>
-                    </div>
-                    <div class="px-8">
-                        <div class="aos-init zi-2 position-relative mb-8" data-aos="slideUp" data-aos-delay="50">
-                            <h2 class="display-md-4 display-xl-3 display-5 lh-1 fw-800 text-primary mb-4 mb-xl-2">Service 4 ...</h2>
-                            <h2 class="lh-3">Lorem ipsum dolor sit amet</h2>
-                        </div>
-                        <div class="aos-init ser_ul" data-aos="slideUp" data-aos-delay="100">
-                            <p class="lead-md-2 fw-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
-                          <ul>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                              <li><a href="#">Lorem ipsum dolor</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /.content-section -->
+                                                    ?>
+                                                      <li><a href="subservice?sid=<?php echo $sb['sub_id']; ?>"><?php echo $sb['sub_name']; ?></a></li>
+                                                     
+                                                    <?php } ?>
+                                                  </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- /.content-section -->
+                    <?php
+                }
+            }
+        ?>
 
 
-<div class="clients-section">
+
+
+
+
+
+<!-- <div class="clients-section">
             <div class="section-header ourclients">
                 <h4>Our Clients</h4>
             </div>
@@ -280,7 +220,7 @@
                     <div class="item client1"><img src="images/spacer.gif" alt="client" /></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 </main>
 
 

@@ -10,7 +10,7 @@
 
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-  
+    <link rel="shortcut icon" href="images/fav.png">
     
     <!-- Standard Favicon -->
     <link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon" /> 
@@ -78,65 +78,8 @@
                             <ul class="navigation-menu">
                                 <li><a href="index">Home</a></li>
                                 <li><a href="company">About Us</a></li>
-                                <li><a href="services">Services</a></li>
-                              <!--   <li class="dropdown">
-                                    <i class="ddl-switch"></i>
-                                    <a href="services">Services</a>
-                                    <ul class="dropdown-menu">
-                                        <div class="dropdown-menubox">
-                                            <li><a href="services/application-development.html">Application Development</a></li>
-                                            <li><a href="#">Digital Transformation</a></li>
-                                            <li><a href="services/software-consulting-services.html">Software Consulting Services</a></li>
-                                            <li><a href="services/software-it-outsourcing-services.html">Software IT Outsourcing</a></li>
-                                            <li><a href="services/offshore-development-center.html">Offshore Development</a></li>
-                                        </div>
-                                        <div class="dropdown-menubox">
-                                            <li><a href="services/big-data-services.html">Big Data</a></li>
-                                            <li><a href="services/real-time-data-analytics-services.html">Real Time Analytics</a></li>
-                                            <li><a href="#">Block Chain</a></li>
-                                            <li><a href="services/devops-consulting.html">DevOps</a></li>
-                                            <li><a href="services/offshore-qa-testing-services.html">QA and Testing Services</a></li>
-                                        </div>
-                                        <div class="dropdown-menubox">
-                                            <li><a href="services/amazon-cloud-services.html">Amazon Cloud Services</a></li>
-                                            <li><a href="services/cloud-application-development.html">Cloud Application</a></li>
-                                            <li><a href="services/mobility-solutions.html">Enterprise Mobility</a></li>
-                                            <li><a href="#">Business Intelligence</a></li>
-                                        </div>
-                                        <div class="dropdown-menubox">
-                                            <li><a href="services/data-warehousing-solutions.html">Data ware Housing</a></li>
-                                            <li><a href="#">Data Integration</a></li>
-                                            <li><a href="services/ETL-data-integration-services.html">ETL</a></li>
-                                            <li><a href="#">Dashboards</a></li>
-                                        </div>
-                                    </ul>
-                                </li> -->
-                              <!--   <li class="dropdown">
-                                    <i class="ddl-switch"></i>
-                                    <a href="#">Technologies</a>
-                                    <ul class="dropdown-menu two_col">
-                                        <div class="dropdown-menubox">
-                                            <li><a href="technologies/java-application-development.html">Java</a></li>
-                                            <li><a href="technologies/python-development-services.html">Python</a></li>
-                                            <li><a href="technologies/scala-development.html">Scala</a></li>
-                                            <li><a href="technologies/magento-ecommerce.html">Magento</a></li>
-                                        </div>
-                                        <div class="dropdown-menubox">
-                                            <li><a href="technologies/android-app-development.html">Android</a></li>
-                                            <li><a href="technologies/ios-application-development.html">iOS</a></li>
-                                            <li><a href="technologies/pentaho-BI-Services.html">Pentaho BI</a></li>
-                                        </div>
-                                        <div class="dropdown-menubox microsoft_nested">
-                                            <li class="full_width"><strong>Microsoft</strong></li>
-                                            <li><a href="technologies/net-application-development.html">.Net Development</a></li>
-                                            <li><a href="technologies/microsoft-dynamics-365.html">Dynamics 365</a></li>
-                                            <li><a href="technologies/dynamics-365-business-central-solutions-development.html">Dynamics 365 Business Central</a></li>
-                                            <li><a href="technologies/dynamics365-finance-and-operations.html">Dynamics 365 Finance &amp; Operations</a></li>
-                                            <li><a href="technologies/microsoft-dynamics-crm-consulting.html">Dynamics CRM</a></li>
-                                            <li><a href="#">Power BI</a></li>
-                                        </div>
-                                    </ul>
-                                </li> -->
+                                <li><a href="ourservices">Services</a></li>
+                         
                                 <li><a href="/articles/">Blog</a></li>
                                 <li>
                                     <a href="contact" class="nabtn">
@@ -231,7 +174,7 @@
 
       
 
-       <div class="clients-section">
+     <!--   <div class="clients-section">
             <div class="section-header ourclients">
                 <h4>Our Clients</h4>
             </div>
@@ -248,7 +191,7 @@
                     <div class="item client1"><img src="images/spacer.gif" alt="client" /></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </main>
