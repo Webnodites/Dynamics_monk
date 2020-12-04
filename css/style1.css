@@ -6,7 +6,15 @@
 }
 body{
 	font-family: 'Raleway', sans-serif;
+	scroll-behavior: smooth;
 }
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+
 
 .ndiv {
 	position: fixed;
@@ -721,11 +729,14 @@ a.menu-box::after {
 .section-header h4,
 .section-header strong {
 	color: #000;
+    margin: auto;
 	font-size: 30px;
 	line-height: 36px;
 	font-weight: 400;
 	margin-bottom: 15px;
 	display: block;
+	border-bottom: 2px solid #d35b0b;
+    width: fit-content;
 }
 
 .white_txt.section-header h3 {
@@ -1388,7 +1399,7 @@ a.menu-box::after {
 
 .home-about {
 	width: 100%;
-    background: url(../images/banner/b5.jpg) center top no-repeat;
+    background: url(../images/aboutbg.jpg) center top no-repeat;
     padding: 60px 0;
     text-align: center;
     background-size: cover;
@@ -3721,7 +3732,6 @@ iframe {
 .support-partner-box img {
 	position: absolute;
 	left: 0;
-	border-radius: 100%
 }
 
 .defaults .support-partner-box img {
@@ -5494,8 +5504,7 @@ iframe {
 .our-best-practices {
 	display: inline-block;
 	width: 100%;
-	padding: 50px 0 200px;
-	background: url(../services/images/werehouse_secbg.webp) center bottom no-repeat
+	padding: 50px 0 50px;
 }
 
 .our-best-list {
@@ -5511,7 +5520,8 @@ iframe {
 }
 
 .our-best-list .ourbest-list-innerbox {
-	background-color: #e6f5ff;
+	    background-color: #e78f55;
+    color: white;
 	display: inline-block;
 	width: 100%;
 	margin-bottom: 30px;
@@ -5523,8 +5533,26 @@ iframe {
 	font-size: 16px
 }
 
+.timeline-section {
+	
+    align-items: center;
+    padding: 20px 0 20px;
+    background-color: #e78f55;
+}
+.timeline-section .t{
+	display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+@media (max-width: 480px){
+	.timeline-section h2{
+		font-size: 14px;
+	}
+}
+
 .our-challenges-section {
-	background-color: #e6f5ff;
 	display: inline-block;
 	width: 100%;
 	padding: 60px 0 20px
@@ -5546,17 +5574,17 @@ iframe {
 	margin-bottom: 20px;
 	font-size: 16px;
 	color: #000;
-	width: 50%;
+	width: 100%;
 	padding-right: 10px
 }
 
 .our-challenges-section .our-challenges-listing p::before {
 	position: absolute;
-	content: "\f05d";
+	content: "\27A4";
 	font-family: FontAwesome;
 	left: 0;
 	font-size: 24px;
-	color: #ed1c24;
+	color: #D35B0B;
 	font-weight: 400
 }
 
@@ -9799,7 +9827,7 @@ form .form-control {
 	.hirepython_developers .section-header strong,
 	.section-header h2,
 	.section-header h3 {
-		font-size: 20px
+		font-size: 25px
 	}
 	.designer-section {
 		padding: 30px 0 20px
@@ -10629,6 +10657,7 @@ ul.article-listing .article-disc li {
 
 .footer-box p{
 	padding-right: 40px;
+	    padding-top: 15px;
  }
  .footer-socialbox {
  	margin: 15px 0;
@@ -10637,8 +10666,9 @@ ul.article-listing .article-disc li {
  	padding: 0 5px;
  }
  .enquiry{
- 	background-color: #E78F55;
+ 	/*background-color: #E78F55;*/
  	   padding: 45px 0 30px;
+ 	   background: url(../images/abtbg.png);
  }
 
 .enquiry h2 {
@@ -10719,4 +10749,8 @@ ul.article-listing .article-disc li {
     font-weight: 400;
     margin-bottom: 50px;
     border-bottom: 2px solid #d35b0b;
+}
+
+.grey-bg{
+	background-color: #f2f2f2;
 }

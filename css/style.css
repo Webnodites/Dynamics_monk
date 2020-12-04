@@ -630,6 +630,86 @@ h4 {
 	background: 0
 }
 
+.Tabs1 {
+	background: #eee;
+	border-radius: 5px;
+	height: 45px;
+	font-size: 16px;
+	margin: 20px 0 20px
+}
+.Tabs1 ul{
+	list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Tabs1 li a,
+.Tabs1 li.act {
+	padding: 10px 50px;
+	text-align: center
+}
+
+.Tabs1 li a {
+	color: #1d1d1b;
+	border-right: 2px solid #ddd;
+	border-bottom: 1px solid #48b;
+	padding: 14px 0;
+	background: #fff;
+	line-height: 10px;
+	margin: 3px
+}
+
+.Tabs1 li:last-child a {
+	border-right: 0 none
+}
+
+.Tabs1 li a:hover {
+	color: #48b
+}
+
+.Tabs1 li.act {
+	    background: url(../images/actbg.png) top center no-repeat;
+    margin-top: 0;
+    padding-bottom: 30px;
+    font-size: 18px;
+}
+
+.Tabs1 li.act a {
+	color: #fff;
+	border: 0;
+	background: 0
+}
+@media (max-width: 480px){
+	.Tabs1 {
+    background: #eee;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 16px;
+    margin: 20px 0 20px;
+}
+.Tabs1 li a,
+.Tabs1 li.act {
+
+    padding: 10px 5px;
+    text-align: center;
+}
+.Tabs1 li.act {
+    background: url(../images/actbg.png) top center no-repeat;
+    margin-top: 0;
+    padding-bottom: 40px;
+    font-size: 14px;
+}
+
+.Tabs1 p {
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: .07rem;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+}
+
+}
+
 .Text {
 	width: 67%;
 	margin-right: 5%;
