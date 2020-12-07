@@ -25449,4 +25449,13 @@ ul.list-style-square {
     color: #d35b0b;
 }
 
+@media (max-width: 480px){
+  .ser_ul li{
+  font-size: 16px;
+}
+.content-section p{
+  font-size: 15px;
+}
+}
+
 

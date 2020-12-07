@@ -729,6 +729,19 @@ a.menu-box::after {
 .section-header h4,
 .section-header strong {
 	color: #000;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 400;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.hirepython_developers .section-header1 strong,
+.section-header1 h2,
+.section-header1 h3,
+.section-header1 h4,
+.section-header1 strong {
+	color: #000;
     margin: auto;
 	font-size: 30px;
 	line-height: 36px;
@@ -1076,7 +1089,7 @@ a.menu-box::after {
 }
 
 .pagebanner-section.banner_aboutbg {
-	background: url(../images/about/b5.jpg) center no-repeat;
+	background: url(../images/abtbg.png) center no-repeat;
 	    background-size: cover;
 }
 
@@ -1785,7 +1798,7 @@ a.menu-box::after {
 	text-align: center;
 	display: inline-block;
 	width: 100%;
-	font-weight: 400;
+	font-weight: 500;
 	margin-bottom: 15px
 }
 
@@ -3761,7 +3774,7 @@ iframe {
 }
 
 .value_proposition .support-partner-box h3 {
-	color: #ed1c24;
+	color: #D35B0B;
 	font-weight: 500
 }
 
@@ -4666,7 +4679,7 @@ iframe {
 .bigdata_services_section .aboutservice-block.style2 .aboutservice-box h3,
 .whychooseus_nexbox h3 {
 	font-size: 20px;
-	color: #ed1c24
+	color: #D35B0B;
 }
 
 .bigdatafeatures-block {
@@ -5113,9 +5126,9 @@ iframe {
 }
 
 .offshoreqabox_innerbox {
-	padding: 40px 15px;
+	padding: 40px 10px;
 	float: left;
-	min-height: 510px
+	min-height: 380px
 }
 
 .offshoreqabox_innerbox .offshare-qaiconbox {
@@ -5272,11 +5285,17 @@ iframe {
 }
 
 .selenium-features-block .devlopment-features-box p {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 	margin-top: 25px;
 	margin-bottom: 15px;
 	line-height: 24px
+}
+.selenium-features-block .devlopment-features-box h4{
+ margin: 15px 0;
+    color: #d35b0b;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .selenium-testing-approach {
@@ -8604,7 +8623,7 @@ form .form-control {
 		margin: 40px 0
 	}
 	.service-titleblock-section.bg2 {
-		background: #1fbca7
+		background: #E78F55;
 	}
 	.services-block {
 		width: 33.33%
@@ -9892,7 +9911,7 @@ form .form-control {
 	}
 	.section-header p {
 		font-size: 16px;
-		line-height: 20px
+		line-height: 24px
 	}
 	.stack-box {
 		width: 100%
@@ -10039,6 +10058,10 @@ form .form-control {
 	.topheader .header-contact a {
 		display: block;
 		margin-right: 0
+	}
+	.section-header p {
+		font-size: 14px;
+		line-height: 22px
 	}
 }
 
@@ -10753,4 +10776,124 @@ ul.article-listing .article-disc li {
 
 .grey-bg{
 	background-color: #f2f2f2;
+}
+.ul{
+
+    border-bottom: 2px solid #d35b0b;
+    width: fit-content;
+}
+ul li{
+	font-size: 15px;
+    line-height: 25px;
+    letter-spacing: .07rem;
+}
+.list-info2 h4{
+    margin: 15px 0;
+    color: #d35b0b;
+    font-weight: 600;
+    font-size: 20px;
+}
+.technologies .aboutservice-innerbox {
+    border: 0;
+    box-shadow: none;
+    text-align: left;
+}
+.technologies .aboutservice-block.style2 .aboutservice-box-content {
+    padding: 15px 0;
+    min-height: auto;
+}
+.technologies .aboutservice-block.style2 .aboutservice-box h3, .whychooseus_nexbox h3 {
+    font-size: 20px;
+    color: #D35B0B;
+}
+.technologies .aboutservice-block.style2 .aboutservice-box h3 {
+    text-align: left;
+    line-height: 29px;
+}
+.no-pad{
+	padding-left: 0 !important;
+	min-height: auto;
+}
+.section-header1 p{
+	margin: 20px 0;
+}
+.light-pbg{
+background-color: #e7eaff;
+}
+
+@media (max-width: 480px){
+	p{
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.section-header1 h2{
+		font-size: 22px;
+	}
+	.aboutservice p {
+		margin-bottom: 0;
+	}
+	.aboutservice-block.style2 .aboutservice-box p {
+    font-size: 16px;
+    line-height: 24px;
+	}
+	.support-partner-contentbox p {
+    line-height: 24px;
+	}
+}
+
+
+@media (max-width: 400px){
+	.section-header1 h2 {
+	    font-size: 20px;
+	}
+	p{
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.aboutservice-block.style2 .aboutservice-box p {
+    font-size: 14px;
+    line-height: 22px;
+	}
+	.support-partner-contentbox p {
+    line-height: 22px;
+	}
+	ul li {
+    font-size: 14px;
+    line-height: 22px;
+}
+.list-info2 h4 {
+    font-size: 18px;
+}
+.selenium-features-block .devlopment-features-box h4 {
+    font-size: 18px;
+}
+.selenium-features-block .devlopment-features-box p {
+    font-size: 14px;
+    }
+    .technologies .aboutservice-block.style2 .aboutservice-box h3, .whychooseus_nexbox h3 {
+    font-size: 18px;
+}
+.support-partner-contentbox h3 {
+    font-size: 18px;
+    }
+    .our-challenges-section .our-challenges-listing p {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.offshoreqabox_innerbox h3, .offshoreqabox_innerbox h3 a {
+    font-size: 18px;
+    font-weight: 500;
+}
+.bigdata_services_section .aboutservice-block.style2 .aboutservice-box h3, .whychooseus_nexbox h3 {
+    font-size: 18px;
+}
+.our-best-list {
+    margin-top: 10px;
+}
+.our-best-list .ourbest-list-innerbox {
+    padding: 10px 10px 0px;
+}
+.our-challenges-section {
+    padding: 50px 0 20px;
+}
 }
