@@ -1388,6 +1388,9 @@ h4 {
 	.entry-date {
 		margin-top: 0
 	}
+	.app-img {
+		max-width: 50%; }
+	  
 }
 
 @media(max-width:640px) {
