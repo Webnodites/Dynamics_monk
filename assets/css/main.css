@@ -25444,7 +25444,7 @@ ul.list-style-square {
 .ser_ul li::before {
     position: absolute;
     content: "\f101";
-    left: 0;
+    margin-left: -20px;
     font-family: FontAwesome;
     color: #d35b0b;
 }

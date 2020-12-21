@@ -14,7 +14,15 @@ a{
 a:hover{
 	text-decoration: none;
 }
+html{
+	scroll-behavior: smooth;
+}
 
+.ser_ul .ul2 {
+    list-style: none;
+    display: inline-block;
+        padding-left: 20px;
+}
 
 .ndiv {
 	position: fixed;
@@ -3363,6 +3371,12 @@ iframe {
 	margin: 0 0 20px 0!important
 }
 
+.d2 {
+	flex: 0 0 33%;
+	max-width: 33%;
+}
+
+
 .devlopment-features-box span {
 	min-height: 70px;
 	display: inline-block;
@@ -4066,7 +4080,7 @@ iframe {
 
 .designer-inner-box.content_area {
 	padding: 25px 20px;
-	background-color: #eee;
+	/*background-color: #eee;*/
 	min-height: 220px
 }
 
@@ -10896,4 +10910,71 @@ background-color: #e7eaff;
 .our-challenges-section {
     padding: 50px 0 20px;
 }
+}
+
+.our-challenges-section .l2 p {
+    width: 20%;
+        padding-left: 30px;
+}
+@media (max-width: 767px){
+.our-challenges-section .l2 p {
+    width: 50%;
+    font-size: 14px;
+}
+}
+
+.sideh h4{
+text-align: left;
+margin: 15px 0;
+    color: #d35b0b;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: underline; 
+}
+
+.offshoreqabox_innerbox2 {
+    padding: 40px 10px;
+    float: left;
+    min-height: 310px;
+}
+
+@media (max-width: 991px){
+.offshoreqabox_innerbox2 {
+    padding: 40px 10px;
+    float: left;
+    min-height: 200px;
+}
+}
+
+.our-best-list-box2 {
+    float: left;
+    width: 20%;
+    padding: 0 5px;
+    text-align: center;
+}
+.our-best-list-box2 .ourbest-list-innerbox {
+   min-height: 330px;
+}
+@media (max-width: 991px){
+.our-best-list-box2 {
+    width: 100%;
+    padding: 0;
+}
+.our-best-list-box2 .ourbest-list-innerbox {
+   min-height: auto;
+}
+}
+@media (max-width: 991px){
+.our-challenges-section .l2 p {
+    width: 33%;
+    padding-left: 30px;
+}
+}
+@media (max-width: 767px){
+.our-challenges-section .l2 p {
+    width: 100%;
+}
+}
+.designer-block{
+	padding-top: 50px;
 }
