@@ -1330,7 +1330,7 @@ a.menu-box::after {
 	min-height: 190px;
 	background: url(../images/home/services-bg.png) right top no-repeat #84b7ce;
 	color: #fff!important;
-	margin: 70px 0
+	margin: 50px 0;
 }
 
 .service-title-content {
@@ -5529,6 +5529,12 @@ iframe {
 .datawarehouse_box-inner {
 	border: 1px solid #ddd;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	min-height: 500px;
+}
+@media (max-width: 991px){
+	.datawarehouse_box-inner {
+	min-height: 475px;
+}
 }
 .datawarehouse_box-inner ul{
 	padding:15px;
@@ -10977,4 +10983,21 @@ margin: 15px 0;
 }
 .designer-block{
 	padding-top: 50px;
+}
+.contactpage_form button{
+	cursor: pointer;
+}
+.txt{
+	font-size: 75px;
+}
+.sg{
+	height: 170px;
+}
+@media (max-width: 767px){
+.txt{
+	font-size: 40px;
+}
+.sg{
+	height: 120px;
+}
 }
