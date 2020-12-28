@@ -1340,12 +1340,12 @@ a.menu-box::after {
 
 .service-title-content h2 {
 	font-size: 30px;
-	margin-bottom: 10px
+	margin-bottom: 10px;
 }
 
 .service-title-content p {
 	line-height: 22px;
-	color: #fff
+	color: #fff;
 }
 
 .services-block {
@@ -1380,8 +1380,11 @@ a.menu-box::after {
 }
 
 .service-titleblock-section.bg2 {
+	display: inline-block;
+	width: 100%;
+	min-height: 190px;
 	background: url(../images/home/technology-bg.png) right top no-repeat #e78f55;
-	margin-top: 0
+	margin-top: 50px 0;
 }
 
 .technology-block {
